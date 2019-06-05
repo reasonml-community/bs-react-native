@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>ToastAndroid-BsReactNative (BsReactNative.ToastAndroid-BsReactNative)</title><link rel="stylesheet" href="../../odoc.css"/><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/><script src="../../highlight.pack.js"></script><script>hljs.initHighlightingOnLoad();</script></head><body><div class="content"><header><nav><a href="../">Up</a> – <a href="../">BsReactNative</a> &#x00BB; ToastAndroid-BsReactNative</nav><h1>Module <code>ToastAndroid-BsReactNative</code></h1></header><dl><dt class="spec type" id="type-duration"><a href="#type-duration" class="anchor"></a><code><span class="keyword">type</span> duration</code><code> = </code><table class="variant"><tr id="type-duration.LONG" class="anchored"><td class="def constructor"><a href="#type-duration.LONG" class="anchor"></a><code>| </code><code><span class="constructor">LONG</span></code></td></tr><tr id="type-duration.SHORT" class="anchored"><td class="def constructor"><a href="#type-duration.SHORT" class="anchor"></a><code>| </code><code><span class="constructor">SHORT</span></code></td></tr></table>;</dt><dd><p>You can read more on <code>ToastAndroid</code> API usage in official docs: <a href="https://facebook.github.io/react-native/docs/toastandroid">https://facebook.github.io/react-native/docs/toastandroid</a></p><p>ToastAndroid module provides simple feedback in the small popup.</p><h4 id="example-of-use"><a href="#example-of-use" class="anchor"></a>Example of use</h4><h5 id="default"><a href="#default" class="anchor"></a>default</h5><pre><code class="re">ToastAndroid.show(&quot;A pikachu appeared nearby !&quot;, ToastAndroid.SHORT); </code></pre><h5 id="show-with-gravity"><a href="#show-with-gravity" class="anchor"></a>show with gravity</h5><pre><code class="re">ToastAndroid.showWithGravity(
+  &quot;All Your Base Are Belong To Us&quot;,
+  ToastAndroid.SHORT,
+  ToastAndroid.CENTER
+);</code></pre><h5 id="show-with-gravity-and-add-offset"><a href="#show-with-gravity-and-add-offset" class="anchor"></a>show with gravity and add offset</h5><pre><code class="re">ToastAndroid.showWithGravityAndOffset(
+  &quot;A wild toast appeared!&quot;,
+  ToastAndroid.LONG,
+  ToastAndroid.BOTTOM,
+  25,
+  50
+);</code></pre><h4 id="methods"><a href="#methods" class="anchor"></a>Methods</h4><h5 id="show"><a href="#show" class="anchor"></a>show</h5><pre><code class="re">type duration =
+| BOTTOM
+| CENTER;
+| LONG
+| SHORT
+| TOP
+
+(string, duration) =&gt; unit;</code></pre><h5 id="showwithgravity"><a href="#showwithgravity" class="anchor"></a>showWithGravity</h5><pre><code class="re">type gravity =
+  | BOTTOM
+  | CENTER;
+  | TOP
+
+let showWithGravity: (string, duration, gravity) =&gt; unit;</code></pre><h5 id="showgravityandoffset"><a href="#showgravityandoffset" class="anchor"></a>showGravityAndOffset</h5><pre><code class="re">type gravity =
+ | BOTTOM
+ | CENTER;
+ | TOP
+
+let showWithGravityAndOffset: (string, duration, gravity, int, int) =&gt; unit;</code></pre><h4 id="properties"><a href="#properties" class="anchor"></a>Properties</h4><ul><li><p>BOTTOM</p><pre><code class="re">ToastAndroid.BOTTOM </code></pre></li><li><p>CENTER</p><pre><code class="re">ToastAndroid.CENTER </code></pre></li><li><p>LONG</p><pre><code class="re">ToastAndroid.LONG </code></pre></li><li><p>SHORT</p><pre><code class="re">ToastAndroid.SHORT </code></pre></li><li><p>TOP</p><pre><code class="re">ToastAndroid.TOP </code></pre></li></ul></dd></dl><dl><dt class="spec type" id="type-gravity"><a href="#type-gravity" class="anchor"></a><code><span class="keyword">type</span> gravity</code><code> = </code><table class="variant"><tr id="type-gravity.BOTTOM" class="anchored"><td class="def constructor"><a href="#type-gravity.BOTTOM" class="anchor"></a><code>| </code><code><span class="constructor">BOTTOM</span></code></td></tr><tr id="type-gravity.CENTER" class="anchored"><td class="def constructor"><a href="#type-gravity.CENTER" class="anchor"></a><code>| </code><code><span class="constructor">CENTER</span></code></td></tr><tr id="type-gravity.TOP" class="anchored"><td class="def constructor"><a href="#type-gravity.TOP" class="anchor"></a><code>| </code><code><span class="constructor">TOP</span></code></td></tr></table>;</dt></dl><dl><dt class="spec value" id="val-show"><a href="#val-show" class="anchor"></a><code><span class="keyword">let</span> show: string <span>=&gt;</span> duration:<a href="#type-duration">duration</a> <span>=&gt;</span> ?&#8288;gravity:<a href="#type-gravity">gravity</a> <span>=&gt;</span> ?&#8288;offset:(int, int) <span>=&gt;</span> unit <span>=&gt;</span> unit;</code></dt></dl></div></body></html>

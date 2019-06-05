@@ -1,0 +1,1196 @@
+
+<!DOCTYPE html>
+<html style="height:100%">
+<head><meta data-react-helmet="true" charset="utf-8"/><meta data-react-helmet="true" content="width=device-width, initial-scale=1" name="viewport"/><meta data-react-helmet="true" content="#222222" name="msapplication-TileColor"/><meta data-react-helmet="true" content="/bs-react-native/browserconfig.xml" name="msapplication-config"/><meta data-react-helmet="true" content="#222222" name="theme-color"/><meta data-react-helmet="true" content="width=device-width, initial-scale=1, viewport-fit=cover" name="viewport"/> <link data-react-helmet="true" href="/bs-react-native/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/><link data-react-helmet="true" href="/bs-react-native/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/><link data-react-helmet="true" href="/bs-react-native/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/><link data-react-helmet="true" href="/bs-react-native/site.webmanifest" rel="manifest"/><link data-react-helmet="true" rel="mask-icon" href="/bs-react-native/safari-pinned-tab.svg" color="#222222"/><link data-react-helmet="true" href="/bs-react-native/favicon.ico" rel="shortcut icon"/><link data-react-helmet="true" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css" rel="stylesheet"/> <title data-react-helmet="true">BsReactNative Style</title> <style data-react-helmet="true" >@-ms-viewport { width: device-width } @viewport { width: device-width }</style><style data-react-helmet="true" >
+html {
+  width: 100%;
+  height: 100%;
+  overflow-x:hidden;
+  background: #fff;
+}
+body {
+  min-width: 100%;
+  min-height: 100%;
+  overflow-x: hidden;
+}
+
+@supports(padding: max(0px)) {
+  body {
+    /* https://webkit.org/blog/7929/designing-websites-for-iphone-x/ */
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+    /* padding-left: max(12px, env(safe-area-inset-left)); */
+    /* padding-right: max(12px, env(safe-area-inset-right)); */
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+}
+
+.hljs {
+font-size: 14px;
+padding: 20px;
+border: 1px solid rgba(0,0,0,0.05);
+background: rgba(0,0,0,0.01);
+border-radius: 4px;
+}
+
+.hljs.javascript {
+background-color: rgba(247, 223, 30, .03)
+}
+
+table .hljs {
+border: none;
+background: none
+}
+
+.hljs-operator {
+color: #a626a4
+}
+
+.hljs-character {
+color: #50a14f
+}
+
+.hljs-module-identifier {
+color: #4078f2
+}
+
+.hljs-constructor {
+color: #e45649
+}
+
+.stick { position: -webkit-sticky; position: sticky; }
+
+.htmlContent {
+  font-family: system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Ubuntu,"Helvetica Neue",sans-serif;
+  font-size: 16px;
+  line-height: 25px;
+}
+
+</style><style data-react-helmet="true" >
+    @media (max-width: 499px) { .WindowSizeFilter-notSmall { display: none } }
+  </style>  <style id="react-native-stylesheet">[stylesheet-group="0"]{}
+html{-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;-webkit-tap-highlight-color:rgba(0,0,0,0);}
+body{margin:0;}
+button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0;}
+input::-webkit-inner-spin-button,input::-webkit-outer-spin-button,input::-webkit-search-cancel-button,input::-webkit-search-decoration,input::-webkit-search-results-button,input::-webkit-search-results-decoration{display:none;}
+[stylesheet-group="0.1"]{}
+:focus:not([data-focusvisible-polyfill]){outline: none;}
+[stylesheet-group="0.5"]{}
+.css-reset-4rbku5{background-color:rgba(0,0,0,0.00);color:inherit;font:inherit;list-style:none;margin-bottom:0px;margin-left:0px;margin-right:0px;margin-top:0px;text-align:inherit;text-decoration:none;}
+.css-cursor-18t94o4{cursor:pointer;}
+[stylesheet-group="1"]{}
+.css-view-1dbjc4n{-ms-flex-align:stretch;-ms-flex-direction:column;-ms-flex-negative:0;-ms-flex-preferred-size:auto;-webkit-align-items:stretch;-webkit-box-align:stretch;-webkit-box-direction:normal;-webkit-box-orient:vertical;-webkit-flex-basis:auto;-webkit-flex-direction:column;-webkit-flex-shrink:0;align-items:stretch;border:0 solid black;box-sizing:border-box;display:-webkit-box;display:-moz-box;display:-ms-flexbox;display:-webkit-flex;display:flex;flex-basis:auto;flex-direction:column;flex-shrink:0;margin-bottom:0px;margin-left:0px;margin-right:0px;margin-top:0px;min-height:0px;min-width:0px;padding-bottom:0px;padding-left:0px;padding-right:0px;padding-top:0px;position:relative;z-index:0;}
+.css-text-76zvg2{border-bottom-width:0px;border-left-width:0px;border-right-width:0px;border-top-width:0px;box-sizing:border-box;color:rgba(0,0,0,1.00);display:inline;font:14px system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Ubuntu,"Helvetica Neue",sans-serif;margin-bottom:0px;margin-left:0px;margin-right:0px;margin-top:0px;padding-bottom:0px;padding-left:0px;padding-right:0px;padding-top:0px;white-space:pre-wrap;word-wrap:break-word;}
+.css-textHasAncestor-16my406{color:inherit;font:inherit;white-space:inherit;}
+[stylesheet-group="2"]{}
+.r-flex-13awgt0{-ms-flex-negative:1;-ms-flex-positive:1;-ms-flex-preferred-size:0%;-webkit-box-flex:1;-webkit-flex-basis:0%;-webkit-flex-grow:1;-webkit-flex-shrink:1;flex-basis:0%;flex-grow:1;flex-shrink:1;}
+.r-borderColor-1tc8wwf{border-bottom-color:rgba(72,169,220,1.00);border-left-color:rgba(72,169,220,1.00);border-right-color:rgba(72,169,220,1.00);border-top-color:rgba(72,169,220,1.00);}
+.r-overflow-1udh08x{overflow-x:hidden;overflow-y:hidden;}
+.r-display-xoduu5{display:-webkit-inline-box;display:-moz-inline-box;display:-ms-inline-flexbox;display:-webkit-inline-flex;display:inline-flex;}
+.r-display-6koalj{display:-webkit-box;display:-moz-box;display:-ms-flexbox;display:-webkit-flex;display:flex;}
+.r-borderRadius-z2wwpe{border-bottom-left-radius:4px;border-bottom-right-radius:4px;border-top-left-radius:4px;border-top-right-radius:4px;}
+.r-borderStyle-1phboty{border-bottom-style:solid;border-left-style:solid;border-right-style:solid;border-top-style:solid;}
+.r-borderWidth-rs99b7{border-bottom-width:1px;border-left-width:1px;border-right-width:1px;border-top-width:1px;}
+[stylesheet-group="2.1"]{}
+.r-paddingHorizontal-ou255f{padding-left:5px;padding-right:5px;}
+.r-paddingHorizontal-1e081e0{padding-left:12px;padding-right:12px;}
+.r-paddingVertical-1rcbeiy{padding-bottom:6px;padding-top:6px;}
+.r-paddingVertical-atwnbb{padding-bottom:5px;padding-top:5px;}
+[stylesheet-group="2.2"]{}
+.r-pointerEvents-12vffkv>*{pointer-events:auto;}
+.r-pointerEvents-12vffkv{pointer-events:none!important;}
+.r-alignItems-1awozwy{-ms-flex-align:center;-webkit-align-items:center;-webkit-box-align:center;align-items:center;}
+.r-borderTopWidth-1e35tp8{border-top-width:8px;}
+.r-boxShadow-urspo7{box-shadow:0px 5px 20px rgba(0,0,0,0.15);}
+.r-justifyContent-1777fci{-ms-flex-pack:center;-webkit-box-pack:center;-webkit-justify-content:center;justify-content:center;}
+.r-zIndex-184en5c{z-index:1;}
+.r-flexGrow-16y2uox{-ms-flex-positive:1;-webkit-box-flex:1;-webkit-flex-grow:1;flex-grow:1;}
+.r-flexShrink-1wbh5a2{-ms-flex-negative:1;-webkit-flex-shrink:1;flex-shrink:1;}
+.r-width-13qz1uu{width:100%;}
+.r-backgroundColor-qve0mc{background-color:rgba(32,35,42,1.00);}
+.r-flexDirection-18u37iz{-ms-flex-direction:row;-webkit-box-direction:normal;-webkit-box-orient:horizontal;-webkit-flex-direction:row;flex-direction:row;}
+.r-flexWrap-1w6e6rj{-ms-flex-wrap:wrap;-webkit-box-lines:multiple;-webkit-flex-wrap:wrap;flex-wrap:wrap;}
+.r-justifyContent-1wtj0ep{-ms-flex-pack:justify;-webkit-box-pack:justify;-webkit-justify-content:space-between;justify-content:space-between;}
+.r-position-bnwqim{position:relative;}
+.r-pointerEvents-105ug2t{pointer-events:auto!important;}
+.r-color-1l26oi5{color:rgba(250,252,255,1.00);}
+.r-fontSize-1i10wst{font-size:18px;}
+.r-fontWeight-b88u0q{font-weight:700;}
+.r-fontWeight-1od2jal{font-weight:300;}
+.r-lineHeight-277cki{line-height:30.599999999999998px;}
+.r-justifyContent-17s6mgv{-ms-flex-pack:end;-webkit-box-pack:end;-webkit-justify-content:flex-end;justify-content:flex-end;}
+.r-fontSize-1enofrn{font-size:12px;}
+.r-height-1or9b2r{height:10px;}
+.r-width-5soawk{width:10px;}
+.r-flexBasis-1ogojb1{-ms-flex-preferred-size:500px;-webkit-flex-basis:500px;flex-basis:500px;}
+.r-color-1et4ttl{color:rgba(40,44,52,1.00);}
+.r-fontSize-s67bdx{font-size:48px;}
+.r-color-1ordeou{color:rgba(72,169,220,1.00);}
+.r-fontSize-1b43r93{font-size:14px;}
+.r-height-z80fyv{height:20px;}
+.r-width-19wmn03{width:20px;}
+.r-alignSelf-173mn98{-ms-flex-item-align:end;-webkit-align-self:flex-end;align-self:flex-end;}
+.r-color-1khnkhu{color:rgba(51,51,51,1.00);}
+.r-fontSize-ubezar{font-size:16px;}
+.r-fontWeight-1kfrs79{font-weight:600;}
+.r-color-181bzza{color:rgba(85,85,85,1.00);}
+.r-fontWeight-16dba41{font-weight:400;}
+.r-height-14g73ha{height:15px;}
+.r-width-1b94p3d{width:15px;}
+.r-color-1e6zz2d{color:rgba(221,221,221,1.00);}</style></head>
+<body style="min-height:100%"><div class="css-view-1dbjc4n r-flex-13awgt0 r-pointerEvents-12vffkv" data-reactroot=""><div class="css-view-1dbjc4n r-flex-13awgt0 r-pointerEvents-12vffkv"><div class="css-view-1dbjc4n r-alignItems-1awozwy r-borderColor-1tc8wwf r-borderTopWidth-1e35tp8 r-boxShadow-urspo7 r-justifyContent-1777fci r-zIndex-184en5c"><div class="css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-qve0mc r-flexGrow-16y2uox r-flexShrink-1wbh5a2 r-overflow-1udh08x r-width-13qz1uu"><div class="css-view-1dbjc4n r-flexDirection-18u37iz r-flexGrow-16y2uox r-flexShrink-1wbh5a2 r-flexWrap-1w6e6rj r-justifyContent-1wtj0ep r-paddingHorizontal-ou255f r-width-13qz1uu" style="max-width:1000px"><a href="/bs-react-native/" dir="auto" role="link" data-focusable="true" class="css-reset-4rbku5 css-cursor-18t94o4 css-text-76zvg2 r-flexGrow-16y2uox r-flexShrink-1wbh5a2 r-position-bnwqim r-zIndex-184en5c" style="display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-box-orient:vertical;-webkit-box-direction:normal"><div class="css-view-1dbjc4n r-alignItems-1awozwy r-display-xoduu5 r-flexDirection-18u37iz r-flexGrow-16y2uox r-pointerEvents-105ug2t" style="padding-right:20px;padding-left:20px;padding-top:10px;padding-bottom:10px"><svg viewBox="0 0 260 232" height="36" width="36" fill="hsl(219.1, 100%, 99.5%)"><path d="m72.88901 190.475233c-32.080731-10.068965-52.88901-26.260945-52.88901-44.520051 0-18.258966 20.8079621-34.450839 52.8882774-44.51982-7.3205803-32.8167664-3.7023205-58.9329724 12.1102926-68.0626565 15.812854-9.1298233 40.240037.7945954 65.000865 23.5428946 24.760539-22.7486137 49.187595-32.6733427 65.000565-23.5437203 15.81285 9.1295529 19.431376 35.2460409 12.11099 68.0632512 32.080731 10.068966 52.88901 26.260946 52.88901 44.520051 0 18.258967-20.807962 34.450839-52.888277 44.519821 7.32058 32.816766 3.70232 58.932972-12.110293 68.062656-15.812854 9.129823-40.240037-.794595-65.000864-23.542895-24.760539 22.748614-49.187596 32.673343-65.000566 23.543721-15.8128494-9.129553-19.4313757-35.246041-12.11099-68.063252zm8.4070827 2.429202c-6.6209079 28.314823-4.2800463 50.273414 8.3592693 57.570726 12.639416 7.29737 32.826764-1.654879 54.03785-21.546496-8.383658-8.425182-16.724977-18.260213-24.702421-29.26317-13.517876-1.407049-26.2062103-3.713237-37.6946983-6.76106zm137.4078143-93.8985053c6.620908-28.3148231 4.280047-50.2734141-8.359269-57.5707264-12.639416-7.29737-32.826764 1.6548794-54.03785 21.5464961 8.383658 8.4251817 16.724978 18.2602127 24.702421 29.2631699 13.517876 1.4070493 26.20621 3.7132371 37.694698 6.7610604zm-99.713545-6.7610157c7.977235-11.0029277 16.318349-20.8379538 24.70182-29.2631581-21.211363-19.8913236-41.398825-28.8433167-54.0381476-21.545786-12.6391228 7.297415-14.9797685 29.2557458-8.3586953 57.5701599 11.4885651-3.0478903 24.1770119-5.3541316 37.6950229-6.7612158zm12.186868-1.007488c6.1455-.3791028 12.430253-.5753502 18.82277-.5753502 6.392331 0 12.676902.1962359 18.822231.5753169-6.195666-8.1645404-12.525704-15.5593119-18.822719-22.0480686-6.296869 6.4887722-12.62675 13.8835414-18.822254 22.0480641zm49.832408 108.428025c-7.977235 11.002927-16.318349 20.837953-24.70182 29.263158 21.211363 19.891323 41.398825 28.843316 54.038148 21.545786 12.639122-7.297415 14.979768-29.255746 8.358695-57.57016-11.488565 3.04789-24.177012 5.354131-37.695023 6.761216zm-12.186868 1.007487c-6.1455.379103-12.430252.575351-18.82277.575351-6.39233 0-12.676902-.196236-18.822231-.575317 6.195666 8.16454 12.525704 15.559312 18.822719 22.048068 6.296869-6.488772 12.62675-13.883541 18.822254-22.048064zm-93.833969-18.693053c3.1046838-11.472984 7.4515122-23.614219 12.9917368-36.024285-5.5404979-12.410299-9.887553-24.551747-12.9923981-36.02492-27.8314315 8.423543-45.6774156 21.429993-45.6774156 36.024502 0 14.594625 17.8462668 27.601166 45.6780769 36.024703zm8.5295808 2.358477c8.7681482 2.208964 18.3374812 3.99349 28.5062922 5.276728-3.401023-5.132428-6.713322-10.476866-9.909558-16.012746-3.1964222-5.536204-6.1689937-11.077207-8.9135683-16.589042-3.9730012 9.447909-7.2121582 18.627303-9.6831731 27.325086zm28.5060362-82.043055c-10.168978 1.283269-19.7384556 3.067842-28.5067151 5.276866 2.4711486 8.697943 5.7104844 17.877518 9.6837044 27.325611 2.7445045-5.51187 5.7170056-11.052911 8.9133577-16.589155 3.196259-5.536082 6.50859-10.880714 9.909653-16.013322zm12.042026-1.258361c-4.780335 6.885984-9.437085 14.217217-13.888355 21.927045-4.451337 7.70994-8.472049 15.408533-12.0453578 22.991525 3.5734068 7.58294 7.5942158 15.281481 12.0456498 22.991363 4.451305 7.709662 9.108079 15.040738 13.888431 21.926576 8.353488.696873 17.030775 1.06411 25.933188 1.06411 8.902542 0 17.579951-.367247 25.933556-1.064147 4.780335-6.885984 9.437085-14.217217 13.888355-21.927044 4.451336-7.709941 8.472049-15.408534 12.045358-22.991525-3.573407-7.582941-7.594217-15.281481-12.04565-22.991364-4.451306-7.709661-9.10808-15.040737-13.888431-21.926576-8.353488-.696873-17.030775-1.0641091-25.933188-1.0641091-8.902542 0-17.579951.3672471-25.933556 1.0641461zm82.732149 55.975634c-2.744505 5.511871-5.717006 11.052912-8.913358 16.589156-3.196259 5.536082-6.50859 10.880713-9.909653 16.013321 10.168978-1.283268 19.738455-3.067842 28.506715-5.276866-2.471149-8.697942-5.710485-17.877517-9.683704-27.325611zm9.683025-49.440578c-8.768148-2.208963-18.337481-3.993489-28.506292-5.276727 3.401023 5.132427 6.713322 10.476866 9.909558 16.012746 3.196422 5.536203 6.168994 11.077206 8.913568 16.589042 3.973001-9.447909 7.212158-18.627304 9.683173-27.325086zm8.529581 2.358478c-3.104684 11.472984-7.451512 23.614219-12.991737 36.024285 5.540498 12.410299 9.887553 24.551746 12.992398 36.02492 27.831432-8.423543 45.677416-21.429994 45.677416-36.024503 0-14.594624-17.846267-27.601165-45.678077-36.024702zm-74.154075 60.243827c-12.855427 0-23.27681-10.421383-23.27681-23.276811 0-12.855427 10.421383-23.27681 23.27681-23.27681s23.27681 10.421383 23.27681 23.27681c0 12.855428-10.421383 23.276811-23.27681 23.276811zm.142876-12.174307-4.417198-7.186876c2.450637-1.318117 3.781848-3.766048 3.781848-7.092725 0-4.895863-3.207007-7.720399-8.834395-7.720399h-9.530255v22h5.536624v-6.088445h4.11465l3.085987 6.088445zm-12-17h3.724c2.072 0 3.276 1.032558 3.276 2.95814 0 1.981395-1.204 3.04186-3.276 3.04186h-3.724zm14-5v22h17v-4.582026h-11.474245v-4.142653l10.085257-.031384v-4.550642h-10.085257v-4.111269h11.172291v-4.582026z" transform="translate(-20 -30)"></path></svg><span dir="auto" class="css-text-76zvg2 css-textHasAncestor-16my406 r-color-1l26oi5 r-fontSize-1i10wst r-fontWeight-b88u0q">   BS React Native</span></div></a><div class="css-view-1dbjc4n r-alignItems-1awozwy r-flexDirection-18u37iz r-flexGrow-16y2uox r-flexShrink-1wbh5a2 r-flexWrap-1w6e6rj r-justifyContent-1777fci r-pointerEvents-105ug2t" style="padding-right:20px;padding-left:20px;padding-top:10px;padding-bottom:10px"><a href="/bs-react-native/BsReactNative/" dir="auto" role="link" data-focusable="true" class="css-reset-4rbku5 css-cursor-18t94o4 css-text-76zvg2 r-color-1l26oi5 r-fontSize-1i10wst r-fontWeight-1od2jal r-lineHeight-277cki" style="display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-box-orient:vertical;-webkit-box-direction:normal"><div class="css-view-1dbjc4n r-display-xoduu5 r-pointerEvents-105ug2t" style="padding-right:15px;padding-left:15px"><span dir="auto" class="css-text-76zvg2 css-textHasAncestor-16my406">Legacy Docs</span></div></a><a href="/bs-react-native/en/docs/" dir="auto" role="link" data-focusable="true" class="css-reset-4rbku5 css-cursor-18t94o4 css-text-76zvg2 r-color-1l26oi5 r-fontSize-1i10wst r-fontWeight-1od2jal r-lineHeight-277cki" style="display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-box-orient:vertical;-webkit-box-direction:normal"><div class="css-view-1dbjc4n r-display-xoduu5 r-pointerEvents-105ug2t" style="padding-right:15px;padding-left:15px"><span dir="auto" class="css-text-76zvg2 css-textHasAncestor-16my406">Docs@next</span></div></a></div><div class="css-view-1dbjc4n r-flexDirection-18u37iz r-flexGrow-16y2uox r-flexShrink-1wbh5a2 r-flexWrap-1w6e6rj r-justifyContent-17s6mgv r-pointerEvents-105ug2t" style="padding-right:20px;padding-left:20px;padding-top:10px;padding-bottom:10px"><a href="https://github.com/reasonml-community/bs-react-native" dir="auto" aria-label="bs-react-native on GitHub" role="link" data-focusable="true" class="css-reset-4rbku5 css-cursor-18t94o4 css-text-76zvg2 r-alignItems-1awozwy r-display-6koalj r-flexDirection-18u37iz r-fontSize-1enofrn r-justifyContent-1777fci r-paddingHorizontal-1e081e0 r-paddingVertical-1rcbeiy"><svg viewBox="0 0 30 30" height="22" width="22" fill="hsl(219.1, 100%, 99%)"><path d="m15 3c-6.627 0-12 5.373-12 12 0 5.623 3.872 10.328 9.092 11.63-.056-.162-.092-.35-.092-.583v-2.051c-.487 0-1.303 0-1.508 0-.821 0-1.551-.353-1.905-1.009-.393-.729-.461-1.844-1.435-2.526-.289-.227-.069-.486.264-.451.615.174 1.125.596 1.605 1.222.478.627.703.769 1.596.769.433 0 1.081-.025 1.691-.121.328-.833.895-1.6 1.588-1.962-3.996-.411-5.903-2.399-5.903-5.098 0-1.162.495-2.286 1.336-3.233-.276-.94-.623-2.857.106-3.587 1.798 0 2.885 1.166 3.146 1.481.896-.307 1.88-.481 2.914-.481 1.036 0 2.024.174 2.922.483.258-.313 1.346-1.483 3.148-1.483.732.731.381 2.656.102 3.594.836.945 1.328 2.066 1.328 3.226 0 2.697-1.904 4.684-5.894 5.097 1.098.573 1.899 2.183 1.899 3.396v2.734c0 .104-.023.179-.035.268 4.676-1.639 8.035-6.079 8.035-11.315 0-6.627-5.373-12-12-12z"></path></svg><div class="WindowSizeFilter-notSmall"><div class="css-view-1dbjc4n r-display-xoduu5 r-height-1or9b2r r-width-5soawk"></div><span dir="auto" class="css-text-76zvg2 css-textHasAncestor-16my406 r-color-1l26oi5 r-fontSize-1i10wst r-fontWeight-1od2jal r-lineHeight-277cki">GitHub</span></div></a></div></div></div></div><div class="css-view-1dbjc4n r-alignItems-1awozwy r-flexGrow-16y2uox r-flexShrink-1wbh5a2 r-overflow-1udh08x r-width-13qz1uu"><div class="css-view-1dbjc4n r-flexDirection-18u37iz r-flexGrow-16y2uox r-flexShrink-1wbh5a2 r-flexWrap-1w6e6rj r-justifyContent-1777fci r-paddingHorizontal-ou255f r-width-13qz1uu" style="height:100%;max-width:1000px"><div class="css-view-1dbjc4n r-flex-13awgt0 r-flexBasis-1ogojb1 r-pointerEvents-105ug2t" style="padding-right:20px;padding-left:20px;padding-top:40px;padding-bottom:40px"><div class="css-view-1dbjc4n r-alignItems-1awozwy r-flexDirection-18u37iz r-justifyContent-1wtj0ep"><div dir="auto" class="css-text-76zvg2 r-color-1et4ttl r-fontSize-s67bdx r-fontWeight-b88u0q">Style</div><a href="https://facebook.github.io/react-native/docs/style" dir="auto" role="link" data-focusable="true" class="css-reset-4rbku5 css-cursor-18t94o4 css-text-76zvg2 r-alignItems-1awozwy r-color-1ordeou r-display-6koalj r-flexDirection-18u37iz r-fontSize-1b43r93 r-fontWeight-1od2jal"><svg viewBox="0 0 30 30" height="14" width="14" fill="#48a9dc"><path d="m25.980469 2.9902344a1.0001 1.0001 0 0 0 -.111328.0097656h-5.869141a1.0001 1.0001 0 1 0 0 2h3.585938l-10.292969 10.292969a1.0001 1.0001 0 1 0 1.414062 1.414062l10.292969-10.2929685v3.5859375a1.0001 1.0001 0 1 0 2 0v-5.8730469a1.0001 1.0001 0 0 0 -1.019531-1.1367187zm-19.980469 4.0097656c-1.0930628 0-2 .9069372-2 2v15c0 1.093063.9069372 2 2 2h15c1.093063 0 2-.906937 2-2v-10-2.578125l-2 2v2.578125 8h-15v-15h8 2 .578125l2-2h-2.578125-2z"></path></svg> Official documentation </a></div><div class="css-view-1dbjc4n r-height-z80fyv r-width-19wmn03"></div><a href="https://github.com/reasonml-community/bs-react-native/blob/master/reason-react-native/src/apis/Style.md" dir="auto" role="link" data-focusable="true" class="css-reset-4rbku5 css-cursor-18t94o4 css-text-76zvg2 r-alignSelf-173mn98 r-borderColor-1tc8wwf r-borderRadius-z2wwpe r-borderStyle-1phboty r-borderWidth-rs99b7"><div class="css-view-1dbjc4n r-display-xoduu5 r-pointerEvents-105ug2t" style="padding-right:10px;padding-left:10px;padding-top:10px;padding-bottom:10px"><span dir="auto" class="css-text-76zvg2 css-textHasAncestor-16my406 r-alignItems-1awozwy r-color-1ordeou">Edit</span></div></a><div class="htmlContent" style="display:flex;white-space:normal;flex-direction:column;flex-grow:1;flex-shrink:1"><p>Styles accepted by most components (thanks to a <code>style</code> prop) are defined using
+style functions that prepare required object for React Native. The style names
+and values usually match how CSS works on the web, except names are written
+using camel casing, e.g <code>backgroundColor</code> rather than <code>background-color</code>.</p>
+<p>The <code>style</code> prop accepts values returned by the <code>style()</code> constructor. That's
+the simplest way to pass styles. You can also pass an array or list of styles -
+the last style in the array has precedence, so you can use this to mix &amp; inherit
+styles.</p>
+<p>⚠️ <em>Note that when a component grows in complexity, it is often cleaner to use
+<a href="../StyleSheet/#create"><code>StyleSheet.create</code></a> to define several styles in one
+place</em>.</p>
+<p>We have made different style constructors because React Native have various
+components that accept different styles props. For example <code>View</code> doesn't accept
+<code>color</code> (only <code>Text</code> does).</p>
+<h2>Table of Contents</h2>
+<ul>
+<li><a href="#style-example">Style Example</a></li>
+<li><a href="#style-units">Style Units</a></li>
+<li><a href="#style-functions">Style Function</a>
+<ul>
+<li><a href="#style-style"><code>Style.style</code></a></li>
+<li><a href="#style-viewStyle"><code>Style.viewStyle</code></a></li>
+<li><a href="#style-textStyle"><code>Style.textStyle</code></a></li>
+<li><a href="#style-imageStyle"><code>Style.imageStyle</code></a></li>
+</ul></li>
+<li><a href="#style-props">Style Props</a>
+<ul>
+<li><a href="#layout-style-props">Layout Style Props</a></li>
+<li><a href="#shadow-style-props">Shadow Style Props</a></li>
+<li><a href="#transform-style-props">Transform Style Props</a></li>
+<li><a href="#view-style-props">View Style Props</a></li>
+<li><a href="#text-style-props">Text Style Props</a></li>
+<li><a href="#image-style-props">Image Style Props</a></li>
+<li><a href="#unsafe-style-props">Unsafe Style Props</a></li>
+</ul></li>
+<li><a href="#style-helpers">Style Helpers</a>
+<ul>
+<li><a href="#style-array`"><code>Style.array</code></a></li>
+<li><a href="#style-arrayoption`"><code>Style.arrayOption</code></a></li>
+<li><a href="#style-list`"><code>Style.list</code></a></li>
+<li><a href="#style-listoption`"><code>Style.listOption</code></a></li>
+</ul></li>
+</ul>
+<h2>Style Example</h2>
+<p>Since an example is worth a thousand words...</p>
+<pre><code class="hljs language-reason"><span class="hljs-keyword">open</span> <span class="hljs-module-identifier">ReactNative</span>;
+
+<span class="hljs-keyword">let</span> styles =
+  <span class="hljs-module-identifier">Style</span>.(
+    <span class="hljs-module-identifier">StyleSheet</span>.create({
+      <span class="hljs-string">"container"</span>:
+        viewStyle(
+          ~maxHeight=<span class="hljs-number">600.</span><span class="hljs-operator">-&gt;</span>dp,
+          ~width=<span class="hljs-number">800.</span><span class="hljs-operator">-&gt;</span>pct,
+          ~justifyContent=<span class="hljs-constructor">`flexStart</span>,
+          ~alignItems=<span class="hljs-constructor">`center</span>,
+          ~margin=auto,
+          (),
+        ),
+      <span class="hljs-string">"cornerThing"</span>:
+        viewStyle(
+          ~position=<span class="hljs-constructor">`absolute</span>,
+          ~top=<span class="hljs-number">100.</span><span class="hljs-operator">-&gt;</span>dp,
+          ~right=<span class="hljs-number">(-20.)</span><span class="hljs-operator">-&gt;</span>dp,
+          ~transform=<span class="hljs-literal">[|</span>rotate(~rotate=<span class="hljs-number">4.</span><span class="hljs-operator">-&gt;</span>deg)<span class="hljs-literal">|]</span>,
+          (),
+        ),
+      <span class="hljs-string">"text"</span>: textStyle(~textTransform=<span class="hljs-constructor">`uppercase</span>, ()),
+    })
+  );
+
+<span class="hljs-attribute">[@react.component]</span>
+<span class="hljs-keyword">let</span> make = (~isSomething) =&gt; {
+  &lt;<span class="hljs-module-identifier">View</span> style=styles##container&gt;
+    &lt;<span class="hljs-module-identifier">View</span> style=styles##cornerThing&gt;
+      &lt;<span class="hljs-module-identifier">Text</span>
+        style=<span class="hljs-module-identifier">Style</span>.(
+          arrayOption(<span class="hljs-literal">[|</span>
+            <span class="hljs-constructor">Some</span>(styles##text),
+            isSomething ? <span class="hljs-constructor">Some</span>(style(~opacity=<span class="hljs-number">0.05</span>, ())) : <span class="hljs-constructor">None</span>,
+          <span class="hljs-literal">|]</span>)
+        )
+      /&gt;
+    &lt;/<span class="hljs-module-identifier">View</span>&gt;
+  &lt;/<span class="hljs-module-identifier">View</span>&gt;;
+};
+</code></pre>
+<h2>Style Units</h2>
+<h3><code>size</code></h3>
+<p><code>size</code> is required in various style props, to be specified as
+density-independant pixels, (<code>dp</code> function - also known as logical pixels),
+percentage (<code>pct</code> function) or also <code>auto</code> (inline string, edge case for
+<code>margin</code>).</p>
+<p>As soon as <code>Style</code> module is open, you can make <code>size</code> in various ways as you
+can see in these random examples</p>
+<ul>
+<li><code>~height=10.5-&gt;dp</code> (= <code>~height=dp(10.5)</code>)</li>
+<li><code>~width=55.-&gt;pct</code> (= <code>~width=pct(55.)</code>)</li>
+<li><code>~margin=auto</code></li>
+</ul>
+<h3><code>offset</code></h3>
+<p><code>offset</code> is used for <code>shadowOffset</code> &amp; <code>textShadowOffset</code>.</p>
+<p>Eg: <code>~shadowOffset=offset(~height=2., ~width=4.)</code></p>
+<h3><code>angle</code></h3>
+<p><code>angle</code> is used for transforms. It can be expressed in degrees (<code>deg</code> function)
+or in radians (<code>rad</code> function):</p>
+<ul>
+<li><code>20.-&gt;deg</code> (eg: <code>rotateX(~rotateX=20.-&gt;deg)</code></li>
+<li><code>0.5.-&gt;rad</code> (eg: <code>rotateZ(~rotateZ=0.5-&gt;rad)</code></li>
+</ul>
+<h2>Style Functions</h2>
+<h3><code>Style.style</code></h3>
+<p>For convenience, this function allows you to prepare a style object with all
+styles available in React Native. The nice side of this is that you can use this
+function &amp; not think about what component is going to use it. On the other hand,
+this function can trigger React Native error screen (eg: if you pass <code>color</code> to
+a <code>View</code> component).</p>
+<p><code>style</code> accepts all the Style Props:</p>
+<ul>
+<li><a href="#layout-styles-props">Layout styles</a></li>
+<li><a href="#shadow-styles-props">Shadow styles</a></li>
+<li><a href="#transform-styles-props">Transform styles</a></li>
+<li><a href="#view-styles-props">View styles</a></li>
+<li><a href="#text-styles-props">Text styles</a></li>
+<li><a href="#image-styles-props">Image styles</a></li>
+</ul>
+<p>⚠️ <em>Internally, React Native codebase types for this function are called
+<code>____DangerouslyImpreciseStyle_Internal</code>. That's why we created new functions:
+<a href="#style-viewstyle"><code>viewStyle</code></a>, <a href="#style-textstyle"><code>textStyle</code></a> &amp;
+<a href="#style-imagestyle"><code>imageStyle</code></a></em>.</p>
+<h3><code>Style.viewStyle</code></h3>
+<p>This function accepts all React Native styles below:</p>
+<ul>
+<li><a href="#layout-styles-props">Layout styles</a></li>
+<li><a href="#shadow-styles-props">Shadow styles</a></li>
+<li><a href="#transform-styles-props">Transform styles</a></li>
+<li><a href="#view-styles-props">View styles</a></li>
+</ul>
+<h3><code>Style.textStyle</code></h3>
+<p>This function accepts all React Native styles below:</p>
+<ul>
+<li><a href="#layout-styles-props">Layout styles</a></li>
+<li><a href="#shadow-styles-props">Shadow styles</a></li>
+<li><a href="#transform-styles-props">Transform styles</a></li>
+<li><a href="#text-styles-props">Text styles</a></li>
+</ul>
+<h3><code>Style.imageStyle</code></h3>
+<p>This function accepts all React Native styles below:</p>
+<ul>
+<li><a href="#layout-styles-props">Layout styles</a></li>
+<li><a href="#shad@ow-styles-props">Shadow styles</a></li>
+<li><a href="#transform-styles-props">Transform styles</a></li>
+<li><a href="#image-styles-props">Image styles</a></li>
+</ul>
+<h2>Style Props</h2>
+<h3>Layout Style Props</h3>
+<p><a href="https://facebook.github.io/react-native/docs/layout-props">Official documentation</a></p>
+<h4><code>alignContent</code></h4>
+<p>Accepts one of the following values:</p>
+<ul>
+<li><code>`flexStart</code> (default)</li>
+<li><code>`flexEnd</code></li>
+<li><code>`center</code></li>
+<li><code>`stretch</code></li>
+<li><code>`spaceAround</code></li>
+<li><code>`spaceBetween</code></li>
+</ul>
+<p>Controls how rows align in the cross direction, overriding the <code>alignContent</code> of
+the parent.</p>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/align-content">Web reference</a></li>
+<li><a href="https://yogalayout.com/docs/align-content/">Yoga reference</a></li>
+</ul>
+<h4><code>alignItems</code></h4>
+<p>Accepts one of the following values:</p>
+<ul>
+<li><code>`flexStart</code></li>
+<li><code>`flexEnd</code></li>
+<li><code>`center</code></li>
+<li><code>`stretch</code> (default)</li>
+<li><code>`baseline</code></li>
+</ul>
+<p>Aligns children in the cross direction. For example, if children are flowing
+vertically, <code>alignItems</code> controls how they align horizontally.</p>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/align-items">Web reference</a></li>
+<li><a href="https://yogalayout.com/docs/align-items/">Yoga reference</a></li>
+</ul>
+<h4><code>alignSelf</code></h4>
+<p>Accepts one of the following values:</p>
+<ul>
+<li><code>`auto</code> (default)</li>
+<li><code>`flexStart</code></li>
+<li><code>`flexEnd</code></li>
+<li><code>`center</code></li>
+<li><code>`stretch</code></li>
+<li><code>`baseline</code></li>
+</ul>
+<p>Controls how a child aligns in the cross direction, overriding the <code>alignItems</code>
+of the parent.</p>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/align-self">Web reference</a></li>
+<li><a href="https://yogalayout.com/docs/align-items/">Yoga reference</a></li>
+</ul>
+<h4><code>aspectRatio</code></h4>
+<p>Accepts a <code>float</code>.</p>
+<p>Aspect ratio controls the size of the undefined dimension of a node. <em>Aspect
+ratio is a non-standard property only available in react native and not CSS.</em></p>
+<ul>
+<li>On a node with a set width/height, aspect ratio controls the size of the unset
+dimension</li>
+<li>On a node with a set flex basis, aspect ratio controls the size of the node in
+the cross axis if unset</li>
+<li>On a node with a measure function, aspect ratio works as though the measure
+function measures the flex basis</li>
+<li>On a node with flex grow/shrink, aspect ratio controls the size of the node in
+the cross axis if unset</li>
+<li>Aspect ratio takes min/max dimensions into account</li>
+</ul>
+<ul>
+<li><a href="https://yogalayout.com/docs/aspect-ratio/">Yoga reference</a></li>
+</ul>
+<h4><code>bottom</code></h4>
+<p>Accepts a <code>size</code>.</p>
+<p>Number of logical pixels to offset the bottom edge of this component.</p>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/bottom">Web reference</a></li>
+<li><a href="https://yogalayout.com/docs/absolute-relative-layout">Yoga reference</a></li>
+</ul>
+<h4><code>direction</code></h4>
+<p>Accepts one of the following values:</p>
+<ul>
+<li><code>`inherit_</code> (default)</li>
+<li><code>`ltr</code></li>
+<li><code>`rtl</code></li>
+</ul>
+<p><code>direction</code> specifies the directional flow of the user interface. The default is
+<code>`inherit_</code>, except for root node which will have value based on the current
+locale.</p>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/bottom">Web reference</a></li>
+<li><a href="https://yogalayout.com/docs/layout-direction">Yoga reference</a></li>
+</ul>
+<p>Only for</p>
+<ul>
+<li>iOS</li>
+</ul>
+<h4><code>display</code></h4>
+<p>Accepts one of the following values:</p>
+<ul>
+<li><code>`flex</code> (default)</li>
+<li><code>`none</code></li>
+</ul>
+<p>Sets the display type of this component. It works similarly to <code>display</code> in CSS,
+but only supports <code>flex</code> and <code>none</code>.</p>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/display">Web reference</a></li>
+</ul>
+<h4><code>_end</code></h4>
+<p>Accepts a <code>size</code></p>
+<p>When the direction is <code>ltr</code>, <code>end</code> is equivalent to <code>right</code>. When the direction
+is <code>rtl</code>, <code>end</code> is equivalent to <code>left</code>. This style takes precedence over the
+<code>left</code> and <code>right</code> styles.</p>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/end">Web reference</a></li>
+<li><a href="https://yogalayout.com/docs/layout-direction">Yoga reference</a></li>
+</ul>
+<h4><code>flex</code></h4>
+<p>Accepts a <code>float</code>.</p>
+<p>In React Native <code>flex</code> does not work the same way that it does in CSS. <code>flex</code> is
+a number rather than a string, and it works according to the Yoga
+implementation.</p>
+<p>When <code>flex</code> is a positive number, it makes the component flexible and it will be
+sized proportional to its flex value. So a component with <code>flex</code> set to 2 will
+take twice the space as a component with <code>flex</code> set to 1.</p>
+<p>When <code>flex</code> is 0, the component is sized according to <code>width</code> and <code>height</code> and
+it is inflexible.</p>
+<p>When <code>flex</code> is -1, the component is normally sized according <code>width</code> and
+<code>height</code>. However, if there's not enough space, the component will shrink to its
+<code>minWidth</code> and <code>minHeight</code>.</p>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/flex">Web reference</a></li>
+<li><a href="https://yogalayout.com/docs/flex">Yoga reference</a></li>
+</ul>
+<h4><code>flexBasis</code></h4>
+<p>Accepts a <code>margin</code>.</p>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/flex-basis">Web reference</a></li>
+<li><a href="https://yogalayout.com/docs/flex">Yoga reference</a></li>
+</ul>
+<h4><code>flexDirection</code></h4>
+<p>Accepts one of the following values:</p>
+<ul>
+<li><code>`row</code></li>
+<li><code>`rowReverse</code></li>
+<li><code>`column</code> (default)</li>
+<li><code>`columnReverse</code></li>
+</ul>
+<p><code>flexDirection</code> controls which directions children of a container go. <code>row</code> goes
+left to right, <code>column</code> goes top to bottom, and you may be able to guess what
+the other two do.</p>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/flex-direction">Web reference</a></li>
+<li><a href="https://yogalayout.com/docs/flex-direction">Yoga reference</a></li>
+</ul>
+<h4><code>flexGrow</code></h4>
+<p>Accepts a <code>float</code>.</p>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/flex-grow">Web reference</a></li>
+<li><a href="https://yogalayout.com/docs/flex">Yoga reference</a></li>
+</ul>
+<h4><code>flexShrink</code></h4>
+<p>Accepts a <code>float</code>.</p>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/flex-shrink">Web reference</a></li>
+<li><a href="https://yogalayout.com/docs/flex">Yoga reference</a></li>
+</ul>
+<h4><code>flexWrap</code></h4>
+<p>Accepts one of the following values:</p>
+<ul>
+<li><code>`wrap</code> (default)</li>
+<li><code>`nowrap</code></li>
+</ul>
+<p><code>flexWrap</code> controls whether children can wrap around after they hit the end of a
+flex container.</p>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/flex-wrap">Web reference</a></li>
+<li><a href="https://yogalayout.com/docs/flex-wrap">Yoga reference</a></li>
+</ul>
+<h4><code>height</code></h4>
+<p>Accepts a <code>size</code>.</p>
+<p>sets the height of this component.</p>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/height">Web reference</a></li>
+<li><a href="https://yogalayout.com/docs/width-height">Yoga reference</a></li>
+</ul>
+<h4><code>justifyContent</code></h4>
+<p>Accepts one of the following values:</p>
+<ul>
+<li><code>`flexStart</code> (default)</li>
+<li><code>`flexEnd</code></li>
+<li><code>`center</code></li>
+<li><code>`spaceAround</code></li>
+<li><code>`spaceBetween</code></li>
+<li><code>`spaceEvenly</code></li>
+</ul>
+<p><code>justifyContent</code> aligns children in the main direction. For example, if children
+are flowing vertically, <code>justifyContent</code> controls how they align vertically.</p>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/justify-content">Web reference</a></li>
+<li><a href="https://yogalayout.com/docs/justify-content">Yoga reference</a></li>
+</ul>
+<h4><code>left</code></h4>
+<p>Accepts a <code>size</code>.</p>
+<p>number of logical pixels to offset the left edge of this component.</p>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/left">Web reference</a></li>
+<li><a href="https://yogalayout.com/docs/absolute-relative-layout">Yoga reference</a></li>
+</ul>
+<h4><code>margin</code></h4>
+<p>Accepts a <code>margin</code>.</p>
+<p>Setting <code>margin</code> has the same effect as setting each of <code>marginTop</code>,
+<code>marginLeft</code>, <code>marginBottom</code>, and <code>marginRight</code>.</p>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/margin">Web reference</a></li>
+<li><a href="https://yogalayout.com/docs/margins-paddings-borders">Yoga reference</a></li>
+</ul>
+<h4><code>marginBottom</code></h4>
+<p>Accepts a <code>margin</code>.</p>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/margin-bottom">Web reference</a></li>
+<li><a href="https://yogalayout.com/docs/margins-paddings-borders">Yoga reference</a></li>
+</ul>
+<h4><code>marginEnd</code></h4>
+<p>Accepts a <code>margin</code>.</p>
+<p>When direction is <code>ltr</code>, <code>marginEnd</code> is equivalent to <code>marginRight</code>. When
+direction is <code>rtl</code>, <code>marginEnd</code> is equivalent to <code>marginLeft</code>.</p>
+<ul>
+<li><a href="https://yogalayout.com/docs/margins-paddings-borders">Yoga reference</a></li>
+</ul>
+<h4><code>marginHorizontal</code></h4>
+<p>Accepts a <code>margin</code>.</p>
+<p>Setting <code>marginHorizontal</code> has the same effect as setting both <code>marginLeft</code> and
+<code>marginRight</code>.</p>
+<ul>
+<li><a href="https://yogalayout.com/docs/margins-paddings-borders">Yoga reference</a></li>
+</ul>
+<h4><code>marginLeft</code></h4>
+<p>Accepts a <code>margin</code>.</p>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/margin-left">Web reference</a></li>
+<li><a href="https://yogalayout.com/docs/margins-paddings-borders">Yoga reference</a></li>
+</ul>
+<h4><code>marginRight</code></h4>
+<p>Accepts a <code>margin</code>.</p>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/margin-right">Web reference</a></li>
+<li><a href="https://yogalayout.com/docs/margins-paddings-borders">Yoga reference</a></li>
+</ul>
+<h4><code>marginStart</code></h4>
+<p>Accepts a <code>margin</code>.</p>
+<p>When direction is <code>ltr</code>, <code>marginStart</code> is equivalent to <code>marginLeft</code>. When
+direction is <code>rtl</code>, <code>marginStart</code> is equivalent to <code>marginRight</code>.</p>
+<ul>
+<li><a href="https://yogalayout.com/docs/margins-paddings-borders">Yoga reference</a></li>
+</ul>
+<h4><code>marginTop</code></h4>
+<p>Accepts a <code>margin</code>.</p>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/margin-top">Web reference</a></li>
+<li><a href="https://yogalayout.com/docs/margins-paddings-borders">Yoga reference</a></li>
+</ul>
+<h4><code>marginVertical</code></h4>
+<p>Accepts a <code>margin</code>.</p>
+<p>Setting <code>marginVertical</code> has the same effect as setting both <code>marginTop</code> and
+<code>marginBottom</code>.</p>
+<ul>
+<li><a href="https://yogalayout.com/docs/margins-paddings-borders">Yoga reference</a></li>
+</ul>
+<h4><code>maxHeight</code></h4>
+<p>Accepts a <code>size</code>.</p>
+<p>maximum height for this component, in logical pixels.</p>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/max-height">Web reference</a></li>
+<li><a href="https://yogalayout.com/docs/min-max">Yoga reference</a></li>
+</ul>
+<h4><code>maxWidth</code></h4>
+<p>Accepts a <code>size</code>.</p>
+<p>Maximum width for this component, in logical pixels.</p>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/margin">Web reference</a></li>
+<li><a href="https://yogalayout.com/docs/min-max">Yoga reference</a></li>
+</ul>
+<h4><code>minHeight</code></h4>
+<p>Accepts a <code>size</code>.</p>
+<p>Minimum height for this component, in logical pixels.</p>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/min-height">Web reference</a></li>
+<li><a href="https://yogalayout.com/docs/min-max">Yoga reference</a></li>
+</ul>
+<h4><code>minWidth</code></h4>
+<p>Accepts a <code>size</code>.</p>
+<p>Minimum width for this component, in logical pixels.</p>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/min-width">Web reference</a></li>
+<li><a href="https://yogalayout.com/docs/min-max">Yoga reference</a></li>
+</ul>
+<h4><code>overflow</code></h4>
+<p>Accepts one of the following values:</p>
+<ul>
+<li><code>`visible</code> (default)</li>
+<li><code>`hidden</code></li>
+<li><code>`scroll</code></li>
+</ul>
+<p><code>overflow</code> controls how children are measured and displayed. <code>`hidden</code>
+causes views to be clipped while <code>`scroll</code> causes views to be measured
+independently of their parents main axis.</p>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/overflow">Web reference</a></li>
+</ul>
+<h4><code>padding</code></h4>
+<p>Accepts a <code>size</code>.</p>
+<p>Setting <code>padding</code> has the same effect as setting each of <code>paddingTop</code>,
+<code>paddingBottom</code>, <code>paddingLeft</code>, and <code>paddingRight</code>.</p>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/padding">Web reference</a></li>
+<li><a href="https://yogalayout.com/docs/margins-paddings-borders">Yoga reference</a></li>
+</ul>
+<h4><code>paddingBottom</code></h4>
+<p>Accepts a <code>size</code>.</p>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/padding-bottom">Web reference</a></li>
+<li><a href="https://yogalayout.com/docs/margins-paddings-borders">Yoga reference</a></li>
+</ul>
+<h4><code>paddingEnd</code></h4>
+<p>Accepts a <code>size</code>.</p>
+<p>When direction is <code>ltr</code>, <code>paddingEnd</code> is equivalent to <code>paddingRight</code>. When
+direction is <code>rtl</code>, <code>paddingEnd</code> is equivalent to <code>paddingLeft</code>.</p>
+<ul>
+<li><a href="https://yogalayout.com/docs/margins-paddings-borders">Yoga reference</a></li>
+</ul>
+<h4><code>paddingHorizontal</code></h4>
+<p>Accepts a <code>size</code>.</p>
+<p>Setting <code>paddingHorizontal</code> is like setting both of <code>paddingLeft</code> and
+<code>paddingRight</code>.</p>
+<ul>
+<li><a href="https://yogalayout.com/docs/margins-paddings-borders">Yoga reference</a></li>
+</ul>
+<h4><code>paddingLeft</code></h4>
+<p>Accepts a <code>size</code>.</p>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/padding-left">Web reference</a></li>
+<li><a href="https://yogalayout.com/docs/margins-paddings-borders">Yoga reference</a></li>
+</ul>
+<h4><code>paddingRight</code></h4>
+<p>Accepts a <code>size</code>.</p>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/padding-right">Web reference</a></li>
+<li><a href="https://yogalayout.com/docs/margins-paddings-borders">Yoga reference</a></li>
+</ul>
+<h4><code>paddingStart</code></h4>
+<p>Accepts a <code>size</code>.</p>
+<p>When direction is <code>ltr</code>, <code>paddingStart</code> is equivalent to <code>paddingLeft</code>. When
+direction is <code>rtl</code>, <code>paddingStart</code> is equivalent to <code>paddingRight</code>.</p>
+<ul>
+<li><a href="https://yogalayout.com/docs/margins-paddings-borders">Yoga reference</a></li>
+</ul>
+<h4><code>paddingTop</code></h4>
+<p>Accepts a <code>size</code>.</p>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/padding-top">Web reference</a></li>
+<li><a href="https://yogalayout.com/docs/margins-paddings-borders">Yoga reference</a></li>
+</ul>
+<h4><code>paddingVertical</code></h4>
+<p>Accepts a <code>size</code>.</p>
+<p>Setting <code>paddingVertical</code> is like setting both of <code>paddingTop</code> and
+<code>paddingBottom</code>.</p>
+<ul>
+<li><a href="https://yogalayout.com/docs/margins-paddings-borders">Yoga reference</a></li>
+</ul>
+<h4><code>position</code></h4>
+<p>Accepts one of the following values:</p>
+<ul>
+<li><code>`absolute</code></li>
+<li><code>`relative</code> (default)</li>
+</ul>
+<p><code>position</code> in React Native is similar to regular CSS, but everything is set to
+<code>relative</code> by default, so <code>absolute</code> positioning is always just relative to the
+parent.</p>
+<p>If you want to position a child using specific numbers of logical pixels
+relative to its parent, set the child to have <code>absolute</code> position.</p>
+<p>If you want to position a child relative to something that is not its parent,
+just don't use styles for that. Use the component tree.</p>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/position">Web reference</a></li>
+<li><a href="https://yogalayout.com/docs/absolute-relative-layout">Yoga reference</a></li>
+</ul>
+<h4><code>right</code></h4>
+<p>Accepts a <code>size</code>.</p>
+<p>Number of logical pixels to offset the right edge of this component.</p>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/right">Web reference</a></li>
+<li><a href="https://yogalayout.com/docs/absolute-relative-layout">Yoga reference</a></li>
+</ul>
+<h4><code>start</code></h4>
+<p>Accepts a <code>size</code>.</p>
+<p>When the direction is <code>ltr</code>, <code>start</code> is equivalent to <code>left</code>. When the direction
+is <code>rtl</code>, <code>start</code> is equivalent to <code>right</code>.</p>
+<p>This style takes precedence over the <code>left</code>, <code>right</code>, and <code>end</code> styles.</p>
+<ul>
+<li><a href="https://yogalayout.com/docs/absolute-relative-layout">Yoga reference</a></li>
+</ul>
+<h4><code>top</code></h4>
+<p>Accepts a <code>size</code>.</p>
+<p>Number of logical pixels to offset the top edge of this component.</p>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/top">Web reference</a></li>
+<li><a href="https://yogalayout.com/docs/absolute-relative-layout">Yoga reference</a></li>
+</ul>
+<h4><code>width</code></h4>
+<p>Accepts a <code>size</code>.</p>
+<p>Sets the width of this component.</p>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/width">Web reference</a></li>
+<li><a href="https://yogalayout.com/docs/width-height">Yoga reference</a></li>
+</ul>
+<h4><code>zIndex</code></h4>
+<p>Accepts an <code>int</code>.</p>
+<p><code>zIndex</code> controls which components display on top of others. Normally, you don't
+use <code>zIndex</code>. Components render according to their order in the document tree,
+so later components draw over earlier ones. <code>zIndex</code> may be useful if you have
+animations or custom modal interfaces where you don't want this behavior.</p>
+<p>It works like the CSS <code>z-index</code> property - components with a larger <code>zIndex</code>
+will render on top. Think of the z-direction like it's pointing from the phone
+into your eyeball.</p>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/z-index">Web reference</a></li>
+</ul>
+<h3>Shadow Style Props</h3>
+<p><a href="https://facebook.github.io/react-native/docs/shadow-props">Official documentation</a></p>
+<p>Use <code>elevation</code> style props for Android.</p>
+<h4><code>shadowColor</code></h4>
+<p>Accepts a <code>Color.t</code> (<code>string</code>).</p>
+<p>Sets the drop shadow color</p>
+<p>Only for</p>
+<ul>
+<li>iOS</li>
+</ul>
+<p>You can see it as CSS <code>box-shadow</code> color</p>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/box-shadow">Web reference</a></li>
+</ul>
+<h4><code>shadowOffset</code></h4>
+<p>Accepts an <code>offset</code>.</p>
+<p>Sets the drop shadow offset</p>
+<p>Only for</p>
+<ul>
+<li>iOS</li>
+</ul>
+<p>You can see it as CSS <code>box-shadow</code> offsets</p>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/box-shadow">Web reference</a></li>
+</ul>
+<h4><code>shadowOpacity</code></h4>
+<p>Accepts a <code>float</code>.</p>
+<p>Sets the drop shadow opacity (multiplied by the color's alpha component)</p>
+<p>Only for</p>
+<ul>
+<li>iOS</li>
+</ul>
+<p>You can see it as CSS <code>box-shadow</code> color alpha value</p>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/box-shadow">Web reference</a></li>
+</ul>
+<h4><code>shadowRadius</code></h4>
+<p>Accepts a <code>float</code>.</p>
+<p>Sets the drop shadow blur radius</p>
+<p>Only for</p>
+<ul>
+<li>iOS</li>
+</ul>
+<p>You can see it as CSS <code>box-shadow</code> blur radius</p>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/box-shadow">Web reference</a></li>
+</ul>
+<h3>Transform Style Props</h3>
+<p><a href="https://facebook.github.io/react-native/docs/transforms">Official documentation</a></p>
+<p>⚠️ <em>We only included <code>transform</code> prop as other have been deprecated.</em></p>
+<h4><code>transform</code></h4>
+<p>Accepts an array of <code>transform</code>.</p>
+<p>Keep in mind that order or transformation matters.</p>
+<ul>
+<li><code>perspective(~perspective=float)</code></li>
+<li><code>rotate(~rotate=angle)</code></li>
+<li><code>rotateX(~rotateX=angle)</code></li>
+<li><code>rotateY(~rotateY=angle)</code></li>
+<li><code>rotateZ(~rotateZ=angle)</code></li>
+<li><code>scale(~scale=float)</code></li>
+<li><code>scaleX(~scaleX=float)</code></li>
+<li><code>scaleY(~scaleY=float)</code></li>
+<li><code>translateX(~translateX=float)</code></li>
+<li><code>translateY(~translateY=float)</code></li>
+<li><code>skewX(~skewX=angle)</code></li>
+<li><code>skewY(~skewY=angle)</code></li>
+</ul>
+<h5>Transform Examples</h5>
+<h6>Transform with multiple transform</h6>
+<pre><code class="hljs language-reason"><span class="hljs-module-identifier">Style</span>.(style(
+  ~transform=<span class="hljs-literal">[|</span>
+    perspective(~perspective=<span class="hljs-number">1000.</span>),
+    rotateX(~rotateX=<span class="hljs-number">20.</span><span class="hljs-operator">-&gt;</span>deg),
+    rotateZ(~rotateZ=<span class="hljs-number">0.5</span><span class="hljs-operator">-&gt;</span>rad),
+    scale(~scale=<span class="hljs-number">0.95</span>),
+  <span class="hljs-literal">|]</span>,
+  ()
+))
+</code></pre>
+<h6>Transform with an animated value</h6>
+<pre><code class="hljs language-reason"><span class="hljs-module-identifier">Style</span>.(style(
+  ~transform=<span class="hljs-literal">[|</span>
+    rotateY(
+      ~rotateY=
+        <span class="hljs-module-identifier">Animated</span>.<span class="hljs-module-identifier">Interpolation</span>.(
+          scrollYAnimatedValue<span class="hljs-operator">-&gt;</span>interpolate(
+            config(
+              ~inputRange=<span class="hljs-literal">[|</span><span class="hljs-number">0.</span>, <span class="hljs-number">200.</span><span class="hljs-literal">|]</span>,
+              ~outputRange=
+                <span class="hljs-literal">[|</span><span class="hljs-string">"-10deg"</span>, <span class="hljs-string">"-14deg"</span><span class="hljs-literal">|]</span><span class="hljs-operator">-&gt;</span>fromStringArray,
+              ~extrapolateLeft=<span class="hljs-constructor">`clamp</span>,
+              ~extrapolate=<span class="hljs-constructor">`identity</span>,
+              ~extrapolateRight=<span class="hljs-constructor">`extend</span>,
+              (),
+            ),
+          )
+        )
+        <span class="hljs-operator">-&gt;</span><span class="hljs-module-identifier">Animated</span>.<span class="hljs-module-identifier">StyleProp</span>.angle,
+    ),
+    scale(
+      ~scale=
+        <span class="hljs-module-identifier">Animated</span>.<span class="hljs-module-identifier">Interpolation</span>.(
+          scrollYAnimatedValue<span class="hljs-operator">-&gt;</span>interpolate(
+            config(
+              ~inputRange=<span class="hljs-literal">[|</span><span class="hljs-number">0.</span>, <span class="hljs-number">200.</span><span class="hljs-literal">|]</span>,
+              ~outputRange=<span class="hljs-literal">[|</span><span class="hljs-number">0.8</span>, <span class="hljs-number">0.75</span><span class="hljs-literal">|]</span><span class="hljs-operator">-&gt;</span>fromFloatArray,
+              (),
+            ),
+          )
+        )
+        <span class="hljs-operator">-&gt;</span><span class="hljs-module-identifier">Animated</span>.<span class="hljs-module-identifier">StyleProp</span>.float,
+    ),
+  <span class="hljs-literal">|]</span>,
+  (),
+))
+</code></pre>
+<p>If you need something unsupported by this binding, you can use
+<code>unsafeTransform</code>.</p>
+<pre><code class="hljs language-reason"><span class="hljs-module-identifier">Style</span>.(style(
+  ~transform=<span class="hljs-literal">[|</span>
+    unsafeTransform({<span class="hljs-string">"translateZ"</span>: <span class="hljs-string">"0"</span>}),
+  <span class="hljs-literal">|]</span>,
+  (),
+))
+</code></pre>
+<h3>View Style Props</h3>
+<p><a href="https://facebook.github.io/react-native/docs/view-style-props">Official documentation</a></p>
+<h4><code>backfaceVisibility</code></h4>
+<p>Accepts one of the following values:</p>
+<ul>
+<li><p><code>`visible</code></p></li>
+<li><p><code>`hidden</code></p></li>
+<li><p><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/backface-visibility">Web reference</a></p></li>
+</ul>
+<h4><code>backgroundColor</code></h4>
+<p>Accepts a <code>Color.t</code> (<code>string</code>).</p>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/background-color">Web reference</a></li>
+</ul>
+<h4><code>borderBottomColor</code></h4>
+<p>Accepts a <code>Color.t</code> (<code>string</code>).</p>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-bottom-color">Web reference</a></li>
+</ul>
+<h4><code>borderBottomEndRadius</code></h4>
+<p>Accepts a <code>float</code>.</p>
+<p>When direction is <code>ltr</code>, <code>borderBottomEndRadius</code> is equivalent to
+<code>borderBottomRightRadius</code>. When direction is <code>rtl</code>, <code>borderBottomEndRadius</code> is
+equivalent to <code>borderBottomLeftRadius</code>.</p>
+<h4><code>borderBottomLeftRadius</code></h4>
+<p>Accepts a <code>float</code>.</p>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-bottom-left-radius">Web reference</a></li>
+</ul>
+<h4><code>borderBottomRightRadius</code></h4>
+<p>Accepts a <code>float</code>.</p>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-bottom-right-radius">Web reference</a></li>
+</ul>
+<h4><code>borderBottomStartRadius</code></h4>
+<p>Accepts a <code>float</code>.</p>
+<p>When direction is <code>ltr</code>, <code>borderBottomStartRadius</code> is equivalent to
+<code>borderBottomLeftRadius</code>. When direction is <code>rtl</code>, <code>borderBottomStartRadius</code> is
+equivalent to <code>borderBottomRightRadius</code>.</p>
+<h4><code>borderBottomWidth</code></h4>
+<p>Accepts a <code>float</code>.</p>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-bottom-width">Web reference</a></li>
+</ul>
+<h4><code>borderColor</code></h4>
+<p>Accepts a <code>Color.t</code> (<code>string</code>).</p>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-color">Web reference</a></li>
+</ul>
+<h4><code>borderEndColor</code></h4>
+<p>Accepts a <code>Color.t</code> (<code>string</code>).</p>
+<p>When direction is <code>ltr</code>, <code>borderEndColor</code> is equivalent to <code>borderRightColor</code>.
+When direction is <code>rtl</code>, <code>borderEndColor</code> is equivalent to <code>borderLeftColor</code>.</p>
+<h4><code>borderEndWidth</code></h4>
+<p>Accepts a <code>float</code>.</p>
+<p>When direction is <code>ltr</code>, <code>borderEndWidth</code> is equivalent to <code>borderRightWidth</code>.
+When direction is <code>rtl</code>, <code>borderEndWidth</code> is equivalent to <code>borderLeftWidth</code>.</p>
+<h4><code>borderLeftColor</code></h4>
+<p>Accepts a <code>Color.t</code> (<code>string</code>).</p>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-left-color">Web reference</a></li>
+</ul>
+<h4><code>borderLeftWidth</code></h4>
+<p>Accepts a <code>float</code>.</p>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-left-width">Web reference</a></li>
+</ul>
+<h4><code>borderRadius</code></h4>
+<p>Accepts a <code>float</code>.</p>
+<p>Rounds the corners of an element's outer border edge.</p>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-radius">Web reference</a></li>
+</ul>
+<h4><code>borderRightColor</code></h4>
+<p>Accepts a <code>Color.t</code> (<code>string</code>).</p>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-right-color">Web reference</a></li>
+</ul>
+<h4><code>borderRightWidth</code></h4>
+<p>Accepts a <code>float</code>.</p>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-right-width">Web reference</a></li>
+</ul>
+<h4><code>borderStartColor</code></h4>
+<p>Accepts a <code>Color.t</code> (<code>string</code>).</p>
+<p>When direction is <code>ltr</code>, <code>borderStartColor</code> is equivalent to <code>borderLeftColor</code>.
+When direction is <code>rtl</code>, <code>borderStartColor</code> is equivalent to <code>borderRightColor</code>.</p>
+<h4><code>borderStartWidth</code></h4>
+<p>Accepts a <code>float</code>.</p>
+<p>When direction is <code>ltr</code>, <code>borderStartWidth</code> is equivalent to <code>borderLeftWidth</code>.
+When direction is <code>rtl</code>, <code>borderStartWidth</code> is equivalent to <code>borderRightWidth</code>.</p>
+<h4><code>borderStyle</code></h4>
+<p>Accepts one of the following values:</p>
+<ul>
+<li><p><code>`solid</code> (default)</p></li>
+<li><p><code>`dotted</code></p></li>
+<li><p><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-style">Web reference</a></p></li>
+</ul>
+<h4><code>borderTopColor</code></h4>
+<p>Accepts a <code>Color.t</code> (<code>string</code>).</p>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-top-color">Web reference</a></li>
+</ul>
+<h4><code>borderTopEndRadius</code></h4>
+<p>Accepts a <code>float</code>.</p>
+<p>When direction is <code>ltr</code>, <code>borderTopEndRadius</code> is equivalent to
+<code>borderTopRightRadius</code>. When direction is <code>rtl</code>, <code>borderTopEndRadius</code> is
+equivalent to <code>borderTopLeftRadius</code>.</p>
+<h4><code>borderTopLeftRadius</code></h4>
+<p>Accepts a <code>float</code>.</p>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-top-left-radius">Web reference</a></li>
+</ul>
+<h4><code>borderTopRightRadius</code></h4>
+<p>Accepts a <code>float</code>.</p>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-top-right-radius">Web reference</a></li>
+</ul>
+<h4><code>borderTopStartRadius</code></h4>
+<p>Accepts a <code>float</code>.</p>
+<p>When direction is <code>ltr</code>, <code>borderTopStartRadius</code> is equivalent to
+<code>borderTopLeftRadius</code>. When direction is <code>rtl</code>, <code>borderTopStartRadius</code> is
+equivalent to <code>borderTopRightRadius</code>.</p>
+<h4><code>borderTopWidth</code></h4>
+<p>Accepts a <code>float</code>.</p>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-top-width">Web reference</a></li>
+</ul>
+<h4><code>borderWidth</code></h4>
+<p>Accepts a <code>float</code>.</p>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-width">Web reference</a></li>
+</ul>
+<h4><code>elevation</code></h4>
+<p>Accepts a <code>float</code>.</p>
+<p>Sets the elevation of a view, using Android's underlying
+<a href="https://developer.android.com/training/material/shadows-clipping.html#Elevation">elevation API</a>.
+This adds a drop shadow to the item and affects z-order for overlapping views.
+Only supported on Android 5.0+, has no effect on earlier versions.</p>
+<p>Only for</p>
+<ul>
+<li>Android</li>
+</ul>
+<p>Use <code>shadow*</code> style props for iOS.</p>
+<h4><code>opacity</code></h4>
+<p>Accepts a <code>float</code>.</p>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/opacity">Web reference</a></li>
+</ul>
+<h3>Text Style Props</h3>
+<h4><code>color</code></h4>
+<p>Accepts a <code>Color.t</code> (<code>string</code>).</p>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/color">Web reference</a></li>
+</ul>
+<h4><code>fontFamily</code></h4>
+<p>Accepts a <code>string</code>.</p>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-family">Web reference</a></li>
+</ul>
+<h4><code>fontSize</code></h4>
+<p>Accepts a <code>float</code>.</p>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-size">Web reference</a></li>
+</ul>
+<h4><code>fontStyle</code></h4>
+<p>Accepts one of the following values:</p>
+<ul>
+<li><p><code>`normal</code> (default)</p></li>
+<li><p><code>`italic</code></p></li>
+<li><p><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-style">Web reference</a></p></li>
+</ul>
+<h4><code>fontVariant</code></h4>
+<p>Accepts an array of <code>FontVariant.t</code>.</p>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-variant">Web reference</a></li>
+</ul>
+<h4><code>fontWeight</code></h4>
+<p>Accepts one of the following values:</p>
+<ul>
+<li><p><code>`normal</code> (default)</p></li>
+<li><p><code>`bold</code></p></li>
+<li><p><code>`_100</code></p></li>
+<li><p><code>`_200</code></p></li>
+<li><p><code>`_300</code></p></li>
+<li><p><code>`_400</code></p></li>
+<li><p><code>`_500</code></p></li>
+<li><p><code>`_600</code></p></li>
+<li><p><code>`_700</code></p></li>
+<li><p><code>`_800</code></p></li>
+<li><p><code>`_900</code></p></li>
+<li><p><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-weight">Web reference</a></p></li>
+</ul>
+<h4><code>includeFontPadding</code></h4>
+<p>Accepts a <code>bool</code>.</p>
+<h4><code>letterSpacing</code></h4>
+<p>Accepts a <code>float</code>.</p>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/letter-spacing">Web reference</a></li>
+</ul>
+<h4><code>lineHeight</code></h4>
+<p>Accepts a <code>float</code>.</p>
+<p>Only accepts logical pixels.</p>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/letter-spacing">Web reference</a></li>
+</ul>
+<h4><code>textAlign</code></h4>
+<p>Accepts one of the following values:</p>
+<ul>
+<li><p><code>`auto</code> (default)</p></li>
+<li><p><code>`left</code></p></li>
+<li><p><code>`right</code></p></li>
+<li><p><code>`center</code></p></li>
+<li><p><code>`justify</code></p></li>
+<li><p><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-align">Web reference</a></p></li>
+</ul>
+<h4><code>textAlignVertical</code></h4>
+<p>Accepts one of the following values:</p>
+<ul>
+<li><code>`auto</code> (default)</li>
+<li><code>`top</code></li>
+<li><code>`bottom</code></li>
+<li><code>`center</code></li>
+</ul>
+<h4><code>textDecorationColor</code></h4>
+<p>Accepts a <code>Color.t</code> (<code>string</code>).</p>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration-color">Web reference</a></li>
+</ul>
+<h4><code>textDecorationLine</code></h4>
+<p>Accepts one of the following values:</p>
+<ul>
+<li><p><code>`none</code> (default)</p></li>
+<li><p><code>`underline</code></p></li>
+<li><p><code>`lineThrough</code></p></li>
+<li><p><code>`underlineLineThrough</code></p></li>
+<li><p><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration-line">Web reference</a></p></li>
+</ul>
+<h4><code>textDecorationStyle</code></h4>
+<p>Accepts one of the following values:</p>
+<ul>
+<li><p><code>`solid</code></p></li>
+<li><p><code>`double</code></p></li>
+<li><p><code>`dotted</code></p></li>
+<li><p><code>`dashed</code></p></li>
+<li><p><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration-style">Web reference</a></p></li>
+</ul>
+<h4><code>textShadowColor</code></h4>
+<p>Accepts a <code>Color.t</code> (<code>string</code>).</p>
+<p>You can see it as CSS <code>text-shadow</code> blur radius.</p>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-shadow">Web reference</a></li>
+</ul>
+<h4><code>textShadowOffset</code></h4>
+<p>Accepts an <code>offset</code>.</p>
+<p>You can see it as CSS <code>text-shadow</code> offsets.</p>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-shadow">Web reference</a></li>
+</ul>
+<h4><code>textShadowRadius</code></h4>
+<p>Accepts a <code>float</code>.</p>
+<p>You can see it as CSS <code>text-shadow</code> blur radius.</p>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-shadow">Web reference</a></li>
+</ul>
+<h4><code>textTransform</code></h4>
+<p>Accepts one of the following values:</p>
+<ul>
+<li><p><code>`none</code> (default)</p></li>
+<li><p><code>`uppercase</code></p></li>
+<li><p><code>`lowercase</code></p></li>
+<li><p><code>`capitalize</code></p></li>
+<li><p><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-transform">Web reference</a></p></li>
+</ul>
+<h4><code>writingDirection</code></h4>
+<p>Accepts one of the following values:</p>
+<ul>
+<li><code>`auto</code> (default)</li>
+<li><code>`ltr</code></li>
+<li><code>`rtl</code></li>
+</ul>
+<h3>Image Style Props</h3>
+<h4><code>resizeMode</code></h4>
+<p>Accepts one of the following values:</p>
+<ul>
+<li><code>`cover</code></li>
+<li><code>`contain</code></li>
+<li><code>`stretch</code></li>
+<li><code>`repeat</code></li>
+<li><code>`center</code></li>
+</ul>
+<p>Similar to CSS <code>background-size</code> values</p>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/background-size">Web reference</a></li>
+</ul>
+<h4><code>overlayColor</code></h4>
+<p>Accepts a <code>Color.t</code> (<code>string</code>).</p>
+<h4><code>tintColor</code></h4>
+<p>Accepts a <code>Color.t</code> (<code>string</code>).</p>
+<h3>Unsafe Style Props</h3>
+<p>⚠️ <em>Use only as an escape hatch. Don't overuse these functions.</em></p>
+<p>In case you want to use something unsupported by this binding, you can use
+<code>unsafeAddStyle</code> &amp; <code>unsafeStyle</code>.</p>
+<p>For example, if you want to use <code>position: fixed</code> on the web, you can do the
+following</p>
+<pre><code class="hljs language-reason"><span class="hljs-module-identifier">Style</span>.(unsafeStyle({<span class="hljs-string">"position"</span>: <span class="hljs-string">"fixed"</span>, <span class="hljs-string">"top"</span>: <span class="hljs-string">"5em"</span>, <span class="hljs-string">"left"</span>: <span class="hljs-number">0</span>, <span class="hljs-string">"right"</span>: <span class="hljs-number">0</span>}))
+</code></pre>
+<p>If you only want to add some properties to a safe style, you can also do</p>
+<pre><code class="hljs language-reason"><span class="hljs-module-identifier">Style</span>.(
+  style(
+    ~left=<span class="hljs-number">0.</span><span class="hljs-operator">-&gt;</span>dp,
+    ~right=<span class="hljs-number">0.</span><span class="hljs-operator">-&gt;</span>dp,
+    ()
+  )
+  <span class="hljs-operator">-&gt;</span>unsafeAddStyle({<span class="hljs-string">"position"</span>: <span class="hljs-string">"fixed"</span>, <span class="hljs-string">"top"</span>: <span class="hljs-string">"5em"</span>})
+)
+</code></pre>
+<hr />
+<h2>Style Helpers</h2>
+<h3><code>Style.array</code></h3>
+<p>Accepts an array of styles as a single style.</p>
+<pre><code class="hljs language-reason">&lt;<span class="hljs-module-identifier">View</span> style=<span class="hljs-module-identifier">Style</span>.(array(<span class="hljs-literal">[|</span>
+  styles##thing,
+  styles##whatever,
+<span class="hljs-literal">|]</span>))&gt;
+</code></pre>
+<h3><code>Style.arrayOption</code></h3>
+<p>Accepts an array of optional styles as a single style.</p>
+<pre><code class="hljs language-reason">&lt;<span class="hljs-module-identifier">View</span> style=<span class="hljs-module-identifier">Style</span>.(arrayOption(<span class="hljs-literal">[|</span>
+  <span class="hljs-constructor">Some</span>(styles##thing),
+  <span class="hljs-constructor">Some</span>(styles##whatever),
+  optionalStyle,
+  cond ? <span class="hljs-constructor">Some</span>(style(~prop=value, ()) : <span class="hljs-constructor">None</span>
+<span class="hljs-literal">|]</span>))&gt;
+</code></pre>
+<h3><code>Style.list</code></h3>
+<p>Accepts a list of styles as a single style.</p>
+<pre><code class="hljs language-reason">&lt;<span class="hljs-module-identifier">View</span> style=<span class="hljs-module-identifier">Style</span>.(list(<span class="hljs-literal">[|</span>
+  styles##thing,
+  styles##whatever,
+<span class="hljs-literal">]</span>))&gt;
+</code></pre>
+<h3><code>Style.listOption</code></h3>
+<p>Accepts a list of optional styles as a single style.</p>
+<pre><code class="hljs language-reason">&lt;<span class="hljs-module-identifier">View</span> style=<span class="hljs-module-identifier">Style</span>.(listOption(<span class="hljs-literal">[|</span>
+  <span class="hljs-constructor">Some</span>(styles##thing),
+  <span class="hljs-constructor">Some</span>(styles##whatever),
+  optionalStyle,
+  cond ? <span class="hljs-constructor">Some</span>(style(~prop=value, ()) : <span class="hljs-constructor">None</span>
+<span class="hljs-literal">|]</span>))&gt;
+</code></pre>
+</div></div><div class="stick" style="display:flex;height:100vh;overflow-y:auto;top:0;flex-direction:column"><div class="css-view-1dbjc4n r-height-z80fyv r-width-19wmn03"></div><div class="css-view-1dbjc4n r-pointerEvents-105ug2t" style="padding-right:20px;padding-left:20px"><div class="stick" style="background:linear-gradient(hsl(219.1, 100%, 99%) 75%, hsla(219.1, 100%, 99%, 0));display:flex;top:0;flex-direction:column"><div class="css-view-1dbjc4n r-pointerEvents-105ug2t" style="padding-top:20px;padding-bottom:20px"><div dir="auto" class="css-text-76zvg2 r-color-1khnkhu r-fontSize-ubezar r-fontWeight-1kfrs79">GETTING STARTED</div></div></div><a href="/bs-react-native/en/docs/" dir="auto" role="link" data-focusable="true" class="css-reset-4rbku5 css-cursor-18t94o4 css-text-76zvg2 r-color-181bzza r-fontSize-1b43r93 r-fontWeight-16dba41 r-paddingVertical-atwnbb">Introduction</a><a href="/bs-react-native/en/docs/install/" dir="auto" role="link" data-focusable="true" class="css-reset-4rbku5 css-cursor-18t94o4 css-text-76zvg2 r-color-181bzza r-fontSize-1b43r93 r-fontWeight-16dba41 r-paddingVertical-atwnbb">Installation</a><a href="/bs-react-native/en/docs/example/" dir="auto" role="link" data-focusable="true" class="css-reset-4rbku5 css-cursor-18t94o4 css-text-76zvg2 r-color-181bzza r-fontSize-1b43r93 r-fontWeight-16dba41 r-paddingVertical-atwnbb">Example</a><a href="/bs-react-native/en/docs/migration/jsx3/" dir="auto" role="link" data-focusable="true" class="css-reset-4rbku5 css-cursor-18t94o4 css-text-76zvg2 r-color-181bzza r-fontSize-1b43r93 r-fontWeight-16dba41 r-paddingVertical-atwnbb">Migration from bs-react-native</a><div class="css-view-1dbjc4n r-height-14g73ha r-width-1b94p3d"></div></div><div class="css-view-1dbjc4n r-pointerEvents-105ug2t" style="padding-right:20px;padding-left:20px"><div class="stick" style="background:linear-gradient(hsl(219.1, 100%, 99%) 75%, hsla(219.1, 100%, 99%, 0));display:flex;top:0;flex-direction:column"><div class="css-view-1dbjc4n r-pointerEvents-105ug2t" style="padding-top:20px;padding-bottom:20px"><div dir="auto" class="css-text-76zvg2 r-color-1khnkhu r-fontSize-ubezar r-fontWeight-1kfrs79">COMPONENTS</div></div></div><a href="/bs-react-native/en/docs/components/ActivityIndicator/" dir="auto" role="link" data-focusable="true" class="css-reset-4rbku5 css-cursor-18t94o4 css-text-76zvg2 r-color-181bzza r-fontSize-1b43r93 r-fontWeight-16dba41 r-paddingVertical-atwnbb">ActivityIndicator</a><a href="/bs-react-native/en/docs/components/Button/" dir="auto" role="link" data-focusable="true" class="css-reset-4rbku5 css-cursor-18t94o4 css-text-76zvg2 r-color-181bzza r-fontSize-1b43r93 r-fontWeight-16dba41 r-paddingVertical-atwnbb">Button</a><a href="/bs-react-native/en/docs/components/DatePickerIOS/" dir="auto" role="link" data-focusable="true" class="css-reset-4rbku5 css-cursor-18t94o4 css-text-76zvg2 r-color-181bzza r-fontSize-1b43r93 r-fontWeight-16dba41 r-paddingVertical-atwnbb">DatePickerIOS</a><a href="/bs-react-native/en/docs/components/DrawerLayoutAndroid/" dir="auto" role="link" data-focusable="true" class="css-reset-4rbku5 css-cursor-18t94o4 css-text-76zvg2 r-color-181bzza r-fontSize-1b43r93 r-fontWeight-16dba41 r-paddingVertical-atwnbb">DrawerLayoutAndroid</a><a href="/bs-react-native/en/docs/components/FlatList/" dir="auto" role="link" data-focusable="true" class="css-reset-4rbku5 css-cursor-18t94o4 css-text-76zvg2 r-color-181bzza r-fontSize-1b43r93 r-fontWeight-16dba41 r-paddingVertical-atwnbb">FlatList</a><a href="/bs-react-native/en/docs/components/Image/" dir="auto" role="link" data-focusable="true" class="css-reset-4rbku5 css-cursor-18t94o4 css-text-76zvg2 r-color-181bzza r-fontSize-1b43r93 r-fontWeight-16dba41 r-paddingVertical-atwnbb">Image</a><a href="/bs-react-native/en/docs/components/ImageBackground/" dir="auto" role="link" data-focusable="true" class="css-reset-4rbku5 css-cursor-18t94o4 css-text-76zvg2 r-color-181bzza r-fontSize-1b43r93 r-fontWeight-16dba41 r-paddingVertical-atwnbb">ImageBackground</a><a href="/bs-react-native/en/docs/components/InputAccessoryView/" dir="auto" role="link" data-focusable="true" class="css-reset-4rbku5 css-cursor-18t94o4 css-text-76zvg2 r-color-181bzza r-fontSize-1b43r93 r-fontWeight-16dba41 r-paddingVertical-atwnbb">InputAccessoryView</a><a href="/bs-react-native/en/docs/components/KeyboardAvoidingView/" dir="auto" role="link" data-focusable="true" class="css-reset-4rbku5 css-cursor-18t94o4 css-text-76zvg2 r-color-181bzza r-fontSize-1b43r93 r-fontWeight-16dba41 r-paddingVertical-atwnbb">KeyboardAvoidingView</a><a href="/bs-react-native/en/docs/components/ListView/" dir="auto" role="link" data-focusable="true" class="css-reset-4rbku5 css-cursor-18t94o4 css-text-76zvg2 r-color-181bzza r-fontSize-1b43r93 r-fontWeight-16dba41 r-paddingVertical-atwnbb">ListView</a><a href="/bs-react-native/en/docs/components/MaskedViewIOS/" dir="auto" role="link" data-focusable="true" class="css-reset-4rbku5 css-cursor-18t94o4 css-text-76zvg2 r-color-181bzza r-fontSize-1b43r93 r-fontWeight-16dba41 r-paddingVertical-atwnbb">MaskedViewIOS</a><a href="/bs-react-native/en/docs/components/Modal/" dir="auto" role="link" data-focusable="true" class="css-reset-4rbku5 css-cursor-18t94o4 css-text-76zvg2 r-color-181bzza r-fontSize-1b43r93 r-fontWeight-16dba41 r-paddingVertical-atwnbb">Modal</a><a href="/bs-react-native/en/docs/components/Picker/" dir="auto" role="link" data-focusable="true" class="css-reset-4rbku5 css-cursor-18t94o4 css-text-76zvg2 r-color-181bzza r-fontSize-1b43r93 r-fontWeight-16dba41 r-paddingVertical-atwnbb">Picker</a><a href="/bs-react-native/en/docs/components/PickerIOS/" dir="auto" role="link" data-focusable="true" class="css-reset-4rbku5 css-cursor-18t94o4 css-text-76zvg2 r-color-181bzza r-fontSize-1b43r93 r-fontWeight-16dba41 r-paddingVertical-atwnbb">PickerIOS</a><a href="/bs-react-native/en/docs/components/ProgressBarAndroid/" dir="auto" role="link" data-focusable="true" class="css-reset-4rbku5 css-cursor-18t94o4 css-text-76zvg2 r-color-181bzza r-fontSize-1b43r93 r-fontWeight-16dba41 r-paddingVertical-atwnbb">ProgressBarAndroid</a><a href="/bs-react-native/en/docs/components/ProgressViewIOS/" dir="auto" role="link" data-focusable="true" class="css-reset-4rbku5 css-cursor-18t94o4 css-text-76zvg2 r-color-181bzza r-fontSize-1b43r93 r-fontWeight-16dba41 r-paddingVertical-atwnbb">ProgressViewIOS</a><a href="/bs-react-native/en/docs/components/RefreshControl/" dir="auto" role="link" data-focusable="true" class="css-reset-4rbku5 css-cursor-18t94o4 css-text-76zvg2 r-color-181bzza r-fontSize-1b43r93 r-fontWeight-16dba41 r-paddingVertical-atwnbb">RefreshControl</a><a href="/bs-react-native/en/docs/components/SafeAreaView/" dir="auto" role="link" data-focusable="true" class="css-reset-4rbku5 css-cursor-18t94o4 css-text-76zvg2 r-color-181bzza r-fontSize-1b43r93 r-fontWeight-16dba41 r-paddingVertical-atwnbb">SafeAreaView</a><a href="/bs-react-native/en/docs/components/ScrollView/" dir="auto" role="link" data-focusable="true" class="css-reset-4rbku5 css-cursor-18t94o4 css-text-76zvg2 r-color-181bzza r-fontSize-1b43r93 r-fontWeight-16dba41 r-paddingVertical-atwnbb">ScrollView</a><a href="/bs-react-native/en/docs/components/SectionList/" dir="auto" role="link" data-focusable="true" class="css-reset-4rbku5 css-cursor-18t94o4 css-text-76zvg2 r-color-181bzza r-fontSize-1b43r93 r-fontWeight-16dba41 r-paddingVertical-atwnbb">SectionList</a><a href="/bs-react-native/en/docs/components/SegmentedControlIOS/" dir="auto" role="link" data-focusable="true" class="css-reset-4rbku5 css-cursor-18t94o4 css-text-76zvg2 r-color-181bzza r-fontSize-1b43r93 r-fontWeight-16dba41 r-paddingVertical-atwnbb">SegmentedControlIOS</a><a href="/bs-react-native/en/docs/components/Slider/" dir="auto" role="link" data-focusable="true" class="css-reset-4rbku5 css-cursor-18t94o4 css-text-76zvg2 r-color-181bzza r-fontSize-1b43r93 r-fontWeight-16dba41 r-paddingVertical-atwnbb">Slider</a><a href="/bs-react-native/en/docs/components/SnapshotViewIOS/" dir="auto" role="link" data-focusable="true" class="css-reset-4rbku5 css-cursor-18t94o4 css-text-76zvg2 r-color-181bzza r-fontSize-1b43r93 r-fontWeight-16dba41 r-paddingVertical-atwnbb">SnapshotViewIOS</a><a href="/bs-react-native/en/docs/components/StatusBar/" dir="auto" role="link" data-focusable="true" class="css-reset-4rbku5 css-cursor-18t94o4 css-text-76zvg2 r-color-181bzza r-fontSize-1b43r93 r-fontWeight-16dba41 r-paddingVertical-atwnbb">StatusBar</a><a href="/bs-react-native/en/docs/components/Switch/" dir="auto" role="link" data-focusable="true" class="css-reset-4rbku5 css-cursor-18t94o4 css-text-76zvg2 r-color-181bzza r-fontSize-1b43r93 r-fontWeight-16dba41 r-paddingVertical-atwnbb">Switch</a><a href="/bs-react-native/en/docs/components/Text/" dir="auto" role="link" data-focusable="true" class="css-reset-4rbku5 css-cursor-18t94o4 css-text-76zvg2 r-color-181bzza r-fontSize-1b43r93 r-fontWeight-16dba41 r-paddingVertical-atwnbb">Text</a><a href="/bs-react-native/en/docs/components/TextInput/" dir="auto" role="link" data-focusable="true" class="css-reset-4rbku5 css-cursor-18t94o4 css-text-76zvg2 r-color-181bzza r-fontSize-1b43r93 r-fontWeight-16dba41 r-paddingVertical-atwnbb">TextInput</a><a href="/bs-react-native/en/docs/components/ToolbarAndroid/" dir="auto" role="link" data-focusable="true" class="css-reset-4rbku5 css-cursor-18t94o4 css-text-76zvg2 r-color-181bzza r-fontSize-1b43r93 r-fontWeight-16dba41 r-paddingVertical-atwnbb">ToolbarAndroid</a><a href="/bs-react-native/en/docs/components/TouchableHighlight/" dir="auto" role="link" data-focusable="true" class="css-reset-4rbku5 css-cursor-18t94o4 css-text-76zvg2 r-color-181bzza r-fontSize-1b43r93 r-fontWeight-16dba41 r-paddingVertical-atwnbb">TouchableHighlight</a><a href="/bs-react-native/en/docs/components/TouchableNativeFeedback/" dir="auto" role="link" data-focusable="true" class="css-reset-4rbku5 css-cursor-18t94o4 css-text-76zvg2 r-color-181bzza r-fontSize-1b43r93 r-fontWeight-16dba41 r-paddingVertical-atwnbb">TouchableNativeFeedback</a><a href="/bs-react-native/en/docs/components/TouchableOpacity/" dir="auto" role="link" data-focusable="true" class="css-reset-4rbku5 css-cursor-18t94o4 css-text-76zvg2 r-color-181bzza r-fontSize-1b43r93 r-fontWeight-16dba41 r-paddingVertical-atwnbb">TouchableOpacity</a><a href="/bs-react-native/en/docs/components/TouchableWithoutFeedback/" dir="auto" role="link" data-focusable="true" class="css-reset-4rbku5 css-cursor-18t94o4 css-text-76zvg2 r-color-181bzza r-fontSize-1b43r93 r-fontWeight-16dba41 r-paddingVertical-atwnbb">TouchableWithoutFeedback</a><a href="/bs-react-native/en/docs/components/View/" dir="auto" role="link" data-focusable="true" class="css-reset-4rbku5 css-cursor-18t94o4 css-text-76zvg2 r-color-181bzza r-fontSize-1b43r93 r-fontWeight-16dba41 r-paddingVertical-atwnbb">View</a><a href="/bs-react-native/en/docs/components/ViewPagerAndroid/" dir="auto" role="link" data-focusable="true" class="css-reset-4rbku5 css-cursor-18t94o4 css-text-76zvg2 r-color-181bzza r-fontSize-1b43r93 r-fontWeight-16dba41 r-paddingVertical-atwnbb">ViewPagerAndroid</a><a href="/bs-react-native/en/docs/components/VirtualizedList/" dir="auto" role="link" data-focusable="true" class="css-reset-4rbku5 css-cursor-18t94o4 css-text-76zvg2 r-color-181bzza r-fontSize-1b43r93 r-fontWeight-16dba41 r-paddingVertical-atwnbb">VirtualizedList</a><a href="/bs-react-native/en/docs/components/WebView/" dir="auto" role="link" data-focusable="true" class="css-reset-4rbku5 css-cursor-18t94o4 css-text-76zvg2 r-color-181bzza r-fontSize-1b43r93 r-fontWeight-16dba41 r-paddingVertical-atwnbb">WebView</a><div class="css-view-1dbjc4n r-height-14g73ha r-width-1b94p3d"></div></div><div class="css-view-1dbjc4n r-pointerEvents-105ug2t" style="padding-right:20px;padding-left:20px"><div class="stick" style="background:linear-gradient(hsl(219.1, 100%, 99%) 75%, hsla(219.1, 100%, 99%, 0));display:flex;top:0;flex-direction:column"><div class="css-view-1dbjc4n r-pointerEvents-105ug2t" style="padding-top:20px;padding-bottom:20px"><div dir="auto" class="css-text-76zvg2 r-color-1khnkhu r-fontSize-ubezar r-fontWeight-1kfrs79">APIS</div></div></div><div dir="auto" class="css-text-76zvg2 r-color-1e6zz2d r-fontSize-1b43r93 r-fontWeight-16dba41 r-paddingVertical-atwnbb">AccessibilityInfo</div><a href="/bs-react-native/en/docs/apis/ActionSheetIOS/" dir="auto" role="link" data-focusable="true" class="css-reset-4rbku5 css-cursor-18t94o4 css-text-76zvg2 r-color-181bzza r-fontSize-1b43r93 r-fontWeight-16dba41 r-paddingVertical-atwnbb">ActionSheetIOS</a><a href="/bs-react-native/en/docs/apis/Alert/" dir="auto" role="link" data-focusable="true" class="css-reset-4rbku5 css-cursor-18t94o4 css-text-76zvg2 r-color-181bzza r-fontSize-1b43r93 r-fontWeight-16dba41 r-paddingVertical-atwnbb">Alert</a><a href="/bs-react-native/en/docs/apis/AlertIOS/" dir="auto" role="link" data-focusable="true" class="css-reset-4rbku5 css-cursor-18t94o4 css-text-76zvg2 r-color-181bzza r-fontSize-1b43r93 r-fontWeight-16dba41 r-paddingVertical-atwnbb">AlertIOS</a><a href="/bs-react-native/en/docs/apis/Animated/" dir="auto" role="link" data-focusable="true" class="css-reset-4rbku5 css-cursor-18t94o4 css-text-76zvg2 r-color-181bzza r-fontSize-1b43r93 r-fontWeight-16dba41 r-paddingVertical-atwnbb">Animated</a><a href="/bs-react-native/en/docs/apis/AnimationFrame/" dir="auto" role="link" data-focusable="true" class="css-reset-4rbku5 css-cursor-18t94o4 css-text-76zvg2 r-color-181bzza r-fontSize-1b43r93 r-fontWeight-16dba41 r-paddingVertical-atwnbb">AnimationFrame</a><a href="/bs-react-native/en/docs/apis/AppRegistry/" dir="auto" role="link" data-focusable="true" class="css-reset-4rbku5 css-cursor-18t94o4 css-text-76zvg2 r-color-181bzza r-fontSize-1b43r93 r-fontWeight-16dba41 r-paddingVertical-atwnbb">AppRegistry</a><a href="/bs-react-native/en/docs/apis/AppState/" dir="auto" role="link" data-focusable="true" class="css-reset-4rbku5 css-cursor-18t94o4 css-text-76zvg2 r-color-181bzza r-fontSize-1b43r93 r-fontWeight-16dba41 r-paddingVertical-atwnbb">AppState</a><a href="/bs-react-native/en/docs/apis/AsyncStorage/" dir="auto" role="link" data-focusable="true" class="css-reset-4rbku5 css-cursor-18t94o4 css-text-76zvg2 r-color-181bzza r-fontSize-1b43r93 r-fontWeight-16dba41 r-paddingVertical-atwnbb">AsyncStorage</a><a href="/bs-react-native/en/docs/apis/BackAndroid/" dir="auto" role="link" data-focusable="true" class="css-reset-4rbku5 css-cursor-18t94o4 css-text-76zvg2 r-color-181bzza r-fontSize-1b43r93 r-fontWeight-16dba41 r-paddingVertical-atwnbb">BackAndroid</a><a href="/bs-react-native/en/docs/apis/BackHandler/" dir="auto" role="link" data-focusable="true" class="css-reset-4rbku5 css-cursor-18t94o4 css-text-76zvg2 r-color-181bzza r-fontSize-1b43r93 r-fontWeight-16dba41 r-paddingVertical-atwnbb">BackHandler</a><a href="/bs-react-native/en/docs/apis/CameraRoll/" dir="auto" role="link" data-focusable="true" class="css-reset-4rbku5 css-cursor-18t94o4 css-text-76zvg2 r-color-181bzza r-fontSize-1b43r93 r-fontWeight-16dba41 r-paddingVertical-atwnbb">CameraRoll</a><a href="/bs-react-native/en/docs/apis/Clipboard/" dir="auto" role="link" data-focusable="true" class="css-reset-4rbku5 css-cursor-18t94o4 css-text-76zvg2 r-color-181bzza r-fontSize-1b43r93 r-fontWeight-16dba41 r-paddingVertical-atwnbb">Clipboard</a><a href="/bs-react-native/en/docs/apis/DatePickerAndroid/" dir="auto" role="link" data-focusable="true" class="css-reset-4rbku5 css-cursor-18t94o4 css-text-76zvg2 r-color-181bzza r-fontSize-1b43r93 r-fontWeight-16dba41 r-paddingVertical-atwnbb">DatePickerAndroid</a><a href="/bs-react-native/en/docs/apis/Dimensions/" dir="auto" role="link" data-focusable="true" class="css-reset-4rbku5 css-cursor-18t94o4 css-text-76zvg2 r-color-181bzza r-fontSize-1b43r93 r-fontWeight-16dba41 r-paddingVertical-atwnbb">Dimensions</a><a href="/bs-react-native/en/docs/apis/Easing/" dir="auto" role="link" data-focusable="true" class="css-reset-4rbku5 css-cursor-18t94o4 css-text-76zvg2 r-color-181bzza r-fontSize-1b43r93 r-fontWeight-16dba41 r-paddingVertical-atwnbb">Easing</a><a href="/bs-react-native/en/docs/apis/Event/" dir="auto" role="link" data-focusable="true" class="css-reset-4rbku5 css-cursor-18t94o4 css-text-76zvg2 r-color-181bzza r-fontSize-1b43r93 r-fontWeight-16dba41 r-paddingVertical-atwnbb">Event</a><div dir="auto" class="css-text-76zvg2 r-color-1e6zz2d r-fontSize-1b43r93 r-fontWeight-16dba41 r-paddingVertical-atwnbb">Geolocation</div><a href="/bs-react-native/en/docs/apis/ImageEditor/" dir="auto" role="link" data-focusable="true" class="css-reset-4rbku5 css-cursor-18t94o4 css-text-76zvg2 r-color-181bzza r-fontSize-1b43r93 r-fontWeight-16dba41 r-paddingVertical-atwnbb">ImageEditor</a><a href="/bs-react-native/en/docs/apis/ImagePickerIOS/" dir="auto" role="link" data-focusable="true" class="css-reset-4rbku5 css-cursor-18t94o4 css-text-76zvg2 r-color-181bzza r-fontSize-1b43r93 r-fontWeight-16dba41 r-paddingVertical-atwnbb">ImagePickerIOS</a><div dir="auto" class="css-text-76zvg2 r-color-1e6zz2d r-fontSize-1b43r93 r-fontWeight-16dba41 r-paddingVertical-atwnbb">ImageStore</div><div dir="auto" class="css-text-76zvg2 r-color-1e6zz2d r-fontSize-1b43r93 r-fontWeight-16dba41 r-paddingVertical-atwnbb">Image Style Props</div><a href="/bs-react-native/en/docs/apis/InteractionManager/" dir="auto" role="link" data-focusable="true" class="css-reset-4rbku5 css-cursor-18t94o4 css-text-76zvg2 r-color-181bzza r-fontSize-1b43r93 r-fontWeight-16dba41 r-paddingVertical-atwnbb">InteractionManager</a><a href="/bs-react-native/en/docs/apis/Keyboard/" dir="auto" role="link" data-focusable="true" class="css-reset-4rbku5 css-cursor-18t94o4 css-text-76zvg2 r-color-181bzza r-fontSize-1b43r93 r-fontWeight-16dba41 r-paddingVertical-atwnbb">Keyboard</a><div dir="auto" class="css-text-76zvg2 r-color-1e6zz2d r-fontSize-1b43r93 r-fontWeight-16dba41 r-paddingVertical-atwnbb">Layout Props</div><a href="/bs-react-native/en/docs/apis/LayoutAnimation/" dir="auto" role="link" data-focusable="true" class="css-reset-4rbku5 css-cursor-18t94o4 css-text-76zvg2 r-color-181bzza r-fontSize-1b43r93 r-fontWeight-16dba41 r-paddingVertical-atwnbb">LayoutAnimation</a><a href="/bs-react-native/en/docs/apis/Linking/" dir="auto" role="link" data-focusable="true" class="css-reset-4rbku5 css-cursor-18t94o4 css-text-76zvg2 r-color-181bzza r-fontSize-1b43r93 r-fontWeight-16dba41 r-paddingVertical-atwnbb">Linking</a><a href="/bs-react-native/en/docs/apis/ListViewDataSource/" dir="auto" role="link" data-focusable="true" class="css-reset-4rbku5 css-cursor-18t94o4 css-text-76zvg2 r-color-181bzza r-fontSize-1b43r93 r-fontWeight-16dba41 r-paddingVertical-atwnbb">ListViewDataSource</a><a href="/bs-react-native/en/docs/apis/NetInfo/" dir="auto" role="link" data-focusable="true" class="css-reset-4rbku5 css-cursor-18t94o4 css-text-76zvg2 r-color-181bzza r-fontSize-1b43r93 r-fontWeight-16dba41 r-paddingVertical-atwnbb">NetInfo</a><a href="/bs-react-native/en/docs/apis/PanResponder/" dir="auto" role="link" data-focusable="true" class="css-reset-4rbku5 css-cursor-18t94o4 css-text-76zvg2 r-color-181bzza r-fontSize-1b43r93 r-fontWeight-16dba41 r-paddingVertical-atwnbb">PanResponder</a><a href="/bs-react-native/en/docs/apis/PermissionsAndroid/" dir="auto" role="link" data-focusable="true" class="css-reset-4rbku5 css-cursor-18t94o4 css-text-76zvg2 r-color-181bzza r-fontSize-1b43r93 r-fontWeight-16dba41 r-paddingVertical-atwnbb">PermissionsAndroid</a><a href="/bs-react-native/en/docs/apis/PixelRatio/" dir="auto" role="link" data-focusable="true" class="css-reset-4rbku5 css-cursor-18t94o4 css-text-76zvg2 r-color-181bzza r-fontSize-1b43r93 r-fontWeight-16dba41 r-paddingVertical-atwnbb">PixelRatio</a><a href="/bs-react-native/en/docs/apis/Platform/" dir="auto" role="link" data-focusable="true" class="css-reset-4rbku5 css-cursor-18t94o4 css-text-76zvg2 r-color-181bzza r-fontSize-1b43r93 r-fontWeight-16dba41 r-paddingVertical-atwnbb">Platform</a><a href="/bs-react-native/en/docs/apis/PushNotificationIOS/" dir="auto" role="link" data-focusable="true" class="css-reset-4rbku5 css-cursor-18t94o4 css-text-76zvg2 r-color-181bzza r-fontSize-1b43r93 r-fontWeight-16dba41 r-paddingVertical-atwnbb">PushNotificationIOS</a><a href="/bs-react-native/en/docs/apis/Settings/" dir="auto" role="link" data-focusable="true" class="css-reset-4rbku5 css-cursor-18t94o4 css-text-76zvg2 r-color-181bzza r-fontSize-1b43r93 r-fontWeight-16dba41 r-paddingVertical-atwnbb">Settings</a><div dir="auto" class="css-text-76zvg2 r-color-1e6zz2d r-fontSize-1b43r93 r-fontWeight-16dba41 r-paddingVertical-atwnbb">Shadow Props</div><a href="/bs-react-native/en/docs/apis/Share/" dir="auto" role="link" data-focusable="true" class="css-reset-4rbku5 css-cursor-18t94o4 css-text-76zvg2 r-color-181bzza r-fontSize-1b43r93 r-fontWeight-16dba41 r-paddingVertical-atwnbb">Share</a><div dir="auto" class="css-text-76zvg2 r-color-1e6zz2d r-fontSize-1b43r93 r-fontWeight-16dba41 r-paddingVertical-atwnbb">StatusBarIOS</div><a href="/bs-react-native/en/docs/apis/StyleSheet/" dir="auto" role="link" data-focusable="true" class="css-reset-4rbku5 css-cursor-18t94o4 css-text-76zvg2 r-color-181bzza r-fontSize-1b43r93 r-fontWeight-16dba41 r-paddingVertical-atwnbb">StyleSheet</a><div dir="auto" class="css-text-76zvg2 r-color-1e6zz2d r-fontSize-1b43r93 r-fontWeight-16dba41 r-paddingVertical-atwnbb">Systrace</div><div dir="auto" class="css-text-76zvg2 r-color-1e6zz2d r-fontSize-1b43r93 r-fontWeight-16dba41 r-paddingVertical-atwnbb">Text Style Props</div><a href="/bs-react-native/en/docs/apis/TimePickerAndroid/" dir="auto" role="link" data-focusable="true" class="css-reset-4rbku5 css-cursor-18t94o4 css-text-76zvg2 r-color-181bzza r-fontSize-1b43r93 r-fontWeight-16dba41 r-paddingVertical-atwnbb">TimePickerAndroid</a><a href="/bs-react-native/en/docs/apis/ToastAndroid/" dir="auto" role="link" data-focusable="true" class="css-reset-4rbku5 css-cursor-18t94o4 css-text-76zvg2 r-color-181bzza r-fontSize-1b43r93 r-fontWeight-16dba41 r-paddingVertical-atwnbb">ToastAndroid</a><div dir="auto" class="css-text-76zvg2 r-color-1e6zz2d r-fontSize-1b43r93 r-fontWeight-16dba41 r-paddingVertical-atwnbb">Transforms</div><a href="/bs-react-native/en/docs/apis/Vibration/" dir="auto" role="link" data-focusable="true" class="css-reset-4rbku5 css-cursor-18t94o4 css-text-76zvg2 r-color-181bzza r-fontSize-1b43r93 r-fontWeight-16dba41 r-paddingVertical-atwnbb">Vibration</a><div dir="auto" class="css-text-76zvg2 r-color-1e6zz2d r-fontSize-1b43r93 r-fontWeight-16dba41 r-paddingVertical-atwnbb">VibrationIOS</div><div dir="auto" class="css-text-76zvg2 r-color-1e6zz2d r-fontSize-1b43r93 r-fontWeight-16dba41 r-paddingVertical-atwnbb">View Style Props</div><div class="css-view-1dbjc4n r-height-14g73ha r-width-1b94p3d"></div></div><div class="css-view-1dbjc4n r-height-z80fyv r-width-19wmn03"></div></div></div></div><div class="css-view-1dbjc4n r-alignItems-1awozwy r-borderColor-1tc8wwf r-borderTopWidth-1e35tp8 r-boxShadow-urspo7 r-justifyContent-1777fci r-zIndex-184en5c"><div class="css-view-1dbjc4n r-alignItems-1awozwy r-backgroundColor-qve0mc r-flexGrow-16y2uox r-flexShrink-1wbh5a2 r-overflow-1udh08x r-width-13qz1uu"><div class="css-view-1dbjc4n r-flexDirection-18u37iz r-flexGrow-16y2uox r-flexShrink-1wbh5a2 r-flexWrap-1w6e6rj r-justifyContent-1wtj0ep r-paddingHorizontal-ou255f r-width-13qz1uu" style="max-width:1000px"><a href="/bs-react-native/" dir="auto" role="link" data-focusable="true" class="css-reset-4rbku5 css-cursor-18t94o4 css-text-76zvg2 r-display-6koalj r-flexGrow-16y2uox r-flexShrink-1wbh5a2 r-position-bnwqim r-zIndex-184en5c" style="-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-box-orient:vertical;-webkit-box-direction:normal"><div class="css-view-1dbjc4n r-alignItems-1awozwy r-display-xoduu5 r-flexDirection-18u37iz r-flexGrow-16y2uox r-pointerEvents-105ug2t" style="padding-right:20px;padding-left:20px;padding-top:10px;padding-bottom:10px"><svg viewBox="0 0 260 232" height="36" width="36" fill="hsl(219.1, 100%, 99.5%)"><path d="m72.88901 190.475233c-32.080731-10.068965-52.88901-26.260945-52.88901-44.520051 0-18.258966 20.8079621-34.450839 52.8882774-44.51982-7.3205803-32.8167664-3.7023205-58.9329724 12.1102926-68.0626565 15.812854-9.1298233 40.240037.7945954 65.000865 23.5428946 24.760539-22.7486137 49.187595-32.6733427 65.000565-23.5437203 15.81285 9.1295529 19.431376 35.2460409 12.11099 68.0632512 32.080731 10.068966 52.88901 26.260946 52.88901 44.520051 0 18.258967-20.807962 34.450839-52.888277 44.519821 7.32058 32.816766 3.70232 58.932972-12.110293 68.062656-15.812854 9.129823-40.240037-.794595-65.000864-23.542895-24.760539 22.748614-49.187596 32.673343-65.000566 23.543721-15.8128494-9.129553-19.4313757-35.246041-12.11099-68.063252zm8.4070827 2.429202c-6.6209079 28.314823-4.2800463 50.273414 8.3592693 57.570726 12.639416 7.29737 32.826764-1.654879 54.03785-21.546496-8.383658-8.425182-16.724977-18.260213-24.702421-29.26317-13.517876-1.407049-26.2062103-3.713237-37.6946983-6.76106zm137.4078143-93.8985053c6.620908-28.3148231 4.280047-50.2734141-8.359269-57.5707264-12.639416-7.29737-32.826764 1.6548794-54.03785 21.5464961 8.383658 8.4251817 16.724978 18.2602127 24.702421 29.2631699 13.517876 1.4070493 26.20621 3.7132371 37.694698 6.7610604zm-99.713545-6.7610157c7.977235-11.0029277 16.318349-20.8379538 24.70182-29.2631581-21.211363-19.8913236-41.398825-28.8433167-54.0381476-21.545786-12.6391228 7.297415-14.9797685 29.2557458-8.3586953 57.5701599 11.4885651-3.0478903 24.1770119-5.3541316 37.6950229-6.7612158zm12.186868-1.007488c6.1455-.3791028 12.430253-.5753502 18.82277-.5753502 6.392331 0 12.676902.1962359 18.822231.5753169-6.195666-8.1645404-12.525704-15.5593119-18.822719-22.0480686-6.296869 6.4887722-12.62675 13.8835414-18.822254 22.0480641zm49.832408 108.428025c-7.977235 11.002927-16.318349 20.837953-24.70182 29.263158 21.211363 19.891323 41.398825 28.843316 54.038148 21.545786 12.639122-7.297415 14.979768-29.255746 8.358695-57.57016-11.488565 3.04789-24.177012 5.354131-37.695023 6.761216zm-12.186868 1.007487c-6.1455.379103-12.430252.575351-18.82277.575351-6.39233 0-12.676902-.196236-18.822231-.575317 6.195666 8.16454 12.525704 15.559312 18.822719 22.048068 6.296869-6.488772 12.62675-13.883541 18.822254-22.048064zm-93.833969-18.693053c3.1046838-11.472984 7.4515122-23.614219 12.9917368-36.024285-5.5404979-12.410299-9.887553-24.551747-12.9923981-36.02492-27.8314315 8.423543-45.6774156 21.429993-45.6774156 36.024502 0 14.594625 17.8462668 27.601166 45.6780769 36.024703zm8.5295808 2.358477c8.7681482 2.208964 18.3374812 3.99349 28.5062922 5.276728-3.401023-5.132428-6.713322-10.476866-9.909558-16.012746-3.1964222-5.536204-6.1689937-11.077207-8.9135683-16.589042-3.9730012 9.447909-7.2121582 18.627303-9.6831731 27.325086zm28.5060362-82.043055c-10.168978 1.283269-19.7384556 3.067842-28.5067151 5.276866 2.4711486 8.697943 5.7104844 17.877518 9.6837044 27.325611 2.7445045-5.51187 5.7170056-11.052911 8.9133577-16.589155 3.196259-5.536082 6.50859-10.880714 9.909653-16.013322zm12.042026-1.258361c-4.780335 6.885984-9.437085 14.217217-13.888355 21.927045-4.451337 7.70994-8.472049 15.408533-12.0453578 22.991525 3.5734068 7.58294 7.5942158 15.281481 12.0456498 22.991363 4.451305 7.709662 9.108079 15.040738 13.888431 21.926576 8.353488.696873 17.030775 1.06411 25.933188 1.06411 8.902542 0 17.579951-.367247 25.933556-1.064147 4.780335-6.885984 9.437085-14.217217 13.888355-21.927044 4.451336-7.709941 8.472049-15.408534 12.045358-22.991525-3.573407-7.582941-7.594217-15.281481-12.04565-22.991364-4.451306-7.709661-9.10808-15.040737-13.888431-21.926576-8.353488-.696873-17.030775-1.0641091-25.933188-1.0641091-8.902542 0-17.579951.3672471-25.933556 1.0641461zm82.732149 55.975634c-2.744505 5.511871-5.717006 11.052912-8.913358 16.589156-3.196259 5.536082-6.50859 10.880713-9.909653 16.013321 10.168978-1.283268 19.738455-3.067842 28.506715-5.276866-2.471149-8.697942-5.710485-17.877517-9.683704-27.325611zm9.683025-49.440578c-8.768148-2.208963-18.337481-3.993489-28.506292-5.276727 3.401023 5.132427 6.713322 10.476866 9.909558 16.012746 3.196422 5.536203 6.168994 11.077206 8.913568 16.589042 3.973001-9.447909 7.212158-18.627304 9.683173-27.325086zm8.529581 2.358478c-3.104684 11.472984-7.451512 23.614219-12.991737 36.024285 5.540498 12.410299 9.887553 24.551746 12.992398 36.02492 27.831432-8.423543 45.677416-21.429994 45.677416-36.024503 0-14.594624-17.846267-27.601165-45.678077-36.024702zm-74.154075 60.243827c-12.855427 0-23.27681-10.421383-23.27681-23.276811 0-12.855427 10.421383-23.27681 23.27681-23.27681s23.27681 10.421383 23.27681 23.27681c0 12.855428-10.421383 23.276811-23.27681 23.276811zm.142876-12.174307-4.417198-7.186876c2.450637-1.318117 3.781848-3.766048 3.781848-7.092725 0-4.895863-3.207007-7.720399-8.834395-7.720399h-9.530255v22h5.536624v-6.088445h4.11465l3.085987 6.088445zm-12-17h3.724c2.072 0 3.276 1.032558 3.276 2.95814 0 1.981395-1.204 3.04186-3.276 3.04186h-3.724zm14-5v22h17v-4.582026h-11.474245v-4.142653l10.085257-.031384v-4.550642h-10.085257v-4.111269h11.172291v-4.582026z" transform="translate(-20 -30)"></path></svg><span dir="auto" class="css-text-76zvg2 css-textHasAncestor-16my406 r-color-1l26oi5 r-fontSize-1i10wst r-fontWeight-b88u0q">   BS React Native</span></div></a><div class="css-view-1dbjc4n r-alignItems-1awozwy r-flexDirection-18u37iz r-flexGrow-16y2uox r-flexShrink-1wbh5a2 r-flexWrap-1w6e6rj r-justifyContent-1777fci r-pointerEvents-105ug2t" style="padding-right:20px;padding-left:20px;padding-top:10px;padding-bottom:10px"><a href="/bs-react-native/BsReactNative/" dir="auto" role="link" data-focusable="true" class="css-reset-4rbku5 css-cursor-18t94o4 css-text-76zvg2 r-color-1l26oi5 r-display-6koalj r-fontSize-1i10wst r-fontWeight-1od2jal r-lineHeight-277cki" style="-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-box-orient:vertical;-webkit-box-direction:normal"><div class="css-view-1dbjc4n r-display-xoduu5 r-pointerEvents-105ug2t" style="padding-right:15px;padding-left:15px"><span dir="auto" class="css-text-76zvg2 css-textHasAncestor-16my406">Legacy Docs</span></div></a><a href="/bs-react-native/en/docs/" dir="auto" role="link" data-focusable="true" class="css-reset-4rbku5 css-cursor-18t94o4 css-text-76zvg2 r-color-1l26oi5 r-display-6koalj r-fontSize-1i10wst r-fontWeight-1od2jal r-lineHeight-277cki" style="-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-box-orient:vertical;-webkit-box-direction:normal"><div class="css-view-1dbjc4n r-display-xoduu5 r-pointerEvents-105ug2t" style="padding-right:15px;padding-left:15px"><span dir="auto" class="css-text-76zvg2 css-textHasAncestor-16my406">Docs@next</span></div></a></div><div class="css-view-1dbjc4n r-flexDirection-18u37iz r-flexGrow-16y2uox r-flexShrink-1wbh5a2 r-flexWrap-1w6e6rj r-justifyContent-17s6mgv r-pointerEvents-105ug2t" style="padding-right:20px;padding-left:20px;padding-top:10px;padding-bottom:10px"><a href="https://github.com/reasonml-community/bs-react-native" dir="auto" aria-label="bs-react-native on GitHub" role="link" data-focusable="true" class="css-reset-4rbku5 css-cursor-18t94o4 css-text-76zvg2 r-alignItems-1awozwy r-display-6koalj r-flexDirection-18u37iz r-fontSize-1enofrn r-justifyContent-1777fci r-paddingHorizontal-1e081e0 r-paddingVertical-1rcbeiy"><svg viewBox="0 0 30 30" height="22" width="22" fill="hsl(219.1, 100%, 99%)"><path d="m15 3c-6.627 0-12 5.373-12 12 0 5.623 3.872 10.328 9.092 11.63-.056-.162-.092-.35-.092-.583v-2.051c-.487 0-1.303 0-1.508 0-.821 0-1.551-.353-1.905-1.009-.393-.729-.461-1.844-1.435-2.526-.289-.227-.069-.486.264-.451.615.174 1.125.596 1.605 1.222.478.627.703.769 1.596.769.433 0 1.081-.025 1.691-.121.328-.833.895-1.6 1.588-1.962-3.996-.411-5.903-2.399-5.903-5.098 0-1.162.495-2.286 1.336-3.233-.276-.94-.623-2.857.106-3.587 1.798 0 2.885 1.166 3.146 1.481.896-.307 1.88-.481 2.914-.481 1.036 0 2.024.174 2.922.483.258-.313 1.346-1.483 3.148-1.483.732.731.381 2.656.102 3.594.836.945 1.328 2.066 1.328 3.226 0 2.697-1.904 4.684-5.894 5.097 1.098.573 1.899 2.183 1.899 3.396v2.734c0 .104-.023.179-.035.268 4.676-1.639 8.035-6.079 8.035-11.315 0-6.627-5.373-12-12-12z"></path></svg><div class="WindowSizeFilter-notSmall"><div class="css-view-1dbjc4n r-display-xoduu5 r-height-1or9b2r r-width-5soawk"></div><span dir="auto" class="css-text-76zvg2 css-textHasAncestor-16my406 r-color-1l26oi5 r-fontSize-1i10wst r-fontWeight-1od2jal r-lineHeight-277cki">GitHub</span></div></a></div></div></div></div></div></div></body>
+</html>

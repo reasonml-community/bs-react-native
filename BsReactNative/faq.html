@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>faq (BsReactNative.faq)</title><link rel="stylesheet" href="../odoc.css"/><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/><script src="../highlight.pack.js"></script><script>hljs.initHighlightingOnLoad();</script></head><body><div class="content"><header><nav><a href="">Up</a> – <a href="">BsReactNative</a> &#x00BB; faq</nav></header><h2 id="troubleshooting"><a href="#troubleshooting" class="anchor"></a>Troubleshooting</h2><p>Please find a list of common problems when working with <code>bs-react-native</code> below. If you have encountered an error that affected many developers, consider <a href="https://github.com/reasonml-community/bs-react-native/edit/master/docs/pages/page-faq.mld">editing this file</a> and adding a possible solution below.</p><h4 id="native-module-cannot-be-null-with-create-react-native-app"><a href="#native-module-cannot-be-null-with-create-react-native-app" class="anchor"></a><code>Native module cannot be null</code> with create-react-native-app</h4><p>Currently BuckleScript can generate <code>import * as ReactNative from 'react-native'</code>, which breaks <code>create-react-native-app</code>. To get around this you can force BuckleScript to generate CommonJS modules instead of ES Modules using:</p><pre><code class="ml">/* bsconfig.json */
+{
+  /* ... */
+  &quot;package-specs&quot;: [
+    {
+      &quot;module&quot;: &quot;commonjs&quot;
+    }
+  ]
+}</code></pre></div></body></html>

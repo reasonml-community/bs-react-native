@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>Dimensions-BsReactNative (BsReactNative.Dimensions-BsReactNative)</title><link rel="stylesheet" href="../../odoc.css"/><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/><script src="../../highlight.pack.js"></script><script>hljs.initHighlightingOnLoad();</script></head><body><div class="content"><header><nav><a href="../">Up</a> – <a href="../">BsReactNative</a> &#x00BB; Dimensions-BsReactNative</nav><h1>Module <code>Dimensions-BsReactNative</code></h1></header><dl><dt class="spec type" id="type-dimensions"><a href="#type-dimensions" class="anchor"></a><code><span class="keyword">type</span> dimensions</code><code> = Js.t({. width: int, height: int, scale: float, fontScale: float, })</code>;</dt><dd><p>You can read more on <code>Dimensions</code> API usage in official docs: <a href="https://facebook.github.io/react-native/docs/dimensions">https://facebook.github.io/react-native/docs/dimensions</a></p><h4 id="example-of-use"><a href="#example-of-use" class="anchor"></a>Example of use</h4><h5 id="get(`window)"><a href="#get(`window)" class="anchor"></a>get(`window)</h5><pre><code class="re">let windowDimensions = Dimensions.get(`window);
+Js.log(windowDimensions##width);
+Js.log(windowDimensions##height);
+Js.log(windowDimensions##scale);
+Js.log(windowDimensions##fontScale);</code></pre><h5 id="get(`screen)"><a href="#get(`screen)" class="anchor"></a>get(`screen)</h5><pre><code class="re">let screenDimensions = Dimensions.get(`screen);
+Js.log(screenDimensions##width);
+Js.log(screenDimensions##height);
+Js.log(screenDimensions##scale);
+Js.log(screenDimensions##fontScale);</code></pre><h5 id="addeventlistener-and-removeeventlistener"><a href="#addeventlistener-and-removeeventlistener" class="anchor"></a>addEventListener and removeEventListener</h5><pre><code class="re">let handler = dimensions =&gt; Js.log(dimensions##screen##width);
+
+Dimensions.addEventListener(&quot;change&quot;, handler);
+Dimensions.removeEventListener(&quot;change&quot;, handler);</code></pre><h4 id="function-parameters"><a href="#function-parameters" class="anchor"></a>Function parameters</h4><h5 id="get"><a href="#get" class="anchor"></a>get</h5><pre><code class="re">[&lt; | `screen | `window] =&gt; dimensions</code></pre><p>reference:</p><pre><code class="re">type dimensions = {
+  .
+  &quot;width&quot;: int,
+  &quot;height&quot;: int,
+  &quot;scale&quot;: float,
+  &quot;fontScale&quot;: float,
+};</code></pre><h5 id="addeventlistener"><a href="#addeventlistener" class="anchor"></a>addEventListener</h5><pre><code class="re">(
+  string,
+  {
+    .
+    &quot;screen&quot;: dimensions,
+    &quot;window&quot;: dimensions,
+  } =&gt; unit
+) =&gt; unit</code></pre><p>reference:</p><pre><code class="re">type dimensions = {
+  .
+  &quot;width&quot;: int,
+  &quot;height&quot;: int,
+  &quot;scale&quot;: float,
+  &quot;fontScale&quot;: float,
+};</code></pre><h5 id="removeeventlistener"><a href="#removeeventlistener" class="anchor"></a>removeEventListener</h5><pre><code class="re">(
+  string,
+  {
+    .
+    &quot;screen&quot;: dimensions,
+    &quot;window&quot;: dimensions,
+  } =&gt; unit
+) =&gt; unit</code></pre><p>reference:</p><pre><code class="re">type dimensions = {
+  .
+  &quot;width&quot;: int,
+  &quot;height&quot;: int,
+  &quot;scale&quot;: float,
+  &quot;fontScale&quot;: float,
+};</code></pre></dd></dl><dl><dt class="spec value" id="val-get"><a href="#val-get" class="anchor"></a><code><span class="keyword">let</span> get: [&lt; `screen | `window ] <span>=&gt;</span> <a href="#type-dimensions">dimensions</a>;</code></dt></dl><dl><dt class="spec external" id="val-addEventListener"><a href="#val-addEventListener" class="anchor"></a><code><span class="keyword">let</span> addEventListener: string <span>=&gt;</span> (Js.t({. screen: <a href="#type-dimensions">dimensions</a>, window: <a href="#type-dimensions">dimensions</a>, }) <span>=&gt;</span> unit) <span>=&gt;</span> unit;</code></dt><dt class="spec external" id="val-removeEventListener"><a href="#val-removeEventListener" class="anchor"></a><code><span class="keyword">let</span> removeEventListener: string <span>=&gt;</span> (Js.t({. screen: <a href="#type-dimensions">dimensions</a>, window: <a href="#type-dimensions">dimensions</a>, }) <span>=&gt;</span> unit) <span>=&gt;</span> unit;</code></dt></dl></div></body></html>

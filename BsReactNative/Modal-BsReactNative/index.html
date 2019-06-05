@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>Modal-BsReactNative (BsReactNative.Modal-BsReactNative)</title><link rel="stylesheet" href="../../odoc.css"/><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/><script src="../../highlight.pack.js"></script><script>hljs.initHighlightingOnLoad();</script></head><body><div class="content"><header><nav><a href="../">Up</a> – <a href="../">BsReactNative</a> &#x00BB; Modal-BsReactNative</nav><h1>Module <code>Modal-BsReactNative</code></h1></header><dl><dt class="spec value" id="val-make"><a href="#val-make" class="anchor"></a><code><span class="keyword">let</span> make: ?&#8288;animationType:[ `fade | `none | `slide ] <span>=&gt;</span> ?&#8288;onShow:(unit <span>=&gt;</span> unit) <span>=&gt;</span> ?&#8288;transparent:bool <span>=&gt;</span> ?&#8288;visible:bool <span>=&gt;</span> ?&#8288;hardwareAccelerated:bool <span>=&gt;</span> ?&#8288;onRequestClose:(unit <span>=&gt;</span> unit) <span>=&gt;</span> ?&#8288;onOrientationChange:(unit <span>=&gt;</span> unit) <span>=&gt;</span> ?&#8288;supportedOrientations:array([ `landscape | `landscapeLeft | `landscapeRight | `portrait | `portraitUpsideDown ]) <span>=&gt;</span> array(ReasonReact.reactElement) <span>=&gt;</span> ReasonReact.component(ReasonReact.stateless, ReasonReact.noRetainedProps, unit);</code></dt><dd><h4 id="example-of-use"><a href="#example-of-use" class="anchor"></a>Example of use</h4><p><code>Modal</code> component <a href="https://facebook.github.io/react-native/docs/modal">https://facebook.github.io/react-native/docs/modal</a> simply displays content over an enclosing view.</p><h5 id="default"><a href="#default" class="anchor"></a>default</h5><p>Wrap some content in <code>&lt;Modal&gt;&lt;/Modal&gt;</code> and you are good to go</p><pre><code class="re">let component = ReasonReact.statelessComponent(&quot;MyComponent&quot;);
+
+let make = _children =&gt; {
+  ...component,
+  render: _self =&gt;
+    &lt;Modal&gt;
+      &lt;View
+        style=Style.(
+                style([
+                  flex(1.),
+                  justifyContent(Center),
+                  alignItems(Center),
+                  backgroundColor(String(&quot;tomato&quot;)),
+                ])
+              )&gt;
+        &lt;Text&gt; (ReasonReact.string(&quot;hey ho&quot;)) &lt;/Text&gt;
+      &lt;/View&gt;
+    &lt;/Modal&gt;,
+};</code></pre><h4 id="props"><a href="#props" class="anchor"></a>Props</h4><h5 id="animationtype"><a href="#animationtype" class="anchor"></a>animationType</h5><pre><code class="re">animationType: [
+  | `fade
+  | `none
+  | `slide
+]=?</code></pre><p>And this is how you apply one of those types:</p><pre><code class="re">let component = ReasonReact.statelessComponent(&quot;MyComponent&quot;);
+
+let make = _children =&gt; {
+  ...component,
+  render: _self =&gt;
+    &lt;Modal animationType=`slide&gt;
+      &lt;View
+        style=Style.(
+                style([
+                  flex(1.),
+                  justifyContent(Center),
+                  alignItems(Center),
+                  backgroundColor(String(&quot;tomato&quot;)),
+                ])
+              )&gt;
+        &lt;Text&gt; (ReasonReact.string(&quot;hey ho&quot;)) &lt;/Text&gt;
+      &lt;/View&gt;
+    &lt;/Modal&gt;,
+};</code></pre><h5 id="onshow"><a href="#onshow" class="anchor"></a>onShow</h5><pre><code class="re">onShow: unit =&gt; unit=?</code></pre><p>Example:</p><pre><code class="re">let component = ReasonReact.statelessComponent(&quot;MyComponent&quot;);
+
+let make = _children =&gt; {
+  ...component,
+  render: _self =&gt;
+    &lt;Modal onShow=(() =&gt; Js.log(&quot;Just displayed the modal...&quot;))&gt;
+      &lt;View
+        style=Style.(
+                style([
+                  flex(1.),
+                  justifyContent(Center),
+                  alignItems(Center),
+                  backgroundColor(String(&quot;tomato&quot;)),
+                ])
+              )&gt;
+        &lt;Text&gt; (ReasonReact.string(&quot;hey ho&quot;)) &lt;/Text&gt;
+      &lt;/View&gt;
+    &lt;/Modal&gt;,
+};</code></pre><h5 id="transparent"><a href="#transparent" class="anchor"></a>transparent</h5><pre><code class="re">transparent: bool=?</code></pre><h5 id="visible"><a href="#visible" class="anchor"></a>visible</h5><pre><code class="re">visible: bool=?</code></pre><h5 id="hardwareaccelerated"><a href="#hardwareaccelerated" class="anchor"></a>hardwareAccelerated</h5><pre><code class="re">hardwareAccelerated: bool=?</code></pre><h5 id="onrequestclose"><a href="#onrequestclose" class="anchor"></a>onRequestClose</h5><pre><code class="re">onRequestClose: unit =&gt; unit=?</code></pre><h5 id="onorientationchange"><a href="#onorientationchange" class="anchor"></a>onOrientationChange</h5><pre><code class="re">onOrientationChange: unit =&gt; unit=?</code></pre><h5 id="supportedorientations"><a href="#supportedorientations" class="anchor"></a>supportedOrientations</h5><pre><code class="re">supportedOrientations: array(
+  [
+    | `landscape
+    | `landscapeLeft
+    | `landscapeRight
+    | `portrait
+    | `portraitUpsideDown
+  ],
+)=?</code></pre><p>Example:</p><pre><code class="re">let component = ReasonReact.statelessComponent(&quot;MyComponent&quot;);
+
+let make = _children =&gt; {
+  ...component,
+  render: _self =&gt;
+    &lt;Modal supportedOrientations=[|`landscape, `portrait|]&gt;
+      &lt;View
+        style=Style.(
+                style([
+                  flex(1.),
+                  justifyContent(Center),
+                  alignItems(Center),
+                  backgroundColor(String(&quot;tomato&quot;)),
+                ])
+              )&gt;
+        &lt;Text&gt; (ReasonReact.string(&quot;hey ho&quot;)) &lt;/Text&gt;
+      &lt;/View&gt;
+    &lt;/Modal&gt;,
+};</code></pre></dd></dl></div></body></html>

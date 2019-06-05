@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>PermissionsAndroid-BsReactNative (BsReactNative.PermissionsAndroid-BsReactNative)</title><link rel="stylesheet" href="../../odoc.css"/><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/><script src="../../highlight.pack.js"></script><script>hljs.initHighlightingOnLoad();</script></head><body><div class="content"><header><nav><a href="../">Up</a> – <a href="../">BsReactNative</a> &#x00BB; PermissionsAndroid-BsReactNative</nav><h1>Module <code>PermissionsAndroid-BsReactNative</code></h1></header><dl><dt class="spec type" id="type-result"><a href="#type-result" class="anchor"></a><code><span class="keyword">type</span> result</code><code> = </code><table class="variant"><tr id="type-result.GRANTED" class="anchored"><td class="def constructor"><a href="#type-result.GRANTED" class="anchor"></a><code>| </code><code><span class="constructor">GRANTED</span></code></td></tr><tr id="type-result.DENIED" class="anchored"><td class="def constructor"><a href="#type-result.DENIED" class="anchor"></a><code>| </code><code><span class="constructor">DENIED</span></code></td></tr><tr id="type-result.NEVER_ASK_AGAIN" class="anchored"><td class="def constructor"><a href="#type-result.NEVER_ASK_AGAIN" class="anchor"></a><code>| </code><code><span class="constructor">NEVER_ASK_AGAIN</span></code></td></tr></table>;</dt><dd><p>You can read more on <code>PermissionsAndroid</code> API usage in official docs: <a href="https://facebook.github.io/react-native/docs/permissionAndroid">https://facebook.github.io/react-native/docs/permissionAndroid</a></p><h4 id="example-of-use"><a href="#example-of-use" class="anchor"></a>Example of use</h4><h5 id="requesting-single-permission."><a href="#requesting-single-permission." class="anchor"></a>Requesting single permission.</h5><pre><code class="re">let requestPermissions = () =&gt;
+  PermissionsAndroid.request(
+    ~permission=PermissionsAndroid.Permission.SEND_SMS,
+    ~rationale=
+      PermissionsAndroid.rationale(
+        ~title=&quot;Hello!&quot;,
+        ~message=&quot;Cool app wants to send SMS...&quot;,
+        (),
+      ),
+    (),
+  )
+  |&gt; Js.Promise.then_(permissions =&gt; {
+       Js.log(permissions);
+       Js.Promise.resolve();
+     })
+  |&gt; ignore;</code></pre><h5 id="requesting-multiple-permissions."><a href="#requesting-multiple-permissions." class="anchor"></a>Requesting multiple permissions.</h5><pre><code class="re">let requestMultiplePermissions = () =&gt; {
+  PermissionsAndroid.requestMultiple(
+    ~permissions=[
+      PermissionsAndroid.Permission.SEND_SMS,
+      PermissionsAndroid.Permission.READ_EXTERNAL_STORAGE,
+      PermissionsAndroid.Permission.WRITE_EXTERNAL_STORAGE,
+    ],
+  )
+  |&gt; Js.Promise.then_(res =&gt; {
+       Js.log(res);
+       Js.Promise.resolve();
+     })
+  |&gt; ignore;
+
+  ();
+};</code></pre><h5 id="functions"><a href="#functions" class="anchor"></a>Functions</h5><h4 id="check"><a href="#check" class="anchor"></a>check</h4><pre><code class="re">let check: Permission.t =&gt; Js.Promise.t(bool);</code></pre><h5 id="request"><a href="#request" class="anchor"></a>request</h5><pre><code class="re">let request:
+  (~permission: Permission.t, ~rationale: rationale=?, unit) =&gt;
+  Js.Promise.t(result);</code></pre><p>To create rationale paramters use <code>PermissionsAndroid.rationale</code> function.</p><pre><code class="re">PermissionsAndroid.rationale(
+  ~title=&quot;Hello!&quot;,
+  ~message=&quot;Cool app wants to send SMS...&quot;,
+  (),
+),</code></pre><h5 id="requestmultiple"><a href="#requestmultiple" class="anchor"></a>requestMultiple</h5><pre><code class="re">let requestMultiple:
+  (~permissions: list(Permission.t)) =&gt; Js.Promise.t(Js.Dict.t('a));</code></pre><h5 id="rationale"><a href="#rationale" class="anchor"></a>rationale</h5><p>To create rationale for showing why you want to get permission.</p><pre><code class="re">let requestMultiple: (~title=string=?, ~message=string=?, unit) =&gt; rationale; </code></pre><h4 id="permissions-that-require-prompting-the-user"><a href="#permissions-that-require-prompting-the-user" class="anchor"></a>Permissions that require prompting the user</h4><p>All possieble values are avaliable via PermissionsAndroid.Permission</p><pre><code class="re">PermissionsAndroid.Permission.READ_CALENDAR;
+PermissionsAndroid.Permission.WRITE_CALENDAR;
+PermissionsAndroid.Permission.CAMERA;
+PermissionsAndroid.Permission.READ_CONTACTS;
+PermissionsAndroid.Permission.WRITE_CONTACTS;
+PermissionsAndroid.Permission.GET_ACCOUNTS;
+PermissionsAndroid.Permission.ACCESS_FINE_LOCATION;
+PermissionsAndroid.Permission.ACCESS_COARSE_LOCATION;
+PermissionsAndroid.Permission.RECORD_AUDIO;
+PermissionsAndroid.Permission.READ_PHONE_STATE;
+PermissionsAndroid.Permission.CALL_PHONE;
+PermissionsAndroid.Permission.READ_CALL_LOG;
+PermissionsAndroid.Permission.WRITE_CALL_LOG;
+PermissionsAndroid.Permission.ADD_VOICEMAIL;
+PermissionsAndroid.Permission.USE_SIP;
+PermissionsAndroid.Permission.PROCESS_OUTGOING_CALLS;
+PermissionsAndroid.Permission.BODY_SENSORS;
+PermissionsAndroid.Permission.SEND_SMS;
+PermissionsAndroid.Permission.RECEIVE_SMS;
+PermissionsAndroid.Permission.READ_SMS;
+PermissionsAndroid.Permission.RECEIVE_WAP_PUSH;
+PermissionsAndroid.Permission.RECEIVE_MMS;
+PermissionsAndroid.Permission.READ_EXTERNAL_STORAGE;
+PermissionsAndroid.Permission.WRITE_EXTERNAL_STORAGE;</code></pre><h5 id="results-for-requesting"><a href="#results-for-requesting" class="anchor"></a>Results for requesting</h5><pre><code class="re">PermissionsAndroid.GRANTED
+PermissionsAndroid.DENIED
+PermissionsAndroid.NEVER_ASK_AGAIN</code></pre></dd></dl><div><div class="spec include"><div class="doc"><details open="open"><summary><span class="def"><code><span class="keyword">include</span> { ... }<span class="keyword">;</span></code></span></summary><div><div class="spec include"><div class="doc"><details open="open"><summary><span class="def"><code><span class="keyword">include</span> <span class="keyword">module</span> <span class="keyword">type</span> <span class="keyword">of</span> { ... }<span class="keyword">;</span></code></span></summary></details></div></div></div><dl><dt class="spec type" id="type-rationale"><a href="#type-rationale" class="anchor"></a><code><span class="keyword">type</span> rationale</code>;</dt></dl><dl><dt class="spec external" id="val-rationale"><a href="#val-rationale" class="anchor"></a><code><span class="keyword">let</span> rationale: ?&#8288;title:string <span>=&gt;</span> ?&#8288;message:string <span>=&gt;</span> unit <span>=&gt;</span> <a href="#type-rationale">rationale</a>;</code></dt><dt class="spec external" id="val-title"><a href="#val-title" class="anchor"></a><code><span class="keyword">let</span> title: <a href="#type-rationale">rationale</a> <span>=&gt;</span> option(string);</code></dt><dt class="spec external" id="val-titleGet"><a href="#val-titleGet" class="anchor"></a><code><span class="keyword">let</span> titleGet: <a href="#type-rationale">rationale</a> <span>=&gt;</span> option(string);</code></dt><dt class="spec external" id="val-message"><a href="#val-message" class="anchor"></a><code><span class="keyword">let</span> message: <a href="#type-rationale">rationale</a> <span>=&gt;</span> option(string);</code></dt><dt class="spec external" id="val-messageGet"><a href="#val-messageGet" class="anchor"></a><code><span class="keyword">let</span> messageGet: <a href="#type-rationale">rationale</a> <span>=&gt;</span> option(string);</code></dt></dl></details></div></div></div><div class="spec module" id="module-Permission"><a href="#module-Permission" class="anchor"></a><code><span class="keyword">module</span> <a href="Permission">Permission</a>: { ... };</code></div><dl><dt class="spec value" id="val-check"><a href="#val-check" class="anchor"></a><code><span class="keyword">let</span> check: <a href="Permission#type-t">Permission.t</a> <span>=&gt;</span> Js.Promise.t(bool);</code></dt><dt class="spec value" id="val-request"><a href="#val-request" class="anchor"></a><code><span class="keyword">let</span> request: permission:<a href="Permission#type-t">Permission.t</a> <span>=&gt;</span> ?&#8288;rationale:<a href="#type-rationale">rationale</a> <span>=&gt;</span> unit <span>=&gt;</span> Js.Promise.t(<a href="#type-result">result</a>);</code></dt><dt class="spec value" id="val-requestMultiple"><a href="#val-requestMultiple" class="anchor"></a><code><span class="keyword">let</span> requestMultiple: permissions:list(<a href="Permission#type-t">Permission.t</a>) <span>=&gt;</span> Js.Promise.t(Js.Dict.t(<span class="type-var">'a</span>));</code></dt></dl></div></body></html>

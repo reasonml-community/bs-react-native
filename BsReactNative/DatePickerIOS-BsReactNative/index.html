@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>DatePickerIOS-BsReactNative (BsReactNative.DatePickerIOS-BsReactNative)</title><link rel="stylesheet" href="../../odoc.css"/><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/><script src="../../highlight.pack.js"></script><script>hljs.initHighlightingOnLoad();</script></head><body><div class="content"><header><nav><a href="../">Up</a> – <a href="../">BsReactNative</a> &#x00BB; DatePickerIOS-BsReactNative</nav><h1>Module <code>DatePickerIOS-BsReactNative</code></h1></header><dl><dt class="spec value" id="val-make"><a href="#val-make" class="anchor"></a><code><span class="keyword">let</span> make: date:Js.Date.t <span>=&gt;</span> onDateChange:(Js.Date.t <span>=&gt;</span> unit) <span>=&gt;</span> ?&#8288;maximumDate:Js.Date.t <span>=&gt;</span> ?&#8288;minimumDate:Js.Date.t <span>=&gt;</span> ?&#8288;mode:[ `date | `datetime | `time ] <span>=&gt;</span> ?&#8288;minuteInterval:int <span>=&gt;</span> ?&#8288;timeZoneOffsetInMinutes:int <span>=&gt;</span> ?&#8288;accessibilityLabel:ReasonReact.reactElement <span>=&gt;</span> ?&#8288;accessible:bool <span>=&gt;</span> ?&#8288;hitSlop:BsReactNative.Types.insets <span>=&gt;</span> ?&#8288;onAccessibilityTap:(unit <span>=&gt;</span> unit) <span>=&gt;</span> ?&#8288;onLayout:(BsReactNative.RNEvent.NativeLayoutEvent.t <span>=&gt;</span> unit) <span>=&gt;</span> ?&#8288;onMagicTap:(unit <span>=&gt;</span> unit) <span>=&gt;</span> ?&#8288;responderHandlers:BsReactNative.Types.touchResponderHandlers <span>=&gt;</span> ?&#8288;pointerEvents:BsReactNative.Types.pointerEvents <span>=&gt;</span> ?&#8288;removeClippedSubviews:bool <span>=&gt;</span> ?&#8288;style:BsReactNative.Style.t <span>=&gt;</span> ?&#8288;testID:string <span>=&gt;</span> ?&#8288;accessibilityComponentType:BsReactNative.Types.accessibilityComponentType <span>=&gt;</span> ?&#8288;accessibilityLiveRegion:BsReactNative.Types.accessibilityLiveRegion <span>=&gt;</span> ?&#8288;collapsable:bool <span>=&gt;</span> ?&#8288;importantForAccessibility:BsReactNative.Types.importantForAccessibility <span>=&gt;</span> ?&#8288;needsOffscreenAlphaCompositing:bool <span>=&gt;</span> ?&#8288;renderToHardwareTextureAndroid:bool <span>=&gt;</span> ?&#8288;accessibilityTraits:list(BsReactNative.Types.accessibilityTrait) <span>=&gt;</span> ?&#8288;accessibilityRole:BsReactNative.Types.accessibilityRole <span>=&gt;</span> ?&#8288;accessibilityStates:list(BsReactNative.Types.accessibilityState) <span>=&gt;</span> ?&#8288;accessibilityHint:string <span>=&gt;</span> ?&#8288;accessibilityIgnoresInvertColors:bool <span>=&gt;</span> ?&#8288;accessibilityViewIsModal:bool <span>=&gt;</span> ?&#8288;shouldRasterizeIOS:bool <span>=&gt;</span> array(ReasonReact.reactElement) <span>=&gt;</span> ReasonReact.component(ReasonReact.stateless, ReasonReact.noRetainedProps, unit);</code></dt><dd><p>Date/time picker for ios in <a href="https://facebook.github.io/react-native/docs/datepickerios">React Native DOC</a>, requires date and onDateChange props to be rendered:</p><h3 id="example"><a href="#example" class="anchor"></a>Example</h3><h4 id="default"><a href="#default" class="anchor"></a>default</h4><pre><code class="re">let component = ReasonReact.statelessComponent(&quot;MyComponent&quot;);
+
+let make = _children =&gt; {
+  ...component,
+  render: _self =&gt;
+    &lt;DatePickerIOS
+      date=(Js.Date.fromString(&quot;February 12, 1990 17:40&quot;))
+      onDateChange=(date =&gt; Js.log(date))
+    /&gt;,
+};</code></pre><p>Here you can find BuckleScript's <a href="https://bucklescript.github.io/bucklescript/api/Js_date.html">Js.Date API</a></p><p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date">The JavaScript Date API</a> might also be a useful resource.</p><h4 id="mode"><a href="#mode" class="anchor"></a>mode</h4><pre><code class="re">let component = ReasonReact.statelessComponent(&quot;MyComponent&quot;);
+
+let make = _children =&gt; {
+  ...component,
+  render: _self =&gt;
+    &lt;DatePickerIOS
+      date=(Js.Date.fromString(&quot;February 12, 1990 17:40&quot;))
+      onDateChange=(date =&gt; Js.log(date))
+      mode=`date
+    /&gt;,
+};</code></pre><h3 id="props"><a href="#props" class="anchor"></a>Props</h3><h4 id="date"><a href="#date" class="anchor"></a>date</h4><pre><code class="re">~date: Js.Date.t</code></pre><h4 id="ondatechange"><a href="#ondatechange" class="anchor"></a>onDateChange</h4><pre><code class="re">~onDateChange: Js.Date.t =&gt; unit</code></pre><h4 id="maximumdate"><a href="#maximumdate" class="anchor"></a>maximumDate</h4><pre><code class="re">maximumDate: Js.Date.t=?</code></pre><h4 id="minimumdate"><a href="#minimumdate" class="anchor"></a>minimumDate</h4><pre><code class="re">~minimumDate: Js.Date.t=?</code></pre><h4 id="mode"><a href="#mode" class="anchor"></a>mode</h4><pre><code class="re">~mode: [
+  | `date
+  | `datetime
+  | `time
+]=?</code></pre><h4 id="minuteinterval"><a href="#minuteinterval" class="anchor"></a>minuteInterval</h4><pre><code class="re">~minuteInterval: int=?</code></pre><h4 id="timezoneoffsetinminutes"><a href="#timezoneoffsetinminutes" class="anchor"></a>timeZoneOffsetInMinutes</h4><pre><code class="re">~timeZoneOffsetInMinutes: int=?</code></pre><h4 id="accessibilitylabel"><a href="#accessibilitylabel" class="anchor"></a>accessibilityLabel</h4><pre><code class="re">~accessibilityLabel: ReasonReact.reactElement=?</code></pre><h4 id="accessible"><a href="#accessible" class="anchor"></a>accessible</h4><pre><code class="re">~accessible: bool=?</code></pre><h4 id="hitslop"><a href="#hitslop" class="anchor"></a>hitSlop</h4><pre><code class="re">~hitSlop: Types.insets=?</code></pre><h5 id="reference:"><a href="#reference:" class="anchor"></a>reference:</h5><p>Types.rei</p><pre><code class="re">type insets = {
+  .
+  &quot;left&quot;: int,
+  &quot;right&quot;: int,
+  &quot;top&quot;: int,
+  &quot;bottom&quot;: int,
+};</code></pre><h4 id="onaccessibilitytap"><a href="#onaccessibilitytap" class="anchor"></a>onAccessibilityTap</h4><pre><code class="re">~onAccessibilityTap: unit =&gt; unit=?</code></pre><h4 id="onlayout"><a href="#onlayout" class="anchor"></a>onLayout</h4><pre><code class="re">~onLayout: RNEvent.NativeLayoutEvent.t =&gt; unit=?</code></pre><h4 id="onmagictap"><a href="#onmagictap" class="anchor"></a>onMagicTap</h4><pre><code class="re">~onMagicTap: unit =&gt; unit=?</code></pre><h4 id="responderhandlers"><a href="#responderhandlers" class="anchor"></a>responderHandlers</h4><pre><code class="re">~responderHandlers: Types.touchResponderHandlers=?</code></pre><h5 id="reference:"><a href="#reference:" class="anchor"></a>reference:</h5><p>Types.rei</p><pre><code class="re">type insets = {
+  .
+  &quot;left&quot;: int,
+  &quot;right&quot;: int,
+  &quot;top&quot;: int,
+  &quot;bottom&quot;: int,
+};</code></pre><p>RNEvent.rei</p><pre><code class="re">module NativeEvent: {
+  type t;
+  let changedTouches: t =&gt; array(Js.t({..}));
+  let identifier: t =&gt; int;
+  let locationX: t =&gt; float;
+  let locationY: t =&gt; float;
+  let pageX: t =&gt; float;
+  let pageY: t =&gt; float;
+  let target: t =&gt; Js.t({..});
+  let touches: t =&gt; array(Js.t({..}));
+  let timestamp: t =&gt; int;
+  let data: t =&gt; string;
+};</code></pre><h4 id="pointerevents"><a href="#pointerevents" class="anchor"></a>pointerEvents</h4><pre><code class="re">~pointerEvents: [
+  | `auto
+  | `none
+  | `boxNone
+  | `boxOnly
+]=?</code></pre><h4 id="style"><a href="#style" class="anchor"></a>style</h4><pre><code class="re">~style: Style.t=?</code></pre><h4 id="testid"><a href="#testid" class="anchor"></a>testID</h4><pre><code class="re">~testID: string=?</code></pre><h4 id="accessibilitycomponenttype"><a href="#accessibilitycomponenttype" class="anchor"></a>accessibilityComponentType</h4><pre><code class="re">~accessibilityComponentType: [
+  | `none
+  | `button
+  | `radiobutton_checked
+  | `radiobutton_unchecked
+]=?</code></pre><h4 id="accessibilityliveregion"><a href="#accessibilityliveregion" class="anchor"></a>accessibilityLiveRegion</h4><pre><code class="re">~accessibilityLiveRegion: [
+  | `none
+  | `polite
+  | `assertive
+]=?</code></pre><h4 id="collapsable"><a href="#collapsable" class="anchor"></a>collapsable</h4><pre><code class="re">~collapsable: bool=?</code></pre><h4 id="importantforaccessibility"><a href="#importantforaccessibility" class="anchor"></a>importantForAccessibility</h4><pre><code class="re">~importantForAccessibility: [
+  | `auto
+  | `yes
+  | `no
+  | `noHideDescendants
+]=?</code></pre><h4 id="needsoffscreenalphacompositing"><a href="#needsoffscreenalphacompositing" class="anchor"></a>needsOffscreenAlphaCompositing</h4><pre><code class="re">~needsOffscreenAlphaCompositing: bool=?</code></pre><h4 id="rendertohardwaretextureandroid"><a href="#rendertohardwaretextureandroid" class="anchor"></a>renderToHardwareTextureAndroid</h4><pre><code class="re">~renderToHardwareTextureAndroid: bool=?</code></pre><h4 id="accessibilitytraits"><a href="#accessibilitytraits" class="anchor"></a>accessibilityTraits</h4><pre><code class="re">~accessibilityTraits:
+  list(
+    [
+      | `adjustable
+      | `allowsDirectInteraction
+      | `button
+      | `disabled
+      | `frequentUpdates
+      | `header
+      | `image
+      | `key
+      | `link
+      | `none
+      | `pageTurn
+      | `plays
+      | `search
+      | `selected
+      | `startsMedia
+      | `summary
+      | `text
+    ],
+  )=?</code></pre><h4 id="accessibilityviewismodal"><a href="#accessibilityviewismodal" class="anchor"></a>accessibilityViewIsModal</h4><pre><code class="re">~accessibilityViewIsModal: bool=?</code></pre><h4 id="accessibilityviewismodal"><a href="#accessibilityviewismodal" class="anchor"></a>accessibilityViewIsModal</h4><pre><code class="re">~shouldRasterizeIOS: bool=?</code></pre></dd></dl></div></body></html>

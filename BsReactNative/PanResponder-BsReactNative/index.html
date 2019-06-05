@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>PanResponder-BsReactNative (BsReactNative.PanResponder-BsReactNative)</title><link rel="stylesheet" href="../../odoc.css"/><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/><script src="../../highlight.pack.js"></script><script>hljs.initHighlightingOnLoad();</script></head><body><div class="content"><header><nav><a href="../">Up</a> – <a href="../">BsReactNative</a> &#x00BB; PanResponder-BsReactNative</nav><h1>Module <code>PanResponder-BsReactNative</code></h1></header><dl><dt class="spec type" id="type-t"><a href="#type-t" class="anchor"></a><code><span class="keyword">type</span> t</code>;</dt><dd><p><code>PanResponder</code> reconciles several touches into a single gesture. It makes single-touch gestures resilient to extra touches, and can be used to recognize simple multi-touch gestures.</p><p>By default, PanResponder holds an <code>InteractionManager</code> handle to block long-running JS events from interrupting active gestures.</p><p>It provides a predictable wrapper of the responder handlers provided by the gesture responder system. For each handler, it provides a new <code>gestureState</code> object alongside the native event object:</p><pre><code class="re">onPanResponderMove: [
+                        | `callback(callback(unit))
+                        | `update(
+                            list(
+                              [
+                                | `X(AnimatedRe.Value.t)
+                                | `XY(AnimatedRe.ValueXY.t)
+                                | `Y(AnimatedRe.Value.t)
+                              ],
+                            ),
+                          )
+                      ]</code></pre><p>A native event is a synthetic touch event with the following form:</p><pre><code class="re">module NativeEvent: {
+  type t;
+  let changedTouches: t =&gt; array(Js.t({..}));
+  let identifier: t =&gt; int;
+  let locationX: t =&gt; float;
+  let locationY: t =&gt; float;
+  let pageX: t =&gt; float;
+  let pageY: t =&gt; float;
+  let target: t =&gt; Js.t({..});
+  let touches: t =&gt; array(Js.t({..}));
+  let timestamp: t =&gt; int;
+  let data: t =&gt; string;
+};</code></pre><p>A gestureState type is the following</p><pre><code class="re">type gestureState = {
+  stateID: float,
+  moveX: float,
+  moveY: float,
+  x0: float,
+  y0: float,
+  dx: float,
+  dy: float,
+  vx: float,
+  vy: float,
+  numberActiveTouches: int,
+};</code></pre><ul><li><code>stateID</code> - ID of the gestureState- persisted as long as there at least one touch on screen</li><li><code>moveX</code> - the latest screen coordinates of the recently-moved touch</li><li><code>moveY</code> - the latest screen coordinates of the recently-moved touch</li><li><code>x0</code> - the screen coordinates of the responder grant</li><li><code>y0</code> - the screen coordinates of the responder grant</li><li><code>dx</code> - accumulated distance of the gesture since the touch started</li><li><code>dy</code> - accumulated distance of the gesture since the touch started</li><li><code>vx</code> - current velocity of the gesture</li><li><code>vy</code> - current velocity of the gesture</li><li><code>numberActiveTouches</code> - Number of touches currently on screen</li></ul><p>You can read more on <code>PanResponder</code> API usage in official docs: <a href="https://facebook.github.io/react-native/docs/panresponder">https://facebook.github.io/react-native/docs/panresponder</a></p><h4 id="types"><a href="#types" class="anchor"></a>Types</h4><h5 id="t"><a href="#t" class="anchor"></a>t</h5><pre><code class="re">type t;</code></pre><h5 id="gesturestate"><a href="#gesturestate" class="anchor"></a>gestureState</h5><pre><code class="re">type gestureState = {
+  stateID: float,
+  moveX: float,
+  moveY: float,
+  x0: float,
+  y0: float,
+  dx: float,
+  dy: float,
+  vx: float,
+  vy: float,
+  numberActiveTouches: int,
+};</code></pre><h5 id="callback"><a href="#callback" class="anchor"></a>callback</h5><pre><code class="re">type callback('a);</code></pre><h5 id="callback"><a href="#callback" class="anchor"></a>callback</h5><pre><code class="re">let callback: ((RNEvent.NativeEvent.t, gestureState) =&gt; 'a) =&gt; callback('a);</code></pre><h5 id="create"><a href="#create" class="anchor"></a>create</h5><pre><code class="re">let create:
+(
+  ~onMoveShouldSetPanResponder: callback(bool)=?,
+  ~onMoveShouldSetPanResponderCapture: callback(bool)=?,
+  ~onStartShouldSetPanResponder: callback(bool)=?,
+  ~onStartShouldSetPanResponderCapture: callback(bool)=?,
+  ~onPanResponderReject: callback(unit)=?,
+  ~onPanResponderGrant: callback(unit)=?,
+  ~onPanResponderStart: callback(unit)=?,
+  ~onPanResponderEnd: callback(unit)=?,
+  ~onPanResponderRelease: callback(unit)=?,
+  ~onPanResponderMove: [
+                         | `callback(callback(unit))
+                         | `update(
+                             list(
+                               [
+                                 | `X(AnimatedRe.Value.t)
+                                 | `XY(AnimatedRe.ValueXY.t)
+                                 | `Y(AnimatedRe.Value.t)
+                               ],
+                             ),
+                           )
+                       ]
+                         =?,
+  ~onPanResponderTerminate: callback(unit)=?,
+  ~onPanResponderTerminationRequest: callback(bool)=?,
+  ~onShouldBlockNativeResponder: callback(bool)=?,
+  unit
+) =&gt;
+t;</code></pre><h5 id="panhandlers"><a href="#panhandlers" class="anchor"></a>panHandlers</h5><pre><code class="re">let panHandlers: t =&gt; Types.touchResponderHandlers;</code></pre><p>reference <b>Types.touchResponderHandlers</b></p><pre><code class="re">  type touchResponderHandlers = {
+  onMoveShouldSetResponder: option(RNEvent.NativeEvent.t =&gt; bool),
+  onMoveShouldSetResponderCapture: option(RNEvent.NativeEvent.t =&gt; bool),
+  onResponderGrant: option(RNEvent.NativeEvent.t =&gt; unit),
+  onResponderMove: option(RNEvent.NativeEvent.t =&gt; unit),
+  onResponderReject: option(RNEvent.NativeEvent.t =&gt; unit),
+  onResponderRelease: option(RNEvent.NativeEvent.t =&gt; unit),
+  onResponderTerminate: option(RNEvent.NativeEvent.t =&gt; unit),
+  onResponderTerminationRequest: option(RNEvent.NativeEvent.t =&gt; unit),
+  onStartShouldSetResponder: option(RNEvent.NativeEvent.t =&gt; bool),
+  onStartShouldSetResponderCapture: option(RNEvent.NativeEvent.t =&gt; bool),
+};</code></pre><p>reference <b>RNEvent.NativeEvent</b></p><pre><code class="re">  module NativeEvent: {
+  type t;
+  let changedTouches: t =&gt; array(Js.t({..}));
+  let identifier: t =&gt; int;
+  let locationX: t =&gt; float;
+  let locationY: t =&gt; float;
+  let pageX: t =&gt; float;
+  let pageY: t =&gt; float;
+  let target: t =&gt; Js.t({..});
+  let touches: t =&gt; array(Js.t({..}));
+  let timestamp: t =&gt; int;
+  let data: t =&gt; string;
+};</code></pre></dd></dl><dl><dt class="spec type" id="type-gestureState"><a href="#type-gestureState" class="anchor"></a><code><span class="keyword">type</span> gestureState</code><code> = </code><code>{</code><table class="record"><tr id="type-gestureState.stateID" class="anchored"><td class="def field"><a href="#type-gestureState.stateID" class="anchor"></a><code>stateID: float,</code></td></tr><tr id="type-gestureState.moveX" class="anchored"><td class="def field"><a href="#type-gestureState.moveX" class="anchor"></a><code>moveX: float,</code></td></tr><tr id="type-gestureState.moveY" class="anchored"><td class="def field"><a href="#type-gestureState.moveY" class="anchor"></a><code>moveY: float,</code></td></tr><tr id="type-gestureState.x0" class="anchored"><td class="def field"><a href="#type-gestureState.x0" class="anchor"></a><code>x0: float,</code></td></tr><tr id="type-gestureState.y0" class="anchored"><td class="def field"><a href="#type-gestureState.y0" class="anchor"></a><code>y0: float,</code></td></tr><tr id="type-gestureState.dx" class="anchored"><td class="def field"><a href="#type-gestureState.dx" class="anchor"></a><code>dx: float,</code></td></tr><tr id="type-gestureState.dy" class="anchored"><td class="def field"><a href="#type-gestureState.dy" class="anchor"></a><code>dy: float,</code></td></tr><tr id="type-gestureState.vx" class="anchored"><td class="def field"><a href="#type-gestureState.vx" class="anchor"></a><code>vx: float,</code></td></tr><tr id="type-gestureState.vy" class="anchored"><td class="def field"><a href="#type-gestureState.vy" class="anchor"></a><code>vy: float,</code></td></tr><tr id="type-gestureState.numberActiveTouches" class="anchored"><td class="def field"><a href="#type-gestureState.numberActiveTouches" class="anchor"></a><code>numberActiveTouches: int,</code></td></tr></table><code>}</code>;</dt><dt class="spec type" id="type-callback"><a href="#type-callback" class="anchor"></a><code><span class="keyword">type</span> callback('a)</code>;</dt></dl><dl><dt class="spec value" id="val-callback"><a href="#val-callback" class="anchor"></a><code><span class="keyword">let</span> callback: (BsReactNative.RNEvent.NativeEvent.t <span>=&gt;</span> <a href="#type-gestureState">gestureState</a> <span>=&gt;</span> <span class="type-var">'a</span>) <span>=&gt;</span> <a href="#type-callback">callback</a>(<span class="type-var">'a</span>);</code></dt><dt class="spec value" id="val-create"><a href="#val-create" class="anchor"></a><code><span class="keyword">let</span> create: ?&#8288;onMoveShouldSetPanResponder:<a href="#type-callback">callback</a>(bool) <span>=&gt;</span> ?&#8288;onMoveShouldSetPanResponderCapture:<a href="#type-callback">callback</a>(bool) <span>=&gt;</span> ?&#8288;onStartShouldSetPanResponder:<a href="#type-callback">callback</a>(bool) <span>=&gt;</span> ?&#8288;onStartShouldSetPanResponderCapture:<a href="#type-callback">callback</a>(bool) <span>=&gt;</span> ?&#8288;onPanResponderReject:<a href="#type-callback">callback</a>(unit) <span>=&gt;</span> ?&#8288;onPanResponderGrant:<a href="#type-callback">callback</a>(unit) <span>=&gt;</span> ?&#8288;onPanResponderStart:<a href="#type-callback">callback</a>(unit) <span>=&gt;</span> ?&#8288;onPanResponderEnd:<a href="#type-callback">callback</a>(unit) <span>=&gt;</span> ?&#8288;onPanResponderRelease:<a href="#type-callback">callback</a>(unit) <span>=&gt;</span> ?&#8288;onPanResponderMove:[ `callback(<a href="#type-callback">callback</a>(unit)) | `update(list([ `X(BsReactNative.AnimatedRe.Value.t) | `XY(BsReactNative.AnimatedRe.ValueXY.t) | `Y(BsReactNative.AnimatedRe.Value.t) ])) ] <span>=&gt;</span> ?&#8288;onPanResponderTerminate:<a href="#type-callback">callback</a>(unit) <span>=&gt;</span> ?&#8288;onPanResponderTerminationRequest:<a href="#type-callback">callback</a>(bool) <span>=&gt;</span> ?&#8288;onShouldBlockNativeResponder:<a href="#type-callback">callback</a>(bool) <span>=&gt;</span> unit <span>=&gt;</span> <a href="#type-t">t</a>;</code></dt><dt class="spec value" id="val-panHandlers"><a href="#val-panHandlers" class="anchor"></a><code><span class="keyword">let</span> panHandlers: <a href="#type-t">t</a> <span>=&gt;</span> BsReactNative.Types.touchResponderHandlers;</code></dt></dl></div></body></html>

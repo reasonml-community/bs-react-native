@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>Picker-BsReactNative (BsReactNative.Picker-BsReactNative)</title><link rel="stylesheet" href="../../odoc.css"/><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/><script src="../../highlight.pack.js"></script><script>hljs.initHighlightingOnLoad();</script></head><body><div class="content"><header><nav><a href="../">Up</a> – <a href="../">BsReactNative</a> &#x00BB; Picker-BsReactNative</nav><h1>Module <code>Picker-BsReactNative</code></h1></header><dl><dt class="spec value" id="val-make"><a href="#val-make" class="anchor"></a><code><span class="keyword">let</span> make: ?&#8288;onValueChange:(<span class="type-var">'value</span> <span>=&gt;</span> unit) <span>=&gt;</span> ?&#8288;selectedValue:<span class="type-var">'value</span> <span>=&gt;</span> ?&#8288;enabled:bool <span>=&gt;</span> ?&#8288;mode:[ `dialog | `dropdown ] <span>=&gt;</span> ?&#8288;prompt:string <span>=&gt;</span> ?&#8288;itemStyle:BsReactNative.Style.t <span>=&gt;</span> ?&#8288;accessibilityLabel:ReasonReact.reactElement <span>=&gt;</span> ?&#8288;accessible:bool <span>=&gt;</span> ?&#8288;hitSlop:BsReactNative.Types.insets <span>=&gt;</span> ?&#8288;onAccessibilityTap:(unit <span>=&gt;</span> unit) <span>=&gt;</span> ?&#8288;onLayout:(BsReactNative.RNEvent.NativeLayoutEvent.t <span>=&gt;</span> unit) <span>=&gt;</span> ?&#8288;onMagicTap:(unit <span>=&gt;</span> unit) <span>=&gt;</span> ?&#8288;responderHandlers:BsReactNative.Types.touchResponderHandlers <span>=&gt;</span> ?&#8288;pointerEvents:BsReactNative.Types.pointerEvents <span>=&gt;</span> ?&#8288;removeClippedSubviews:bool <span>=&gt;</span> ?&#8288;style:BsReactNative.Style.t <span>=&gt;</span> ?&#8288;testID:string <span>=&gt;</span> ?&#8288;accessibilityComponentType:BsReactNative.Types.accessibilityComponentType <span>=&gt;</span> ?&#8288;accessibilityLiveRegion:BsReactNative.Types.accessibilityLiveRegion <span>=&gt;</span> ?&#8288;collapsable:bool <span>=&gt;</span> ?&#8288;importantForAccessibility:BsReactNative.Types.importantForAccessibility <span>=&gt;</span> ?&#8288;needsOffscreenAlphaCompositing:bool <span>=&gt;</span> ?&#8288;renderToHardwareTextureAndroid:bool <span>=&gt;</span> ?&#8288;accessibilityTraits:list(BsReactNative.Types.accessibilityTrait) <span>=&gt;</span> ?&#8288;accessibilityRole:BsReactNative.Types.accessibilityRole <span>=&gt;</span> ?&#8288;accessibilityStates:list(BsReactNative.Types.accessibilityState) <span>=&gt;</span> ?&#8288;accessibilityHint:string <span>=&gt;</span> ?&#8288;accessibilityIgnoresInvertColors:bool <span>=&gt;</span> ?&#8288;accessibilityViewIsModal:bool <span>=&gt;</span> ?&#8288;shouldRasterizeIOS:bool <span>=&gt;</span> array(ReasonReact.reactElement) <span>=&gt;</span> ReasonReact.component(ReasonReact.stateless, ReasonReact.noRetainedProps, unit);</code></dt><dd><h4 id="example-of-use"><a href="#example-of-use" class="anchor"></a>Example of use</h4><p>In order to render a <code>Picker</code> component <a href="https://facebook.github.io/react-native/docs/picker">https://facebook.github.io/react-native/docs/picker</a> you will need to pass one or many <code>Picker.Item</code> components as children.</p><p>And <code>Picker.Item</code> has a required <code>label</code> prop</p><h5 id="default"><a href="#default" class="anchor"></a>default</h5><pre><code class="re">let component = ReasonReact.statelessComponent(&quot;MyComponent&quot;);
+
+let make = _children =&gt; {
+  ...component,
+  render: _self =&gt;
+    &lt;View&gt;
+      &lt;Picker&gt;
+        &lt;Picker.Item label=&quot;ReasonML&quot; value=&quot;reason&quot; /&gt;
+        &lt;Picker.Item label=&quot;Ocaml&quot; value=&quot;ocaml&quot; /&gt;
+        &lt;Picker.Item label=&quot;JavaScript&quot; value=&quot;js&quot; /&gt;
+      &lt;/Picker&gt;
+    &lt;/View&gt;,
+};</code></pre><h5 id="selectedvalue-and-onvaluechange"><a href="#selectedvalue-and-onvaluechange" class="anchor"></a>selectedValue and onValueChange</h5><pre><code class="re">let component = ReasonReact.statelessComponent(&quot;MyComponent&quot;);
+
+let make = _children =&gt; {
+  ...component,
+  render: _self =&gt;
+    &lt;View&gt;
+      &lt;Picker selectedValue=&quot;ocaml&quot; onValueChange=(value =&gt; Js.log(value))&gt;
+        &lt;Picker.Item label=&quot;ReasonML&quot; value=&quot;reason&quot; /&gt;
+        &lt;Picker.Item label=&quot;Ocaml&quot; value=&quot;ocaml&quot; /&gt;
+        &lt;Picker.Item label=&quot;JavaScript&quot; value=&quot;js&quot; /&gt;
+      &lt;/Picker&gt;
+    &lt;/View&gt;,
+};</code></pre><h4 id="props"><a href="#props" class="anchor"></a>Props</h4><h5 id="onvaluechange"><a href="#onvaluechange" class="anchor"></a>onValueChange</h5><pre><code class="re">onValueChange: 'value =&gt; unit=?</code></pre><h5 id="selectedvalue"><a href="#selectedvalue" class="anchor"></a>selectedValue</h5><pre><code class="re">selectedValue: 'value=?</code></pre><h5 id="enabled"><a href="#enabled" class="anchor"></a>enabled</h5><pre><code class="re">enabled: bool=?</code></pre><h5 id="mode"><a href="#mode" class="anchor"></a>mode</h5><p>On <b>Android only</b>, specifies how to display the selection items when the user taps on the picker:</p><ul><li><code>`dialog</code> - shows a modal dialog. This is the default.</li><li><p><code>`dropdown</code> - shows a dropdown anchored to the picker view</p><pre><code class="re">mode: [
+  | `dialog
+  | `dropdown
+]=?</code></pre></li></ul><h5 id="prompt"><a href="#prompt" class="anchor"></a>prompt</h5><pre><code class="re">prompt: string=?</code></pre><h5 id="itemstyle"><a href="#itemstyle" class="anchor"></a>itemStyle</h5><pre><code class="re">itemStyle: Style.t=?</code></pre><h5 id="accessibilitylabel"><a href="#accessibilitylabel" class="anchor"></a>accessibilityLabel</h5><pre><code class="re">accessibilityLabel: ReasonReact.reactElement=?</code></pre><h5 id="accessible"><a href="#accessible" class="anchor"></a>accessible</h5><pre><code class="re">accessible: bool=?</code></pre><h5 id="hitslop"><a href="#hitslop" class="anchor"></a>hitSlop</h5><pre><code class="re">hitSlop: Types.insets=?</code></pre><p>reference:</p><h5 id="types.rei"><a href="#types.rei" class="anchor"></a>Types.rei</h5><pre><code class="re">type insets = {
+  .
+  &quot;left&quot;: int,
+  &quot;right&quot;: int,
+  &quot;top&quot;: int,
+  &quot;bottom&quot;: int,
+};</code></pre><h5 id="onaccessibilitytap"><a href="#onaccessibilitytap" class="anchor"></a>onAccessibilityTap</h5><pre><code class="re">onAccessibilityTap: unit =&gt; unit=?</code></pre><h5 id="onlayout"><a href="#onlayout" class="anchor"></a>onLayout</h5><pre><code class="re">onLayout: RNEvent.NativeLayoutEvent.t =&gt; unit=?</code></pre><p>Reference <a href="/BsReactNative/RNEvent-BsReactNative/NativeLayoutEvent/"><code>RNEvent.NativeLayoutEvent</code></a></p><h5 id="onmagictap"><a href="#onmagictap" class="anchor"></a>onMagicTap</h5><pre><code class="re">onMagicTap: unit =&gt; unit=?</code></pre><h5 id="responderhandlers"><a href="#responderhandlers" class="anchor"></a>responderHandlers</h5><pre><code class="re">responderHandlers: Types.touchResponderHandlers=?</code></pre><p>reference:</p><h5 id="types.rei"><a href="#types.rei" class="anchor"></a>Types.rei</h5><pre><code class="re">type touchResponderHandlers = {
+  onMoveShouldSetResponder: option(RNEvent.NativeEvent.t =&gt; bool),
+  onMoveShouldSetResponderCapture: option(RNEvent.NativeEvent.t =&gt; bool),
+  onResponderGrant: option(RNEvent.NativeEvent.t =&gt; unit),
+  onResponderMove: option(RNEvent.NativeEvent.t =&gt; unit),
+  onResponderReject: option(RNEvent.NativeEvent.t =&gt; unit),
+  onResponderRelease: option(RNEvent.NativeEvent.t =&gt; unit),
+  onResponderTerminate: option(RNEvent.NativeEvent.t =&gt; unit),
+  onResponderTerminationRequest: option(RNEvent.NativeEvent.t =&gt; unit),
+  onStartShouldSetResponder: option(RNEvent.NativeEvent.t =&gt; bool),
+  onStartShouldSetResponderCapture: option(RNEvent.NativeEvent.t =&gt; bool)
+};</code></pre><h5 id="rnevent.rei"><a href="#rnevent.rei" class="anchor"></a>RNEvent.rei</h5><pre><code class="re">module NativeEvent: {
+  type t;
+  let changedTouches: t =&gt; array(Js.t({..}));
+  let identifier: t =&gt; int;
+  let locationX: t =&gt; float;
+  let locationY: t =&gt; float;
+  let pageX: t =&gt; float;
+  let pageY: t =&gt; float;
+  let target: t =&gt; Js.t({..});
+  let touches: t =&gt; array(Js.t({..}));
+  let timestamp: t =&gt; int;
+  let data: t =&gt; string;
+};</code></pre><h5 id="pointerevents"><a href="#pointerevents" class="anchor"></a>pointerEvents</h5><pre><code class="re">pointerEvents: [
+  | `auto
+  | `none
+  | `boxNone
+  | `boxOnly
+]=?</code></pre><h5 id="removeclippedsubviews"><a href="#removeclippedsubviews" class="anchor"></a>removeClippedSubviews</h5><pre><code class="re">removeClippedSubviews: bool=?</code></pre><h5 id="style"><a href="#style" class="anchor"></a>style</h5><pre><code class="re">style: Style.t=?</code></pre><h5 id="testid"><a href="#testid" class="anchor"></a>testID</h5><pre><code class="re">testID: string=?</code></pre><h5 id="accessibilitycomponenttype"><a href="#accessibilitycomponenttype" class="anchor"></a>accessibilityComponentType</h5><pre><code class="re">accessibilityComponentType: [
+  | `none
+  | `button
+  | `radiobutton_checked
+  | `radiobutton_unchecked
+]=?</code></pre><h5 id="accessibilityliveregion"><a href="#accessibilityliveregion" class="anchor"></a>accessibilityLiveRegion</h5><pre><code class="re">accessibilityLiveRegion: [
+  | `none
+  | `polite
+  | `assertive
+]=?</code></pre><h5 id="collapsable"><a href="#collapsable" class="anchor"></a>collapsable</h5><pre><code class="re">collapsable: bool=?</code></pre><h5 id="importantforaccessibility"><a href="#importantforaccessibility" class="anchor"></a>importantForAccessibility</h5><pre><code class="re">importantForAccessibility: [
+  | `auto
+  | `yes
+  | `no
+  | `noHideDescendants
+]=?</code></pre><h5 id="needsoffscreenalphacompositing"><a href="#needsoffscreenalphacompositing" class="anchor"></a>needsOffscreenAlphaCompositing</h5><pre><code class="re">needsOffscreenAlphaCompositing: bool=?</code></pre><h5 id="rendertohardwaretextureandroid"><a href="#rendertohardwaretextureandroid" class="anchor"></a>renderToHardwareTextureAndroid</h5><pre><code class="re">renderToHardwareTextureAndroid: bool=?</code></pre><h5 id="accessibilitytraits"><a href="#accessibilitytraits" class="anchor"></a>accessibilityTraits</h5><pre><code class="re">accessibilityTraits: list(
+  [
+    | `none
+    | `button
+    | `link
+    | `header
+    | `search
+    | `image
+    | `selected
+    | `plays
+    | `key
+    | `text
+    | `summary
+    | `disabled
+    | `frequentUpdates
+    | `startsMedia
+    | `adjustable
+    | `allowsDirectInteraction
+    | `pageTurn
+  ]
+)=?</code></pre><h5 id="accessibilityviewismodal"><a href="#accessibilityviewismodal" class="anchor"></a>accessibilityViewIsModal</h5><pre><code class="re">accessibilityViewIsModal: bool=?</code></pre><h5 id="shouldrasterizeios"><a href="#shouldrasterizeios" class="anchor"></a>shouldRasterizeIOS</h5><pre><code class="re">shouldRasterizeIOS: bool=?</code></pre></dd></dl><dl><dt class="spec module" id="module-Item"><a href="#module-Item" class="anchor"></a><code><span class="keyword">module</span> <a href="Item">Item</a>: { ... };</code></dt><dd><p><code>Picker.Item</code> component is used <b>only</b> inside <code>&lt;Picker&gt;&lt;/Picker&gt;</code> component</p></dd></dl></div></body></html>

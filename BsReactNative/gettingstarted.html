@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>gettingstarted (BsReactNative.gettingstarted)</title><link rel="stylesheet" href="../odoc.css"/><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/><script src="../highlight.pack.js"></script><script>hljs.initHighlightingOnLoad();</script></head><body><div class="content"><header><nav><a href="">Up</a> – <a href="">BsReactNative</a> &#x00BB; gettingstarted</nav></header><h2 id="getting-started"><a href="#getting-started" class="anchor"></a>Getting started</h2><p>You can create a new React Native project by running the following:</p><pre><code class="ml">react-native init MyApp --template reason</code></pre><p>This will create a fresh React Native project using <code>reason</code> template, giving you the already preconfigured Reason environment out of the box.</p><h5 id="suggested-workflow"><a href="#suggested-workflow" class="anchor"></a>Suggested workflow</h5><p>For better developer experience, consider adding <code>build</code> and <code>watch</code> scripts to your <code>package.json</code>.</p><p>The result should look similar to the following:</p><pre><code class="ml">&quot;scripts&quot;: {
+  &quot;start&quot;: &quot;node node_modules/react-native/local-cli/cli.js start&quot;,
+  &quot;test&quot;: &quot;jest&quot;,
+  &quot;build&quot;: &quot;bsb -make-world -clean-world&quot;,
+  &quot;watch&quot;: &quot;bsb -make-world -clean-world -w&quot;
+}</code></pre><p>Now, you can start your application just like <a href="https://facebook.github.io/react-native/docs/getting-started#running-your-react-native-application-1">any other React Native app</a>. Make sure to have either <code>build</code> or <code>watch</code> script running to compile Reason to Javascript.</p><p>To better understand the integration between Reason and React Native, please see <a href="#add-package-scripts">the following section</a> that explains the manual integration step by step.</p><h4 id="integrating-with-existing-rn-project"><a href="#integrating-with-existing-rn-project" class="anchor"></a>Integrating with existing RN project</h4><p>Let's add the dependencies first:</p><pre><code class="ml">yarn add bs-platform reason-react bs-react-native</code></pre><h5 id="set-up-project-structure"><a href="#set-up-project-structure" class="anchor"></a>Set up project structure</h5><p>Create a directory where the Reason code will be compiled from. In our case it will be <code>src</code> (but it could be any other directory, just remember to reference it in the <code>bsconfig.json</code> - see below):</p><pre><code class="ml">mkdir src</code></pre><p>Now we will add the <code>bsconfig.json</code> BuckleScript configuration file, in the root of the project:</p><pre><code class="ml">touch bsconfig.json</code></pre><p><b>bsconfig.json</b></p><pre><code class="ml">{
+  &quot;name&quot;: &quot;my-reason-react-native-app&quot;,
+  &quot;refmt&quot;: 3,
+  &quot;reason&quot;: {
+    &quot;react-jsx&quot;: 2
+  },
+  &quot;bs-dependencies&quot;: [&quot;bs-react-native&quot;, &quot;reason-react&quot;],
+  &quot;sources&quot;: [
+    {
+      &quot;dir&quot;: &quot;src&quot;
+    }
+  ],
+}</code></pre><h5 id="add-package-scripts"><a href="#add-package-scripts" class="anchor"></a>Add package scripts</h5><p>Last thing we need to do is to add a few scripts to already exisiting <code>package.json</code> file:</p><pre><code class="ml">&quot;scripts&quot;: {
+  &quot;start&quot;: &quot;node node_modules/react-native/local-cli/cli.js start&quot;,
+  &quot;test&quot;: &quot;jest&quot;,
+  &quot;build&quot;: &quot;bsb -make-world -clean-world&quot;,
+  &quot;watch&quot;: &quot;bsb -make-world -clean-world -w&quot;
+}</code></pre><p>A bit of explanation to what both of the scripts do:</p><ul><li><code>yarn build</code> - performs a single build</li><li><code>yarn watch</code> - enters the watch mode</li></ul><h5 id="create-first-component"><a href="#create-first-component" class="anchor"></a>Create first component</h5><p>Now let's add our first component in Reason, add <code>App.re</code> in the <code>src</code> folder:</p><p><b>App.re</b></p><pre><code class="ml">open BsReactNative;
+
+let app = () =&gt;
+  &lt;View&gt;
+    &lt;Text&gt; (ReasonReact.string(&quot;Let's get this party started!&quot;)) &lt;/Text&gt;
+  &lt;/View&gt;;</code></pre><h5 id="set-up-entry-point"><a href="#set-up-entry-point" class="anchor"></a>Set up entry point</h5><p>We are going to use <code>App.re</code> as the entry point in the <code>index.js</code> file from the root of the project:</p><p><b>index.js</b></p><pre><code class="ml">import { app } from './lib/js/src/App.js';
+import React from 'react';
+import { AppRegistry } from 'react-native';
+
+AppRegistry.registerComponent('MyReasonReactNativeApp', () =&gt; app);</code></pre><p>In the first line we are referencing <code>app</code>, but it is not the one from <code>src/App.re</code>, this is because we are in the JavaScript world now, and we need to use compiled version of what we've written in Reason.</p><p>There is an option in the BuckleScript's config file <code>bsconfig.json</code> to compile files in source, so they will no longer be compiled to <code>lib/</code> (as that is what BuckleScript does by default), instead they will be compiled into the same directory where they Reason files are located.</p><p>When you add this to your <code>bsconfig.json</code>, you will get in source compilation that we just spoke about:</p><p><b>bsconfig.json</b></p><pre><code class="ml">&quot;package-specs&quot;: {
+  &quot;module&quot;: &quot;commonjs&quot;,
+  &quot;in-source&quot;: true
+}</code></pre><p>and then you can reference the files in the shorter way:</p><p><b>index.js</b></p><pre><code class="ml">import { app } from './src/App.js';
+import React from 'react';
+import { AppRegistry } from 'react-native';
+
+AppRegistry.registerComponent('MyReasonReactNativeApp', () =&gt; app);</code></pre><h5 id="you-can-run-your-app-now"><a href="#you-can-run-your-app-now" class="anchor"></a>You can run your app now</h5><p>Run in one tab of your terminal <code>yarn run watch</code> to compile the ReasonML code, and in the other start the React Native app in the simulator <code>react-native run-ios</code></p></div></body></html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>StyleSheet-BsReactNative (BsReactNative.StyleSheet-BsReactNative)</title><link rel="stylesheet" href="../../odoc.css"/><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/><script src="../../highlight.pack.js"></script><script>hljs.initHighlightingOnLoad();</script></head><body><div class="content"><header><nav><a href="../">Up</a> – <a href="../">BsReactNative</a> &#x00BB; StyleSheet-BsReactNative</nav><h1>Module <code>StyleSheet-BsReactNative</code></h1></header><dl><dt class="spec type" id="type-t"><a href="#type-t" class="anchor"></a><code><span class="keyword">type</span> t</code>;</dt><dd><p>A StyleSheet is an abstraction similar to CSS StyleSheets</p><p>You can read more on <code>Stylesheet</code> API usage in official docs: <a href="https://facebook.github.io/react-native/docs/stylesheet">https://facebook.github.io/react-native/docs/stylesheet</a></p><h4 id="example-of-use"><a href="#example-of-use" class="anchor"></a>Example of use</h4><pre><code class="re">let styles =
+StyleSheet.create(
+  Style.{
+    &quot;box&quot;:
+      style([
+        backgroundColor(String(&quot;#527FE4&quot;)),
+        borderColor(String(&quot;#000033&quot;)),
+        borderWidth(1.),
+      ]),
+    &quot;zIndex&quot;:
+      style([
+        justifyContent(SpaceAround),
+        width(Pt(100.)),
+        height(Pt(50.)),
+        marginTop(Pt(-10.)),
+      ]),
+  },
+);</code></pre><h4 id="methods"><a href="#methods" class="anchor"></a>Methods</h4><h5 id="create"><a href="#create" class="anchor"></a>create</h5><pre><code class="re">let create: Js.t('a) =&gt; Js.t('a);</code></pre><h5 id="flatten"><a href="#flatten" class="anchor"></a>flatten</h5><pre><code class="re">let flatten: list(Style.t) =&gt; Style.t;</code></pre><h5 id="processcolor"><a href="#processcolor" class="anchor"></a>processColor</h5><pre><code class="re">let processColor: [ | `String(string) | `Number(int)] =&gt; string;</code></pre><h4 id="utils"><a href="#utils" class="anchor"></a>Utils</h4><h5 id="hairlinewidth"><a href="#hairlinewidth" class="anchor"></a>hairlineWidth</h5><p>This constant will always be a round number of pixels (so a line defined by it can look crisp) and will try to match the standard width of a thin line on the underlying platform. However, you should not rely on it being a constant size, because on different platforms and screen densities its value may be calculated differently.</p><p>A line with hairline width may not be visible if your simulator is downscaled.</p><pre><code class="re">let hairlineWidth: float;</code></pre><h5 id="absolutefill"><a href="#absolutefill" class="anchor"></a>absoluteFill</h5><p>A very common pattern is to create overlays with position absolute and zero positioning, so <code>absoluteFill</code> can be used for convenience and to reduce duplication of these repeated styles.</p><pre><code class="re">let absoluteFill: Style.t;</code></pre><h5 id="absolutefillobject"><a href="#absolutefillobject" class="anchor"></a>absoluteFillObject</h5><p>Sometimes you may want absoluteFill but with a couple tweaks - <code>absoluteFillObject</code> can be used to create a customized entry in a StyleSheet, e.g.:</p><pre><code class="re">let absoluteFillObject: Style.t;</code></pre></dd></dl><dl><dt class="spec external" id="val-t"><a href="#val-t" class="anchor"></a><code><span class="keyword">let</span> t: <a href="#type-t">t</a>;</code></dt></dl><dl><dt class="spec value" id="val-create"><a href="#val-create" class="anchor"></a><code><span class="keyword">let</span> create: Js.t(<span class="type-var">'a</span>) <span>=&gt;</span> Js.t(<span class="type-var">'a</span>);</code></dt><dd><p>Method to create a StyleSheet Eg:</p><pre><code class="re">let styles =
+  StyleSheet.create(
+    Style.{
+      &quot;box&quot;:
+        style([
+          backgroundColor(String(&quot;#527FE4&quot;)),
+        ]),
+    },
+  );</code></pre></dd></dl><dl><dt class="spec value" id="val-hairlineWidth"><a href="#val-hairlineWidth" class="anchor"></a><code><span class="keyword">let</span> hairlineWidth: float;</code></dt><dt class="spec value" id="val-absoluteFill"><a href="#val-absoluteFill" class="anchor"></a><code><span class="keyword">let</span> absoluteFill: BsReactNative.Style.t;</code></dt><dt class="spec value" id="val-absoluteFillObject"><a href="#val-absoluteFillObject" class="anchor"></a><code><span class="keyword">let</span> absoluteFillObject: BsReactNative.Style.t;</code></dt><dt class="spec value" id="val-flatten"><a href="#val-flatten" class="anchor"></a><code><span class="keyword">let</span> flatten: list(BsReactNative.Style.t) <span>=&gt;</span> BsReactNative.Style.t;</code></dt><dt class="spec value" id="val-processColor"><a href="#val-processColor" class="anchor"></a><code><span class="keyword">let</span> processColor: [ `String(string) | `Number(int) ] <span>=&gt;</span> string;</code></dt></dl></div></body></html>

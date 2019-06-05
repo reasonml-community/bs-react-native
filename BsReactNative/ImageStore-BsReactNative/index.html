@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>ImageStore-BsReactNative (BsReactNative.ImageStore-BsReactNative)</title><link rel="stylesheet" href="../../odoc.css"/><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/><script src="../../highlight.pack.js"></script><script>hljs.initHighlightingOnLoad();</script></head><body><div class="content"><header><nav><a href="../">Up</a> – <a href="../">BsReactNative</a> &#x00BB; ImageStore-BsReactNative</nav><h1>Module <code>ImageStore-BsReactNative</code></h1></header><dl><dt class="spec type" id="type-error"><a href="#type-error" class="anchor"></a><code><span class="keyword">type</span> error</code>;</dt><dd><p>IOS only</p><p>API which allows to use native iOS Image Store.</p><p>You can read more on <code>ImageStore</code> API usage in official docs: <a href="https://facebook.github.io/react-native/docs/imagestore">https://facebook.github.io/react-native/docs/imagestore</a></p><h4 id="example-of-use"><a href="#example-of-use" class="anchor"></a>Example of use</h4><pre><code class="re">type action =
+| SetImageUri(string);
+
+type state = {imageUri: option(string)};
+
+let component = ReasonReact.reducerComponent(&quot;ImageExample&quot;);
+
+let make = _children =&gt; {
+  ...component,
+  initialState: () =&gt; {imageUri: None},
+  reducer: (action: action, _state: state) =&gt;
+    switch (action) {
+    | SetImageUri(imageUri) =&gt;
+      ReasonReact.Update({imageUri: Some(imageUri)})
+    },
+  render: self =&gt;
+    &lt;View&gt;
+      &lt;Button
+        onPress=(
+          () =&gt; {
+            ImageStore.addImageFromBase64(
+              image,
+              uri =&gt; self.send(SetImageUri(uri)),
+              _ =&gt; (),
+            );
+            ();
+          }
+        )
+        title=&quot;Set Image Uri&quot;
+      /&gt;
+      (
+        switch (self.state.imageUri) {
+        | Some(imageUri) =&gt;
+          &lt;Image
+            source=(
+              `URI(
+                Image.imageURISource(
+                  ~uri=imageUri,
+                  ~width=200.,
+                  ~height=200.,
+                  (),
+                ),
+              )
+            )
+          /&gt;
+        | None =&gt; ReasonReact.null
+        }
+      )
+    &lt;/View&gt;,
+};</code></pre><h4 id="methods"><a href="#methods" class="anchor"></a>Methods</h4><h5 id="hasimagefortag"><a href="#hasimagefortag" class="anchor"></a>hasImageForTag</h5><p>Checks if Image Store contains image for given tag (URI).</p><pre><code class="re">let hasImageForTag: (string, bool =&gt; unit) =&gt; unit;</code></pre><p><b>Arguments</b></p><ul><li>First argument - image URI</li><li>Second argument - callback which takes the boolean result as an argument</li></ul><h5 id="removeimagefortag"><a href="#removeimagefortag" class="anchor"></a>removeImageForTag</h5><p>Removes image from Image Store for given tag (URI). Images are stored in memory and must be manually removed when you are finished with them, otherwise they will continue to use up RAM until the app is terminated</p><pre><code class="re">let removeImageForTag: string =&gt; unit;</code></pre><p><b>Arguments</b></p><ul><li>First argument - image URI</li></ul><h5 id="addimagefrombase64"><a href="#addimagefrombase64" class="anchor"></a>addImageFromBase64</h5><p>Adds image to Store.</p><pre><code class="re">let addImageFromBase64: (string, string =&gt; unit, error =&gt; unit) =&gt; string;</code></pre><p><b>Arguments</b></p><ul><li>First argument - image string in base64</li><li>Second argument - success callback which gets image URI as an aargument</li><li>Third argument - failure callback which gets error as an argument</li></ul><h5 id="getbase64fortag"><a href="#getbase64fortag" class="anchor"></a>getBase64ForTag</h5><p>Retrieves the base64-encoded image data for given tag (URI).</p><pre><code class="re">let getBase64ForTag: (string, string =&gt; unit, error =&gt; unit) =&gt; unit;</code></pre><p><b>Arguments</b></p><ul><li>First argument - Image URI in base64</li><li>Second argument - success callback which gets image string in base64 as an aargument</li><li>Third argument - failure callback which gets error as an argument</li></ul></dd></dl><dl><dt class="spec type" id="type-base64Image"><a href="#type-base64Image" class="anchor"></a><code><span class="keyword">type</span> base64Image</code><code> = string</code>;</dt></dl><dl><dt class="spec value" id="val-hasImageForTag"><a href="#val-hasImageForTag" class="anchor"></a><code><span class="keyword">let</span> hasImageForTag: string <span>=&gt;</span> (bool <span>=&gt;</span> unit) <span>=&gt;</span> unit;</code></dt><dt class="spec value" id="val-removeImageForTag"><a href="#val-removeImageForTag" class="anchor"></a><code><span class="keyword">let</span> removeImageForTag: string <span>=&gt;</span> unit;</code></dt><dt class="spec value" id="val-addImageFromBase64"><a href="#val-addImageFromBase64" class="anchor"></a><code><span class="keyword">let</span> addImageFromBase64: <a href="#type-base64Image">base64Image</a> <span>=&gt;</span> (string <span>=&gt;</span> unit) <span>=&gt;</span> (<a href="#type-error">error</a> <span>=&gt;</span> unit) <span>=&gt;</span> unit;</code></dt><dt class="spec value" id="val-getBase64ForTag"><a href="#val-getBase64ForTag" class="anchor"></a><code><span class="keyword">let</span> getBase64ForTag: string <span>=&gt;</span> (<a href="#type-base64Image">base64Image</a> <span>=&gt;</span> unit) <span>=&gt;</span> (<a href="#type-error">error</a> <span>=&gt;</span> unit) <span>=&gt;</span> unit;</code></dt></dl></div></body></html>

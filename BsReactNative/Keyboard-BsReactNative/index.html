@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>Keyboard-BsReactNative (BsReactNative.Keyboard-BsReactNative)</title><link rel="stylesheet" href="../../odoc.css"/><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/><script src="../../highlight.pack.js"></script><script>hljs.initHighlightingOnLoad();</script></head><body><div class="content"><header><nav><a href="../">Up</a> – <a href="../">BsReactNative</a> &#x00BB; Keyboard-BsReactNative</nav><h1>Module <code>Keyboard-BsReactNative</code></h1></header><dl><dt class="spec type" id="type-subscription"><a href="#type-subscription" class="anchor"></a><code><span class="keyword">type</span> subscription</code>;</dt><dd><p>Keyboard module to control keyboard events.</p><h4 id="usage"><a href="#usage" class="anchor"></a>Usage</h4><p>The Keyboard module allows you to listen for native events and react to them, as well as make changes to the keyboard, like dismissing it.</p><p>You can read more on <code>Keyboard</code> API usage in official docs: <a href="https://facebook.github.io/react-native/docs/keyboard">https://facebook.github.io/react-native/docs/keyboard</a></p><h4 id="types"><a href="#types" class="anchor"></a>Types</h4><h5 id="subscription"><a href="#subscription" class="anchor"></a>subscription</h5><pre><code class="re">type subscription;</code></pre><h5 id="event"><a href="#event" class="anchor"></a>event</h5><pre><code class="re">type event('a) = 'a
+  constraint 'a =
+    Js.t(
+      {
+        ..
+        endCoordinates: {
+          .
+          &quot;height&quot;: float,
+          &quot;screenX&quot;: float,
+          &quot;screenY&quot;: float,
+          &quot;width&quot;: float,
+        },
+      } as 'b,
+    );</code></pre><h5 id="listener"><a href="#listener" class="anchor"></a>listener</h5><pre><code class="re">type listener('a) = event('a) =&gt; unit
+constraint 'a =
+  Js.t(
+    {
+      ..
+      endCoordinates: {
+        .
+        &quot;height&quot;: float,
+        &quot;screenX&quot;: float,
+        &quot;screenY&quot;: float,
+        &quot;width&quot;: float,
+      },
+    } as 'b,
+  );</code></pre><h5 id="keyboardevent"><a href="#keyboardevent" class="anchor"></a>keyboardEvent</h5><pre><code class="re">type keyboardEvent =
+| KeyboardWillShow
+| KeyboardDidShow
+| KeyboardWillHide
+| KeyboardDidHide
+| KeyboardWillChangeFrame
+| KeyboardDidChangeFrame;</code></pre><h4 id="methods"><a href="#methods" class="anchor"></a>Methods</h4><h5 id="dismiss"><a href="#dismiss" class="anchor"></a>dismiss</h5><pre><code class="re">dismiss: unit =&gt; unit = &quot;&quot;;</code></pre><h5 id="addlistener"><a href="#addlistener" class="anchor"></a>addListener</h5><pre><code class="re">let addListener:
+  (
+    keyboardEvent,
+    listener({
+      ..
+      &quot;endCoordinates&quot;: {
+        .
+        &quot;height&quot;: float,
+        &quot;screenX&quot;: float,
+        &quot;screenY&quot;: float,
+        &quot;width&quot;: float,
+      },
+    })
+  ) =&gt;
+  subscription;</code></pre><h5 id="removelistener"><a href="#removelistener" class="anchor"></a>removeListener</h5><pre><code class="re">let removeListener:
+  (
+    keyboardEvent,
+    listener({
+      ..
+      &quot;endCoordinates&quot;: {
+        .
+        &quot;height&quot;: float,
+        &quot;screenX&quot;: float,
+        &quot;screenY&quot;: float,
+        &quot;width&quot;: float,
+      },
+    })
+  ) =&gt;
+  unit;</code></pre><h5 id="removealllisteners"><a href="#removealllisteners" class="anchor"></a>removeAllListeners</h5><pre><code class="re">let removeAllListeners: keyboardEvent =&gt; unit;</code></pre></dd></dl><dl><dt class="spec type" id="type-event"><a href="#type-event" class="anchor"></a><code><span class="keyword">type</span> event('a)</code><code> = <span class="type-var">'a</span></code><code> <span class="keyword">constraint</span> <span class="type-var">'a</span> = Js.t({.. endCoordinates: Js.t({. height: float, screenX: float, screenY: float, width: float, }), } <span class="keyword">as</span> b)</code>;</dt><dt class="spec type" id="type-listener"><a href="#type-listener" class="anchor"></a><code><span class="keyword">type</span> listener('a)</code><code> = <a href="#type-event">event</a>(<span class="type-var">'a</span>) <span>=&gt;</span> unit</code><code> <span class="keyword">constraint</span> <span class="type-var">'a</span> = Js.t({.. endCoordinates: Js.t({. height: float, screenX: float, screenY: float, width: float, }), } <span class="keyword">as</span> b)</code>;</dt><dt class="spec type" id="type-keyboardEvent"><a href="#type-keyboardEvent" class="anchor"></a><code><span class="keyword">type</span> keyboardEvent</code><code> = </code><table class="variant"><tr id="type-keyboardEvent.KeyboardWillShow" class="anchored"><td class="def constructor"><a href="#type-keyboardEvent.KeyboardWillShow" class="anchor"></a><code>| </code><code><span class="constructor">KeyboardWillShow</span></code></td></tr><tr id="type-keyboardEvent.KeyboardDidShow" class="anchored"><td class="def constructor"><a href="#type-keyboardEvent.KeyboardDidShow" class="anchor"></a><code>| </code><code><span class="constructor">KeyboardDidShow</span></code></td></tr><tr id="type-keyboardEvent.KeyboardWillHide" class="anchored"><td class="def constructor"><a href="#type-keyboardEvent.KeyboardWillHide" class="anchor"></a><code>| </code><code><span class="constructor">KeyboardWillHide</span></code></td></tr><tr id="type-keyboardEvent.KeyboardDidHide" class="anchored"><td class="def constructor"><a href="#type-keyboardEvent.KeyboardDidHide" class="anchor"></a><code>| </code><code><span class="constructor">KeyboardDidHide</span></code></td></tr><tr id="type-keyboardEvent.KeyboardWillChangeFrame" class="anchored"><td class="def constructor"><a href="#type-keyboardEvent.KeyboardWillChangeFrame" class="anchor"></a><code>| </code><code><span class="constructor">KeyboardWillChangeFrame</span></code></td></tr><tr id="type-keyboardEvent.KeyboardDidChangeFrame" class="anchored"><td class="def constructor"><a href="#type-keyboardEvent.KeyboardDidChangeFrame" class="anchor"></a><code>| </code><code><span class="constructor">KeyboardDidChangeFrame</span></code></td></tr></table>;</dt></dl><dl><dt class="spec external" id="val-dismiss"><a href="#val-dismiss" class="anchor"></a><code><span class="keyword">let</span> dismiss: unit <span>=&gt;</span> unit;</code></dt></dl><dl><dt class="spec value" id="val-addListener"><a href="#val-addListener" class="anchor"></a><code><span class="keyword">let</span> addListener: <a href="#type-keyboardEvent">keyboardEvent</a> <span>=&gt;</span> <a href="#type-listener">listener</a>(Js.t({.. endCoordinates: Js.t({. height: float, screenX: float, screenY: float, width: float, }), })) <span>=&gt;</span> <a href="#type-subscription">subscription</a>;</code></dt><dt class="spec value" id="val-removeAllListeners"><a href="#val-removeAllListeners" class="anchor"></a><code><span class="keyword">let</span> removeAllListeners: <a href="#type-keyboardEvent">keyboardEvent</a> <span>=&gt;</span> unit;</code></dt><dt class="spec value" id="val-removeListener"><a href="#val-removeListener" class="anchor"></a><code><span class="keyword">let</span> removeListener: <a href="#type-keyboardEvent">keyboardEvent</a> <span>=&gt;</span> <a href="#type-listener">listener</a>(Js.t({.. endCoordinates: Js.t({. height: float, screenX: float, screenY: float, width: float, }), })) <span>=&gt;</span> unit;</code></dt></dl><div class="spec module" id="module-Subscription"><a href="#module-Subscription" class="anchor"></a><code><span class="keyword">module</span> <a href="Subscription">Subscription</a>: { ... };</code></div></div></body></html>

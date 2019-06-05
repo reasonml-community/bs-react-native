@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>Settings-BsReactNative (BsReactNative.Settings-BsReactNative)</title><link rel="stylesheet" href="../../odoc.css"/><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/><script src="../../highlight.pack.js"></script><script>hljs.initHighlightingOnLoad();</script></head><body><div class="content"><header><nav><a href="../">Up</a> – <a href="../">BsReactNative</a> &#x00BB; Settings-BsReactNative</nav><h1>Module <code>Settings-BsReactNative</code></h1></header><dl><dt class="spec value" id="val-get"><a href="#val-get" class="anchor"></a><code><span class="keyword">let</span> get: string <span>=&gt;</span> string;</code></dt><dd><p><b>iOS only</b></p><p>On iOS you can easily add your app custom settings into Settings app built-in iOS system. You can do it by adding Settings bundle into your Xcode project - <code>New File -&gt; Settings Bundle -&gt; Create</code>. Than you can compose your settings shape by modyfying <code>Settings.bundle/Root.plist</code>.</p><p>You can read more on <code>Settings</code> API usage in official docs: <a href="https://facebook.github.io/react-native/docs/settings">https://facebook.github.io/react-native/docs/settings</a></p><h4 id="example-of-use"><a href="#example-of-use" class="anchor"></a>Example of use</h4><pre><code class="re">type action =
+  | SetVersion(string);
+
+type state = {version: string};
+
+let component = ReasonReact.reducerComponent(&quot;SetExample&quot;);
+
+let make = _children =&gt; {
+  ...component,
+  initialState: () =&gt; {version: &quot;1.0&quot;},
+  reducer: (action: action, state: state) =&gt;
+    switch (action) {
+    | SetVersion(version) =&gt; ReasonReact.Update({...state, version})
+    },
+  render: self =&gt;
+    &lt;View&gt;
+      &lt;TextInput
+        value=self.state.version
+        onChangeText=(text =&gt; self.send(SetVersion(text)))
+      /&gt;
+      &lt;Button
+        onPress=(
+          () =&gt; {
+            let settings = Js.Dict.empty();
+            Js.Dict.set(settings, &quot;version_preference&quot;, self.state.version);
+
+            Settings.set(settings);
+          }
+        )
+        title=&quot;Set version&quot;
+        accessibilityLabel=&quot;See an informative alert&quot;
+      /&gt;
+      &lt;Button
+        onPress=(
+          () =&gt; {
+            let version = Settings.get(&quot;version_preference&quot;);
+            Alert.alert(~title=&quot;version -&gt; &quot; ++ version, ());
+          }
+        )
+        title=&quot;Get version&quot;
+        accessibilityLabel=&quot;See an informative alert&quot;
+      /&gt;
+    &lt;/View&gt;,
+};</code></pre><h4 id="methods"><a href="#methods" class="anchor"></a>Methods</h4><h5 id="get"><a href="#get" class="anchor"></a>get</h5><p>Returns the value of one setting.</p><pre><code class="re">let get: string =&gt; string; </code></pre><h5 id="set"><a href="#set" class="anchor"></a>set</h5><p>Sets values for settings. It will accept <code>Js.Dict</code> with your settings Identifiers as keys.</p><pre><code class="re">let set: Js.Dict.t(string) =&gt; unit; </code></pre><h5 id="watchkeys"><a href="#watchkeys" class="anchor"></a>watchKeys</h5><p>Creates settings change listener. It will be fired after user change setting value in syste Settings app.</p><pre><code class="re">let watchKeys: (list(string), unit =&gt; unit) =&gt; int; </code></pre><h5 id="clearwatch"><a href="#clearwatch" class="anchor"></a>clearWatch</h5><p>Removes listener by its id.</p><pre><code class="re">let clearWatch: int =&gt; unit; </code></pre></dd></dl><dl><dt class="spec value" id="val-set"><a href="#val-set" class="anchor"></a><code><span class="keyword">let</span> set: Js.Dict.t(string) <span>=&gt;</span> unit;</code></dt></dl><dl><dt class="spec type" id="type-watchToken"><a href="#type-watchToken" class="anchor"></a><code><span class="keyword">type</span> watchToken</code>;</dt></dl><dl><dt class="spec value" id="val-watchKeys"><a href="#val-watchKeys" class="anchor"></a><code><span class="keyword">let</span> watchKeys: list(string) <span>=&gt;</span> (unit <span>=&gt;</span> unit) <span>=&gt;</span> <a href="#type-watchToken">watchToken</a>;</code></dt><dt class="spec value" id="val-clearWatch"><a href="#val-clearWatch" class="anchor"></a><code><span class="keyword">let</span> clearWatch: <a href="#type-watchToken">watchToken</a> <span>=&gt;</span> unit;</code></dt></dl></div></body></html>

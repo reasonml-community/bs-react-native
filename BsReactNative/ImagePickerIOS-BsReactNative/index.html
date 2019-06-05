@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>ImagePickerIOS-BsReactNative (BsReactNative.ImagePickerIOS-BsReactNative)</title><link rel="stylesheet" href="../../odoc.css"/><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/><script src="../../highlight.pack.js"></script><script>hljs.initHighlightingOnLoad();</script></head><body><div class="content"><header><nav><a href="../">Up</a> – <a href="../">BsReactNative</a> &#x00BB; ImagePickerIOS-BsReactNative</nav><h1>Module <code>ImagePickerIOS-BsReactNative</code></h1></header><dl><dt class="spec value" id="val-canUseCamera"><a href="#val-canUseCamera" class="anchor"></a><code><span class="keyword">let</span> canUseCamera: (unit <span>=&gt;</span> unit) <span>=&gt;</span> unit;</code></dt><dd><p>You can read more on <code>ImagePickerIOS</code> API usage in official docs: <a href="https://facebook.github.io/react-native/docs/imagepickerios">https://facebook.github.io/react-native/docs/imagepickerios</a></p><h4 id="methods"><a href="#methods" class="anchor"></a>Methods</h4><h5 id="canrecordvideos"><a href="#canrecordvideos" class="anchor"></a>canRecordVideos</h5><pre><code class="re">ImagePickerIOS.canRecordVideos(() =&gt; Js.log(&quot;We can record videos!&quot;));</code></pre><h5 id="canusecamera"><a href="#canusecamera" class="anchor"></a>canUseCamera</h5><pre><code class="re">ImagePickerIOS.canUseCamera(() =&gt; Js.log(&quot;We can use camera!&quot;));</code></pre><h5 id="openselectdialog"><a href="#openselectdialog" class="anchor"></a>openSelectDialog</h5><pre><code class="re">ImagePickerIOS.openSelectDialog(
+  ~showImages=true,
+  ~showVideos=true,
+  imageUri =&gt; Js.log(imageUri)),
+  error =&gt; Js.log(error)
+);</code></pre><h5 id="opencameradialog"><a href="#opencameradialog" class="anchor"></a>openCameraDialog</h5><pre><code class="re">ImagePickerIOS.openCameraDialog(
+  ~videoMode=true,
+  imageUri =&gt; Js.log(imageUri)),
+  error =&gt; Js.log(error)
+);</code></pre><h4 id="function-parameters"><a href="#function-parameters" class="anchor"></a>Function parameters</h4><h5 id="canrecordvideos-&amp;&amp;-canusecamera"><a href="#canrecordvideos-&amp;&amp;-canusecamera" class="anchor"></a>canRecordVideos &amp;&amp; canUseCamera</h5><pre><code class="re">unit =&gt; unit</code></pre><h5 id="openselectdialog"><a href="#openselectdialog" class="anchor"></a>openSelectDialog</h5><pre><code class="re">(
+  ~showImages: bool,
+  ~showVideos: bool,
+  string =&gt; unit,
+  error =&gt; unit
+) =&gt; unit</code></pre><p>reference:</p><pre><code class="re">type error = {
+  .
+  &quot;code&quot;: int,
+  &quot;message&quot;: string,
+};</code></pre><h5 id="opencameradialog"><a href="#opencameradialog" class="anchor"></a>openCameraDialog</h5><pre><code class="re">(
+  ~videoMode: bool,
+  string =&gt; unit,
+  error =&gt; unit
+) =&gt; unit</code></pre><p>reference:</p><pre><code class="re">type error = {
+  .
+  &quot;code&quot;: int,
+  &quot;message&quot;: string,
+};</code></pre></dd></dl><dl><dt class="spec value" id="val-canRecordVideos"><a href="#val-canRecordVideos" class="anchor"></a><code><span class="keyword">let</span> canRecordVideos: (unit <span>=&gt;</span> unit) <span>=&gt;</span> unit;</code></dt></dl><dl><dt class="spec type" id="type-error"><a href="#type-error" class="anchor"></a><code><span class="keyword">type</span> error</code><code> = Js.t({. code: int, message: string, })</code>;</dt></dl><dl><dt class="spec value" id="val-openCameraDialog"><a href="#val-openCameraDialog" class="anchor"></a><code><span class="keyword">let</span> openCameraDialog: videoMode:bool <span>=&gt;</span> onSuccess:(unit <span>=&gt;</span> unit) <span>=&gt;</span> onError:(<a href="#type-error">error</a> <span>=&gt;</span> unit) <span>=&gt;</span> unit;</code></dt><dt class="spec value" id="val-openSelectDialog"><a href="#val-openSelectDialog" class="anchor"></a><code><span class="keyword">let</span> openSelectDialog: showImages:bool <span>=&gt;</span> showVideos:bool <span>=&gt;</span> onSuccess:(string <span>=&gt;</span> unit) <span>=&gt;</span> onError:(<a href="#type-error">error</a> <span>=&gt;</span> unit) <span>=&gt;</span> unit;</code></dt></dl></div></body></html>

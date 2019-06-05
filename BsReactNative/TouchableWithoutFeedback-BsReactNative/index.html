@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>TouchableWithoutFeedback-BsReactNative (BsReactNative.TouchableWithoutFeedback-BsReactNative)</title><link rel="stylesheet" href="../../odoc.css"/><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/><script src="../../highlight.pack.js"></script><script>hljs.initHighlightingOnLoad();</script></head><body><div class="content"><header><nav><a href="../">Up</a> – <a href="../">BsReactNative</a> &#x00BB; TouchableWithoutFeedback-BsReactNative</nav><h1>Module <code>TouchableWithoutFeedback-BsReactNative</code></h1></header><dl><dt class="spec value" id="val-make"><a href="#val-make" class="anchor"></a><code><span class="keyword">let</span> make: ?&#8288;accessible:bool <span>=&gt;</span> ?&#8288;accessibilityLabel:string <span>=&gt;</span> ?&#8288;accessibilityComponentType:BsReactNative.Types.accessibilityComponentType <span>=&gt;</span> ?&#8288;accessibilityTraits:list(BsReactNative.Types.accessibilityTrait) <span>=&gt;</span> ?&#8288;accessibilityRole:BsReactNative.Types.accessibilityRole <span>=&gt;</span> ?&#8288;accessibilityStates:list(BsReactNative.Types.accessibilityState) <span>=&gt;</span> ?&#8288;accessibilityHint:string <span>=&gt;</span> ?&#8288;accessibilityIgnoresInvertColors:bool <span>=&gt;</span> ?&#8288;delayLongPress:int <span>=&gt;</span> ?&#8288;delayPressIn:int <span>=&gt;</span> ?&#8288;delayPressOut:int <span>=&gt;</span> ?&#8288;disabled:bool <span>=&gt;</span> ?&#8288;hitSlop:BsReactNative.Types.insets <span>=&gt;</span> ?&#8288;onLayout:(BsReactNative.RNEvent.NativeLayoutEvent.t <span>=&gt;</span> unit) <span>=&gt;</span> ?&#8288;onLongPress:(BsReactNative.RNEvent.NativePressEvent.t <span>=&gt;</span> unit) <span>=&gt;</span> ?&#8288;onPress:(BsReactNative.RNEvent.NativePressEvent.t <span>=&gt;</span> unit) <span>=&gt;</span> ?&#8288;onPressIn:(BsReactNative.RNEvent.NativePressEvent.t <span>=&gt;</span> unit) <span>=&gt;</span> ?&#8288;onPressOut:(BsReactNative.RNEvent.NativePressEvent.t <span>=&gt;</span> unit) <span>=&gt;</span> ?&#8288;pressRetentionOffset:BsReactNative.Types.insets <span>=&gt;</span> ?&#8288;style:BsReactNative.Style.t <span>=&gt;</span> ?&#8288;testID:string <span>=&gt;</span> array(ReasonReact.reactElement) <span>=&gt;</span> ReasonReact.component(ReasonReact.stateless, ReasonReact.noRetainedProps, unit);</code></dt><dd><p>You can read more on <code>TouchableWithoutFeedback</code> component usage in official docs: <a href="https://facebook.github.io/react-native/docs/touchablewithoutfeedback">https://facebook.github.io/react-native/docs/touchablewithoutfeedback</a></p><h4 id="props"><a href="#props" class="anchor"></a>Props</h4><h5 id="accessible"><a href="#accessible" class="anchor"></a>accessible</h5><pre><code class="re">~accessible: bool=?</code></pre><h5 id="accessibilitylabel"><a href="#accessibilitylabel" class="anchor"></a>accessibilityLabel</h5><pre><code class="re">~accessibilityLabel: string=?</code></pre><h5 id="accessibilitycomponenttype"><a href="#accessibilitycomponenttype" class="anchor"></a>accessibilityComponentType</h5><pre><code class="re">~accessibilityComponentType: [
+  | `none
+  | `button
+  | `radiobutton_checked
+  | `radiobutton_unchecked
+]=?</code></pre><h5 id="accessibilitytraits"><a href="#accessibilitytraits" class="anchor"></a>accessibilityTraits</h5><pre><code class="re">~accessibilityTraits: list(
+  [
+    | `none
+    | `button
+    | `link
+    | `header
+    | `search
+    | `image
+    | `selected
+    | `plays
+    | `key
+    | `text
+    | `summary
+    | `disabled
+    | `frequentUpdates
+    | `startsMedia
+    | `adjustable
+    | `allowsDirectInteraction
+    | `pageTurn
+  ]
+)=?</code></pre><h5 id="delaylongpress"><a href="#delaylongpress" class="anchor"></a>delayLongPress</h5><pre><code class="re">~delayLongPress: int=?</code></pre><h5 id="delaypressin"><a href="#delaypressin" class="anchor"></a>delayPressIn</h5><pre><code class="re">~delayPressIn: int=?</code></pre><h5 id="delaypressout"><a href="#delaypressout" class="anchor"></a>delayPressOut</h5><pre><code class="re">~delayPressOut: int=?</code></pre><h5 id="disabled"><a href="#disabled" class="anchor"></a>disabled</h5><pre><code class="re">~disabled: bool=?</code></pre><h5 id="hitslop"><a href="#hitslop" class="anchor"></a>hitSlop</h5><pre><code class="re">~hitSlop: Types.insets=?</code></pre><p>reference:</p><h5 id="types.rei"><a href="#types.rei" class="anchor"></a>Types.rei</h5><pre><code class="re">type insets = {
+  .
+  &quot;left&quot;: int,
+  &quot;right&quot;: int,
+  &quot;top&quot;: int,
+  &quot;bottom&quot;: int,
+};</code></pre><h5 id="onlayout"><a href="#onlayout" class="anchor"></a>onLayout</h5><pre><code class="re">~onLayout: RNEvent.NativeLayoutEvent.t =&gt; unit=?</code></pre><p>reference:</p><pre><code class="re">module NativeLayoutEvent: {
+  type t;
+  type layout = {
+    x: float,
+    y: float,
+    width: float,
+    height: float
+  };
+  let layout: t =&gt; layout;
+};</code></pre><h5 id="onlongpress"><a href="#onlongpress" class="anchor"></a>onLongPress</h5><pre><code class="re">~onLongPress: unit =&gt; unit=?</code></pre><h5 id="onpress"><a href="#onpress" class="anchor"></a>onPress</h5><pre><code class="re">~onPress: unit =&gt; unit=?</code></pre><h5 id="onpressin"><a href="#onpressin" class="anchor"></a>onPressIn</h5><pre><code class="re">~onPressIn: unit =&gt; unit=?</code></pre><h5 id="onpressout"><a href="#onpressout" class="anchor"></a>onPressOut</h5><pre><code class="re">~onPressOut: unit =&gt; unit=?</code></pre><h5 id="pressretentionoffset"><a href="#pressretentionoffset" class="anchor"></a>pressRetentionOffset</h5><pre><code class="re">~pressRetentionOffset: Types.insets=?</code></pre><p>reference:</p><pre><code class="re">type insets = {
+  .
+  &quot;left&quot;: int,
+  &quot;right&quot;: int,
+  &quot;top&quot;: int,
+  &quot;bottom&quot;: int,
+};</code></pre><h5 id="style"><a href="#style" class="anchor"></a>style</h5><pre><code class="re">~style: Style.t=?</code></pre><h5 id="testid"><a href="#testid" class="anchor"></a>testID</h5><pre><code class="re">~testID: string=?</code></pre></dd></dl></div></body></html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>TextInput-BsReactNative (BsReactNative.TextInput-BsReactNative)</title><link rel="stylesheet" href="../../odoc.css"/><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/><script src="../../highlight.pack.js"></script><script>hljs.initHighlightingOnLoad();</script></head><body><div class="content"><header><nav><a href="../">Up</a> – <a href="../">BsReactNative</a> &#x00BB; TextInput-BsReactNative</nav><h1>Module <code>TextInput-BsReactNative</code></h1></header><dl><dt class="spec type" id="type-editingEvent"><a href="#type-editingEvent" class="anchor"></a><code><span class="keyword">type</span> editingEvent</code><code> = Js.t({. nativeEvent: Js.t({. text: string, eventCount: int, target: int, }), })</code>;</dt><dd><p>A React component for displaying text. You can read more on <code>Text</code> component usage in official docs: <a href="https://facebook.github.io/react-native/docs/text">https://facebook.github.io/react-native/docs/text</a></p><h4 id="props"><a href="#props" class="anchor"></a>Props</h4><p><a href="\BsReactNative/View-BsReactNative"><code>View</code> props</a></p><h5 id="autocapitalize"><a href="#autocapitalize" class="anchor"></a>autoCapitalize</h5><pre><code class="re">autoCapitalize: [&lt;
+  | `characters
+  | `none
+  | `sentences
+  | `words
+]=?</code></pre><h5 id="autocomplete"><a href="#autocomplete" class="anchor"></a>autoComplete</h5><pre><code class="re">autoComplete: [&lt;
+  | `off
+  | `username
+  | `password
+  | `email
+  | `name
+  | `tel
+  | `streetAddress
+  | `postalCode
+  | `ccNumber
+  | `ccCsc
+  | `ccExp
+  | `ccExpMonth
+  | `ccExpYear
+]=?</code></pre><h5 id="autocorrect"><a href="#autocorrect" class="anchor"></a>autoCorrect</h5><pre><code class="re">~autoCorrect: bool=?</code></pre><h5 id="autofocus"><a href="#autofocus" class="anchor"></a>autoFocus</h5><pre><code class="re">~autoFocus: bool=?</code></pre><h5 id="bluronsubmit"><a href="#bluronsubmit" class="anchor"></a>blurOnSubmit</h5><pre><code class="re">~blurOnSubmit: bool=?</code></pre><h5 id="carethidden"><a href="#carethidden" class="anchor"></a>caretHidden</h5><pre><code class="re">~caretHidden: bool=?</code></pre><h5 id="defaultvalue"><a href="#defaultvalue" class="anchor"></a>defaultValue</h5><pre><code class="re">~defaultValue: string=?</code></pre><h5 id="editable"><a href="#editable" class="anchor"></a>editable</h5><pre><code class="re">~editable: bool=?</code></pre><h5 id="keyboardtype"><a href="#keyboardtype" class="anchor"></a>keyboardType</h5><pre><code class="re">~keyboardType: [
+  | `asciiCapable
+  | `decimalPad
+  | `default
+  | `emailAddress
+  | `namePhonePad
+  | `numberPad
+  | `numbersAndPunctuation
+  | `numeric
+  | `phonePad
+  | `twitter
+  | `url
+  | `webSearch
+]
+  =?</code></pre><h5 id="maxlength"><a href="#maxlength" class="anchor"></a>maxLength</h5><pre><code class="re">~maxLength: int=?</code></pre><h5 id="multiline"><a href="#multiline" class="anchor"></a>multiline</h5><pre><code class="re">~multiline: bool=?</code></pre><h5 id="onblur"><a href="#onblur" class="anchor"></a>onBlur</h5><pre><code class="re">~onBlur: unit =&gt; unit=?</code></pre><h5 id="onchangetext"><a href="#onchangetext" class="anchor"></a>onChangeText</h5><pre><code class="re">~onChangeText: string =&gt; unit=?</code></pre><h5 id="onchange"><a href="#onchange" class="anchor"></a>onChange</h5><pre><code class="re">~onChange: editingEvent =&gt; unit=?</code></pre><h5 id="onendediting"><a href="#onendediting" class="anchor"></a>onEndEditing</h5><pre><code class="re">~onEndEditing: editingEvent =&gt; unit=?</code></pre><h5 id="onsubmitediting"><a href="#onsubmitediting" class="anchor"></a>onSubmitEditing</h5><pre><code class="re">~onSubmitEditing: editingEvent =&gt; unit=?</code></pre><h5 id="oncontentsizechange"><a href="#oncontentsizechange" class="anchor"></a>onContentSizeChange</h5><pre><code class="re">~onContentSizeChange: {
+  .
+  &quot;nativeEvent&quot;: {
+    .
+    &quot;contentSize&quot;: {
+      .
+      &quot;width&quot;: float,
+      &quot;height&quot;: float
+    }
+  }
+} =&gt; unit=?</code></pre><h5 id="onfocus"><a href="#onfocus" class="anchor"></a>onFocus</h5><pre><code class="re">~onFocus: unit =&gt; unit=?</code></pre><h5 id="onscroll"><a href="#onscroll" class="anchor"></a>onScroll</h5><pre><code class="re">~onScroll: {
+  .
+  &quot;nativeEvent&quot;: {
+    .
+    &quot;contentOffset&quot;: {
+      .
+      &quot;x&quot;: float,
+      &quot;y&quot;: float
+    }
+  }
+} =&gt; unit=?</code></pre><h5 id="onselectionchange"><a href="#onselectionchange" class="anchor"></a>onSelectionChange</h5><pre><code class="re">~onSelectionChange: {
+  .
+  &quot;nativeEvent&quot;: {
+    .
+    &quot;selection&quot;: {
+      .
+      &quot;start&quot;: int,
+      &quot;_end&quot;: int
+    }
+  }
+} =&gt; unit=?</code></pre><h5 id="placeholder"><a href="#placeholder" class="anchor"></a>placeholder</h5><pre><code class="re">~placeholder: string=?</code></pre><h5 id="placeholdertextcolor"><a href="#placeholdertextcolor" class="anchor"></a>placeholderTextColor</h5><pre><code class="re">~placeholderTextColor: string=?</code></pre><h5 id="returnkeytype"><a href="#returnkeytype" class="anchor"></a>returnKeyType</h5><pre><code class="re">~returnKeyType: [
+  | `default
+  | `done_
+  | `emergencyCall
+  | `go
+  | `google
+  | `join
+  | `next
+  | `none
+  | `previous
+  | `route
+  | `search
+  | `send
+  | `yahoo
+]=?</code></pre><h5 id="securetextentry"><a href="#securetextentry" class="anchor"></a>secureTextEntry</h5><pre><code class="re">~secureTextEntry</code></pre><h5 id="selecttextonfocus"><a href="#selecttextonfocus" class="anchor"></a>selectTextOnFocus</h5><pre><code class="re">~selectTextOnFocus: bool=?</code></pre><h5 id="selection"><a href="#selection" class="anchor"></a>selection</h5><pre><code class="re">~selection: {
+  .
+  &quot;start&quot;: int,
+  &quot;_end&quot;: int
+}=?</code></pre><h5 id="selectioncolor"><a href="#selectioncolor" class="anchor"></a>selectionColor</h5><pre><code class="re">~selectionColor: string=?</code></pre><h5 id="value"><a href="#value" class="anchor"></a>value</h5><pre><code class="re">~value: string=?</code></pre><h5 id="disablefullscreenui"><a href="#disablefullscreenui" class="anchor"></a>disableFullscreenUI</h5><pre><code class="re">~disableFullscreenUI: bool=?</code></pre><h5 id="inlineimageleft"><a href="#inlineimageleft" class="anchor"></a>inlineImageLeft</h5><pre><code class="re">~inlineImageLeft: string=?</code></pre><h5 id="inlineimagepadding"><a href="#inlineimagepadding" class="anchor"></a>inlineImagePadding</h5><pre><code class="re">~inlineImagePadding: int=?</code></pre><h5 id="numberoflines"><a href="#numberoflines" class="anchor"></a>numberOfLines</h5><pre><code class="re">~numberOfLines: int=?</code></pre><h5 id="returnkeylabel"><a href="#returnkeylabel" class="anchor"></a>returnKeyLabel</h5><pre><code class="re">~returnKeyLabel: string=?</code></pre><h5 id="textbreakstrategy"><a href="#textbreakstrategy" class="anchor"></a>textBreakStrategy</h5><pre><code class="re">~textBreakStrategy: [
+  | `balanced
+  | `highQuality
+  | `simple
+]=?</code></pre><h5 id="underlinecolorandroid"><a href="#underlinecolorandroid" class="anchor"></a>underlineColorAndroid</h5><pre><code class="re">~underlineColorAndroid: string=?</code></pre><h5 id="clearbuttonmode"><a href="#clearbuttonmode" class="anchor"></a>clearButtonMode</h5><pre><code class="re">~clearButtonMode: [
+  | `always
+  | `never
+  | `unlessEditing
+  | `whileEditing
+]=?</code></pre><h5 id="cleartextonfocus"><a href="#cleartextonfocus" class="anchor"></a>clearTextOnFocus</h5><pre><code class="re">~clearTextOnFocus: bool=?</code></pre><h5 id="datadetectortypes"><a href="#datadetectortypes" class="anchor"></a>dataDetectorTypes</h5><pre><code class="re">~dataDetectorTypes: array([
+  | `all
+  | `calendarEvent
+  | `link
+  | `none
+  | `phoneNumber
+])=?</code></pre><h5 id="enablesreturnkeyautomatically"><a href="#enablesreturnkeyautomatically" class="anchor"></a>enablesReturnKeyAutomatically</h5><pre><code class="re">~enablesReturnKeyAutomatically: bool=?</code></pre><h5 id="keyboardappearance"><a href="#keyboardappearance" class="anchor"></a>keyboardAppearance</h5><pre><code class="re">~keyboardAppearance: [
+  | `dark
+  | `default
+  | `light
+]=?</code></pre><h5 id="onkeypress"><a href="#onkeypress" class="anchor"></a>onKeyPress</h5><pre><code class="re">~onKeyPress: {
+  .
+  &quot;nativeEvent&quot;: {
+    .
+    &quot;key&quot;: string
+  }
+} =&gt; unit=?</code></pre><h5 id="selectionstate"><a href="#selectionstate" class="anchor"></a>selectionState</h5><pre><code class="re">~selectionState: 'documentSelectionState=?</code></pre><h5 id="spellcheck"><a href="#spellcheck" class="anchor"></a>spellCheck</h5><pre><code class="re">~spellCheck: bool=?</code></pre><h5 id="inputaccessoryviewid"><a href="#inputaccessoryviewid" class="anchor"></a>inputAccessoryViewID</h5><pre><code class="re">~inputAccessoryViewID: string=?</code></pre><h4 id="methods"><a href="#methods" class="anchor"></a>Methods</h4><h5 id="isfocused()"><a href="#isfocused()" class="anchor"></a>isFocused()</h5><p>Returns <code>true</code> if the input is currently focused; <code>false</code> otherwise.</p></dd></dl><dl><dt class="spec value" id="val-make"><a href="#val-make" class="anchor"></a><code><span class="keyword">let</span> make: ?&#8288;accessibilityLabel:ReasonReact.reactElement <span>=&gt;</span> ?&#8288;accessible:bool <span>=&gt;</span> ?&#8288;hitSlop:Js.t({. left: int, right: int, top: int, bottom: int, }) <span>=&gt;</span> ?&#8288;onAccessibilityTap:(unit <span>=&gt;</span> unit) <span>=&gt;</span> ?&#8288;onLayout:(BsReactNative.RNEvent.NativeLayoutEvent.t <span>=&gt;</span> unit) <span>=&gt;</span> ?&#8288;onMagicTap:(unit <span>=&gt;</span> unit) <span>=&gt;</span> ?&#8288;responderHandlers:BsReactNative.Types.touchResponderHandlers <span>=&gt;</span> ?&#8288;pointerEvents:BsReactNative.Types.pointerEvents <span>=&gt;</span> ?&#8288;removeClippedSubviews:bool <span>=&gt;</span> ?&#8288;style:BsReactNative.Style.t <span>=&gt;</span> ?&#8288;testID:string <span>=&gt;</span> ?&#8288;accessibilityComponentType:BsReactNative.Types.accessibilityComponentType <span>=&gt;</span> ?&#8288;accessibilityLiveRegion:BsReactNative.Types.accessibilityLiveRegion <span>=&gt;</span> ?&#8288;collapsable:bool <span>=&gt;</span> ?&#8288;importantForAccessibility:BsReactNative.Types.importantForAccessibility <span>=&gt;</span> ?&#8288;needsOffscreenAlphaCompositing:bool <span>=&gt;</span> ?&#8288;renderToHardwareTextureAndroid:bool <span>=&gt;</span> ?&#8288;accessibilityTraits:list(BsReactNative.Types.accessibilityTrait) <span>=&gt;</span> ?&#8288;accessibilityRole:BsReactNative.Types.accessibilityRole <span>=&gt;</span> ?&#8288;accessibilityStates:list(BsReactNative.Types.accessibilityState) <span>=&gt;</span> ?&#8288;accessibilityHint:string <span>=&gt;</span> ?&#8288;accessibilityIgnoresInvertColors:bool <span>=&gt;</span> ?&#8288;accessibilityViewIsModal:bool <span>=&gt;</span> ?&#8288;shouldRasterizeIOS:bool <span>=&gt;</span> ?&#8288;autoCapitalize:[&lt; `characters | `none | `sentences | `words ] <span>=&gt;</span> ?&#8288;autoComplete:[&lt; `off | `username | `password | `email | `name | `tel | `streetAddress | `postalCode | `ccNumber | `ccCsc | `ccExp | `ccExpMonth | `ccExpYear ] <span>=&gt;</span> ?&#8288;autoCorrect:bool <span>=&gt;</span> ?&#8288;autoFocus:bool <span>=&gt;</span> ?&#8288;blurOnSubmit:bool <span>=&gt;</span> ?&#8288;caretHidden:bool <span>=&gt;</span> ?&#8288;defaultValue:string <span>=&gt;</span> ?&#8288;editable:bool <span>=&gt;</span> ?&#8288;keyboardType:[ `asciiCapable | `decimalPad | `default | `emailAddress | `namePhonePad | `numberPad | `numbersAndPunctuation | `numeric | `phonePad | `twitter | `url | `webSearch ] <span>=&gt;</span> ?&#8288;maxLength:int <span>=&gt;</span> ?&#8288;multiline:bool <span>=&gt;</span> ?&#8288;onBlur:(unit <span>=&gt;</span> unit) <span>=&gt;</span> ?&#8288;onChangeText:(string <span>=&gt;</span> unit) <span>=&gt;</span> ?&#8288;onChange:(<a href="#type-editingEvent">editingEvent</a> <span>=&gt;</span> unit) <span>=&gt;</span> ?&#8288;onEndEditing:(<a href="#type-editingEvent">editingEvent</a> <span>=&gt;</span> unit) <span>=&gt;</span> ?&#8288;onSubmitEditing:(<a href="#type-editingEvent">editingEvent</a> <span>=&gt;</span> unit) <span>=&gt;</span> ?&#8288;onContentSizeChange:(Js.t({. nativeEvent: Js.t({. contentSize: Js.t({. width: float, height: float, }), }), }) <span>=&gt;</span> unit) <span>=&gt;</span> ?&#8288;onFocus:(unit <span>=&gt;</span> unit) <span>=&gt;</span> ?&#8288;onScroll:(Js.t({. nativeEvent: Js.t({. contentOffset: Js.t({. x: float, y: float, }), }), }) <span>=&gt;</span> unit) <span>=&gt;</span> ?&#8288;onSelectionChange:(Js.t({. nativeEvent: Js.t({. selection: Js.t({. start: int, _end: int, }), }), }) <span>=&gt;</span> unit) <span>=&gt;</span> ?&#8288;placeholder:string <span>=&gt;</span> ?&#8288;placeholderTextColor:string <span>=&gt;</span> ?&#8288;returnKeyType:[ `default | `done_ | `emergencyCall | `go | `google | `join | `next | `none | `previous | `route | `search | `send | `yahoo ] <span>=&gt;</span> ?&#8288;secureTextEntry:bool <span>=&gt;</span> ?&#8288;selectTextOnFocus:bool <span>=&gt;</span> ?&#8288;selection:Js.t({. start: int, _end: int, }) <span>=&gt;</span> ?&#8288;selectionColor:string <span>=&gt;</span> ?&#8288;value:string <span>=&gt;</span> ?&#8288;disableFullscreenUI:bool <span>=&gt;</span> ?&#8288;inlineImageLeft:string <span>=&gt;</span> ?&#8288;inlineImagePadding:int <span>=&gt;</span> ?&#8288;numberOfLines:int <span>=&gt;</span> ?&#8288;returnKeyLabel:string <span>=&gt;</span> ?&#8288;textBreakStrategy:[ `balanced | `highQuality | `simple ] <span>=&gt;</span> ?&#8288;underlineColorAndroid:string <span>=&gt;</span> ?&#8288;clearButtonMode:[ `always | `never | `unlessEditing | `whileEditing ] <span>=&gt;</span> ?&#8288;clearTextOnFocus:bool <span>=&gt;</span> ?&#8288;dataDetectorTypes:array([ `all | `calendarEvent | `link | `none | `phoneNumber ]) <span>=&gt;</span> ?&#8288;enablesReturnKeyAutomatically:bool <span>=&gt;</span> ?&#8288;keyboardAppearance:[ `dark | `default | `light ] <span>=&gt;</span> ?&#8288;onKeyPress:(Js.t({. nativeEvent: Js.t({. key: string, }), }) <span>=&gt;</span> unit) <span>=&gt;</span> ?&#8288;selectionState:<span class="type-var">'documentSelectionState</span> <span>=&gt;</span> ?&#8288;spellCheck:bool <span>=&gt;</span> ?&#8288;inputAccessoryViewID:string <span>=&gt;</span> array(ReasonReact.reactElement) <span>=&gt;</span> ReasonReact.component(ReasonReact.stateless, ReasonReact.noRetainedProps, unit);</code></dt><dt class="spec value" id="val-isFocused"><a href="#val-isFocused" class="anchor"></a><code><span class="keyword">let</span> isFocused: ReasonReact.reactRef <span>=&gt;</span> bool;</code></dt><dd><h5 id="clear()"><a href="#clear()" class="anchor"></a>clear()</h5><p>Removes all text from the <code>TextInput</code>.</p></dd></dl><dl><dt class="spec value" id="val-clear"><a href="#val-clear" class="anchor"></a><code><span class="keyword">let</span> clear: ReasonReact.reactRef <span>=&gt;</span> unit;</code></dt><dd><h5 id="focus()"><a href="#focus()" class="anchor"></a>focus()</h5><p>focus <code>TextInput</code> programmatically</p></dd></dl><dl><dt class="spec value" id="val-focus"><a href="#val-focus" class="anchor"></a><code><span class="keyword">let</span> focus: ReasonReact.reactRef <span>=&gt;</span> unit;</code></dt><dd><h5 id="blur()"><a href="#blur()" class="anchor"></a>blur()</h5><p>blur <code>TextInput</code> programmatically</p></dd></dl><dl><dt class="spec value" id="val-blur"><a href="#val-blur" class="anchor"></a><code><span class="keyword">let</span> blur: ReasonReact.reactRef <span>=&gt;</span> unit;</code></dt></dl></div></body></html>

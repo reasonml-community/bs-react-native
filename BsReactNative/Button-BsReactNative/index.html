@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>Button-BsReactNative (BsReactNative.Button-BsReactNative)</title><link rel="stylesheet" href="../../odoc.css"/><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/><script src="../../highlight.pack.js"></script><script>hljs.initHighlightingOnLoad();</script></head><body><div class="content"><header><nav><a href="../">Up</a> – <a href="../">BsReactNative</a> &#x00BB; Button-BsReactNative</nav><h1>Module <code>Button-BsReactNative</code></h1></header><dl><dt class="spec value" id="val-make"><a href="#val-make" class="anchor"></a><code><span class="keyword">let</span> make: ?&#8288;accessibilityLabel:string <span>=&gt;</span> ?&#8288;color:string <span>=&gt;</span> ?&#8288;disabled:bool <span>=&gt;</span> onPress:(unit <span>=&gt;</span> unit) <span>=&gt;</span> ?&#8288;testID:string <span>=&gt;</span> title:string <span>=&gt;</span> array(ReasonReact.reactElement) <span>=&gt;</span> ReasonReact.component(ReasonReact.stateless, ReasonReact.noRetainedProps, unit);</code></dt><dd><p>Button in <a href="https://facebook.github.io/react-native/docs/button.html">React Native</a>, has two required props title and onPress, so in order to render a Button component you need to provide them:</p><h3 id="example"><a href="#example" class="anchor"></a>Example</h3><h4 id="default"><a href="#default" class="anchor"></a>default</h4><pre><code class="re">let component = ReasonReact.statelessComponent(&quot;MyComponent&quot;);
+
+let make = _children =&gt; {
+  ...component,
+  render: _self =&gt;
+    &lt;Button title=&quot;Press me&quot; onPress=(() =&gt; Js.log(&quot;pressed&quot;)) /&gt;,
+};</code></pre><h4 id="color"><a href="#color" class="anchor"></a>color</h4><pre><code class="re">let component = ReasonReact.statelessComponent(&quot;MyComponent&quot;);
+
+let make = _children =&gt; {
+  ...component,
+  render: _self =&gt;
+    &lt;Button
+      color=&quot;tomato&quot;
+      title=&quot;Press me&quot;
+      onPress=(() =&gt; Js.log(&quot;pressed&quot;))
+    /&gt;,
+};</code></pre><h4 id="hex-colors"><a href="#hex-colors" class="anchor"></a>hex colors</h4><p>let component = ReasonReact.statelessComponent(&quot;MyComponent&quot;);</p><pre><code class="re">let make = _children =&gt; {
+  ...component,
+  render: _self =&gt;
+    &lt;Button
+      color=&quot;#ff00ff&quot;
+      title=&quot;Press me&quot;
+      onPress=(() =&gt; Js.log(&quot;pressed&quot;))
+    /&gt;,
+};</code></pre><h4 id="rgb-colors"><a href="#rgb-colors" class="anchor"></a>rgb colors</h4><p>let component = ReasonReact.statelessComponent(&quot;MyComponent&quot;);</p><pre><code class="re">let component = ReasonReact.statelessComponent(&quot;MyComponent&quot;);
+
+let make = _children =&gt; {
+  ...component,
+  render: _self =&gt;
+    &lt;Button
+      color=&quot;rgb(255, 34, 11)&quot;
+      title=&quot;Press me&quot;
+      onPress=(() =&gt; Js.log(&quot;pressed&quot;))
+    /&gt;,
+};</code></pre><h4 id="disabled"><a href="#disabled" class="anchor"></a>disabled</h4><pre><code class="re">let component = ReasonReact.statelessComponent(&quot;MyComponent&quot;);
+
+let make = _children =&gt; {
+  ...component,
+  render: _self =&gt;
+    &lt;Button
+      disabled=true
+      title=&quot;Press me&quot;
+      onPress=(() =&gt; Js.log(&quot;pressed&quot;))
+    /&gt;,
+};</code></pre><h3 id="props"><a href="#props" class="anchor"></a>Props</h3><h4 id="accessibilitylabel"><a href="#accessibilitylabel" class="anchor"></a>accessibilityLabel</h4><pre><code class="re">~accessibilityLabel: string=?</code></pre><h4 id="color"><a href="#color" class="anchor"></a>color</h4><pre><code class="re">~color: string=?</code></pre><h4 id="disabled"><a href="#disabled" class="anchor"></a>disabled</h4><pre><code class="re">~disabled: bool=?</code></pre><h4 id="onpress"><a href="#onpress" class="anchor"></a>onPress</h4><pre><code class="re">~onPress: unit =&gt; unit</code></pre><h4 id="testid"><a href="#testid" class="anchor"></a>testID</h4><pre><code class="re">~testID: string=?</code></pre><h4 id="title"><a href="#title" class="anchor"></a>title</h4><pre><code class="re">~title: string</code></pre></dd></dl></div></body></html>
